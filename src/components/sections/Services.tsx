@@ -40,8 +40,8 @@ export default function Services() {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8 mt-12">
-          {services.map((service, index) => (
+        <div className="mx-auto grid max-w-5xl items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 mt-12">
+          {services.slice(0, 3).map((service, index) => (
             <Card key={index} className="flex flex-col justify-between shadow-sm hover:shadow-lg transition-shadow duration-300">
               <CardHeader>
                 <div className="mb-4">{service.icon}</div>

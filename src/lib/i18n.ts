@@ -43,16 +43,16 @@ export const translations = {
         title: 'Our Services',
         description: 'We offer a wide range of professional alteration services to breathe new life into your wardrobe.',
         service1: {
-            title: 'Hemming & Shortening',
-            description: "Pants, skirts, dresses, sleeves. We'll find the perfect length.",
+            title: 'Hemming Any Garment',
+            description: "We adjust the length of pants, skirts, dresses, and more.",
         },
         service2: {
-            title: 'Resizing & Tapering',
-            description: 'Taking in or letting out seams for a custom, flattering fit.',
+            title: 'Tapering Jackets',
+            description: 'And other garments for a perfect, flattering fit.',
         },
         service3: {
-            title: 'Zip Repair & Replacement',
-            description: 'Fixing or replacing broken zippers on jackets, pants, and bags.',
+            title: 'Zipper Replacement',
+            description: 'We repair or replace broken zippers on all types of clothing.',
         },
         service4: {
             title: 'Button & Fastener Service',
@@ -134,16 +134,16 @@ export const translations = {
         title: 'Nuestros Servicios',
         description: 'Ofrecemos una amplia gama de servicios de arreglos profesionales para dar nueva vida a tu armario.',
         service1: {
-            title: 'Bajos y Acortar',
-            description: 'Pantalones, faldas, vestidos, mangas. Encontraremos el largo perfecto.',
+            title: 'Bajos de cualquier prenda',
+            description: 'Ajustamos el largo de pantalones, faldas, vestidos y más.',
         },
         service2: {
-            title: 'Ajustar y Entallar',
-            description: 'Estrechar o ensanchar costuras para un ajuste personalizado y favorecedor.',
+            title: 'Estrechar chaquetas',
+            description: 'Y otras prendas para un ajuste perfecto y favorecedor.',
         },
         service3: {
-            title: 'Reparación de Cremalleras',
-            description: 'Arreglar o reemplazar cremalleras rotas en chaquetas, pantalones y bolsos.',
+            title: 'Cambio de cremalleras',
+            description: 'Reparamos o reemplazamos cremalleras rotas en todo tipo de ropa.',
         },
         service4: {
             title: 'Servicio de Botones',
