@@ -108,14 +108,17 @@ export default function Footer() {
                     <FormField
                         control={form.control}
                         name="image"
-                        render={({ field }) => (
+                        render={({ field: { onChange, value, ...rest } }) => (
                             <FormItem>
                                 <FormLabel>{t('Footer.form.image')}</FormLabel>
                                 <FormControl>
                                     <Input 
                                         type="file"
                                         accept="image/png, image/jpeg, image/webp"
-                                        onChange={(e) => field.onChange(e.target.files)}
+                                        onChange={(e) => {
+                                            onChange(e.target.files);
+                                        }}
+                                        {...rest}
                                     />
                                 </FormControl>
                                 <FormMessage />
