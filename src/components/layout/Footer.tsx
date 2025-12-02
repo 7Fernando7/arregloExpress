@@ -12,6 +12,10 @@ import Logo from '@/components/icons/Logo';
 import { Send } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
+const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
+const ACCEPTED_IMAGE_TYPES = ["image/jpeg", "image/jpg", "image/png", "image/webp"];
+
+
 export default function Footer() {
   const { t } = useLanguage();
   const { toast } = useToast();
@@ -20,6 +24,13 @@ export default function Footer() {
     name: z.string().min(2, { message: t('Footer.validation.name') }),
     email: z.string().email({ message: t('Footer.validation.email') }),
     message: z.string().min(10, { message: t('Footer.validation.message') }),
+    image: z.any()
+        .optional()
+        .refine((files) => !files || files.length === 0 || files?.[0]?.size <= MAX_FILE_SIZE, t('Footer.validation.imageSize'))
+        .refine(
+            (files) => !files || files.length === 0 || ACCEPTED_IMAGE_TYPES.includes(files?.[0]?.type),
+            t('Footer.validation.imageFormat')
+        ),
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -91,6 +102,23 @@ export default function Footer() {
                                 <Textarea placeholder={t('Footer.form.messagePlaceholder')} {...field} />
                             </FormControl>
                             <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                    <FormField
+                        control={form.control}
+                        name="image"
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>{t('Footer.form.image')}</FormLabel>
+                                <FormControl>
+                                    <Input 
+                                        type="file"
+                                        accept="image/png, image/jpeg, image/webp"
+                                        onChange={(e) => field.onChange(e.target.files)}
+                                    />
+                                </FormControl>
+                                <FormMessage />
                             </FormItem>
                         )}
                     />

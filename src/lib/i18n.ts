@@ -70,12 +70,15 @@ export const translations = {
         emailPlaceholder: 'your@email.com',
         message: 'Message',
         messagePlaceholder: 'How can we help you?',
+        image: 'Attach Image (Optional)',
         submit: 'Send Message',
       },
       validation: {
           name: 'Name must be at least 2 characters.',
           email: 'Please enter a valid email.',
           message: 'Message must be at least 10 characters.',
+          imageSize: 'File size should not exceed 5MB.',
+          imageFormat: 'Only .jpg, .jpeg, .png, and .webp formats are supported.',
       },
       toast: {
           title: 'Message Sent!',
@@ -158,12 +161,15 @@ export const translations = {
         emailPlaceholder: 'tu@email.com',
         message: 'Mensaje',
         messagePlaceholder: '¿Cómo podemos ayudarte?',
+        image: 'Adjuntar Imagen (Opcional)',
         submit: 'Enviar Mensaje',
       },
       validation: {
           name: 'El nombre debe tener al menos 2 caracteres.',
           email: 'Por favor, introduce un correo electrónico válido.',
           message: 'El mensaje debe tener al menos 10 caracteres.',
+          imageSize: 'El archivo no debe exceder los 5MB.',
+          imageFormat: 'Solo se admiten los formatos .jpg, .jpeg, .png y .webp.',
       },
       toast: {
         title: '¡Mensaje Enviado!',
