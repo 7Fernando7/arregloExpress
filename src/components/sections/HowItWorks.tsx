@@ -1,6 +1,6 @@
 'use client';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Phone, Truck, SewingPin } from 'lucide-react';
+import { Phone, Truck, Scissors } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function HowItWorks() {
@@ -17,7 +17,7 @@ export default function HowItWorks() {
       description: t('HowItWorks.step2.description'),
     },
     {
-      icon: <SewingPin className="h-10 w-10 text-primary" />,
+      icon: <Scissors className="h-10 w-10 text-primary" />,
       title: t('HowItWorks.step3.title'),
       description: t('HowItWorks.step3.description'),
     },
@@ -50,22 +50,3 @@ export default function HowItWorks() {
     </section>
   );
 }
-
-const SewingPin = (props) => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      {...props}
-    >
-      <path d="M12 10.428V2" />
-      <path d="M15.598 11.666a3.5 3.5 0 1 1-7.196 0" />
-      <path d="M12 22v-8.43" />
-    </svg>
-  );
