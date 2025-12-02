@@ -1,6 +1,6 @@
 'use client';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Scissors, Ruler, Replace, CircleDot } from 'lucide-react';
+import { Scissors, Ruler, Replace, CircleDot, Sparkles, Layers, Home } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function Services() {
@@ -27,6 +27,21 @@ export default function Services() {
       title: t('Services.service4.title'),
       description: t('Services.service4.description'),
     },
+    {
+      icon: <Sparkles className="h-8 w-8 text-accent" />,
+      title: t('Services.service5.title'),
+      description: t('Services.service5.description'),
+    },
+    {
+      icon: <Layers className="h-8 w-8 text-accent" />,
+      title: t('Services.service6.title'),
+      description: t('Services.service6.description'),
+    },
+    {
+      icon: <Home className="h-8 w-8 text-accent" />,
+      title: t('Services.service7.title'),
+      description: t('Services.service7.description'),
+    },
   ];
 
   return (
@@ -40,7 +55,7 @@ export default function Services() {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8 mt-12">
+        <div className="mx-auto grid max-w-5xl items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:gap-8 mt-12">
           {services.map((service, index) => (
             <Card key={index} className="flex flex-col justify-between shadow-sm hover:shadow-lg transition-shadow duration-300">
               <CardHeader>

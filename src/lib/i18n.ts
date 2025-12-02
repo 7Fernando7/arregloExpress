@@ -58,6 +58,18 @@ export const translations = {
             title: 'Button & Fastener Service',
             description: 'Replacing missing buttons, snaps, and other fasteners.',
         },
+        service5: {
+            title: 'Special Garment Alterations',
+            description: 'Weddings, communions, costumes.',
+        },
+        service6: {
+            title: 'Lining Replacement',
+            description: 'We replace the inner lining of jackets, coats, and skirts.',
+        },
+        service7: {
+            title: 'Home Textile Alterations',
+            description: 'Curtains, cushions, covers.',
+        },
     },
     Footer: {
       tagline: 'Bringing new life to your favorite clothes with expert alterations and convenient service.',
@@ -148,6 +160,18 @@ export const translations = {
         service4: {
             title: 'Servicio de Botones',
             description: 'Reemplazar botones, broches y otros cierres perdidos.',
+        },
+        service5: {
+            title: 'Arreglos de trajes especiales',
+            description: 'Bodas, comuniones, disfraces.',
+        },
+        service6: {
+            title: 'Cambio de forros',
+            description: 'Cambiamos el forro interior de chaquetas, abrigos y faldas.',
+        },
+        service7: {
+            title: 'Arreglos de ropa del hogar',
+            description: 'Cortinas, cojines, fundas.',
         },
     },
     Footer: {
