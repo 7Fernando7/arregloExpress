@@ -26,10 +26,10 @@ export default function Hero() {
       <div className="container relative z-10 mx-auto px-4 md:px-6">
         <div className="grid gap-8 md:grid-cols-2">
           <div className="flex flex-col justify-center space-y-6">
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-primary-foreground drop-shadow-lg">
+            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-foreground drop-shadow-lg">
               {t('Hero.title')}
             </h1>
-            <p className="max-w-[600px] text-lg text-primary-foreground/90 md:text-xl drop-shadow-md">
+            <p className="max-w-[600px] text-lg text-foreground/90 md:text-xl drop-shadow-md">
               {t('Hero.description')}
             </p>
             <div className="flex gap-4">
