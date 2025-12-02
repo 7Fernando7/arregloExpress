@@ -1,30 +1,25 @@
 'use client';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { UploadCloud, Sparkles, Phone, Truck } from 'lucide-react';
+import { Phone, Truck, SewingPin } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function HowItWorks() {
   const { t } = useLanguage();
   const steps = [
     {
-      icon: <UploadCloud className="h-10 w-10 text-primary" />,
+      icon: <Phone className="h-10 w-10 text-primary" />,
       title: t('HowItWorks.step1.title'),
       description: t('HowItWorks.step1.description'),
     },
     {
-      icon: <Sparkles className="h-10 w-10 text-primary" />,
+      icon: <Truck className="h-10 w-10 text-primary" />,
       title: t('HowItWorks.step2.title'),
       description: t('HowItWorks.step2.description'),
     },
     {
-      icon: <Phone className="h-10 w-10 text-primary" />,
+      icon: <SewingPin className="h-10 w-10 text-primary" />,
       title: t('HowItWorks.step3.title'),
       description: t('HowItWorks.step3.description'),
-    },
-    {
-      icon: <Truck className="h-10 w-10 text-primary" />,
-      title: t('HowItWorks.step4.title'),
-      description: t('HowItWorks.step4.description'),
     },
   ];
 
@@ -40,7 +35,7 @@ export default function HowItWorks() {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-4 lg:gap-10 mt-12">
+        <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-1 md:gap-12 lg:grid-cols-3 lg:gap-10 mt-12">
           {steps.map((step, index) => (
             <Card key={index} className="text-center shadow-md hover:shadow-xl transition-shadow duration-300">
               <CardHeader>
@@ -55,3 +50,22 @@ export default function HowItWorks() {
     </section>
   );
 }
+
+const SewingPin = (props) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M12 10.428V2" />
+      <path d="M15.598 11.666a3.5 3.5 0 1 1-7.196 0" />
+      <path d="M12 22v-8.43" />
+    </svg>
+  );

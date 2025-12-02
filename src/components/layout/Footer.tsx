@@ -37,7 +37,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="w-full bg-secondary/50">
+    <footer id="contact" className="w-full bg-secondary/50">
       <div className="container grid grid-cols-1 md:grid-cols-3 gap-12 py-12 mx-auto">
         <div className="space-y-4">
           <Logo />

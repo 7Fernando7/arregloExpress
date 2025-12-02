@@ -1,9 +1,8 @@
 'use client';
-import { Button } from '@/components/ui/button';
 import Logo from '@/components/icons/Logo';
-import { Scissors } from 'lucide-react';
 import LanguageSwitcher from '../LanguageSwitcher';
 import { useLanguage } from '@/context/LanguageContext';
+import { Button } from '../ui/button';
 
 export default function Header() {
   const { t } = useLanguage();
@@ -14,10 +13,14 @@ export default function Header() {
           <Logo />
         </a>
         <div className="flex items-center gap-4">
-          <a href="#suggest-alterations">
+           <a href="#services">
+            <Button variant="ghost">
+              {t('Header.services')}
+            </Button>
+          </a>
+           <a href="#contact">
             <Button>
-              <Scissors className="mr-2 h-4 w-4" />
-              {t('Header.getSuggestions')}
+              {t('Header.contact')}
             </Button>
           </a>
           <LanguageSwitcher />

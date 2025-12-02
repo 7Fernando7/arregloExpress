@@ -2,31 +2,29 @@ export const translations = {
   en: {
     logo: 'Arreglos Express',
     Header: {
-      getSuggestions: 'Get Suggestions',
+      services: 'Services',
+      contact: 'Contact',
     },
     Hero: {
       title: 'Perfect Fit, Delivered to You.',
-      description: "Don't let ill-fitting clothes sit in your closet. Upload a photo and let our AI suggest the perfect alterations. Quick, easy, and from the comfort of your home.",
+      description: "Don't let ill-fitting clothes sit in your closet. We offer professional alteration services with home pickup and delivery.",
+      contactButton: 'Contact Us',
     },
     HowItWorks: {
       badge: 'How It Works',
-      title: 'A Simple, 4-Step Process',
+      title: 'A Simple, 3-Step Process',
       description: 'Getting your clothes tailored has never been this easy. Follow these simple steps for a perfect fit.',
       step1: {
-        title: '1. Upload a Photo',
-        description: 'Snap a picture of your garment and upload it to our AI-powered tool.',
+        title: '1. Contact Us',
+        description: 'Get in touch via WhatsApp or our contact form to tell us what you need.',
       },
       step2: {
-        title: '2. Get Suggestions',
-        description: 'Our AI analyzes your photo and suggests professional alterations in seconds.',
+        title: '2. We Pick Up',
+        description: 'We arrange a convenient time to pick up your garments right from your home.',
       },
       step3: {
-        title: '3. Request Service',
-        description: 'Like the suggestions? Contact us via WhatsApp to confirm your service request.',
-      },
-      step4: {
-        title: '4. We Handle the Rest',
-        description: 'We arrange for pickup and delivery, returning your perfectly altered clothing to your doorstep.',
+        title: '3. We Deliver',
+        description: 'We return your perfectly altered clothing to your doorstep, ready to wear.',
       },
     },
     AlterationExamples: {
@@ -61,22 +59,8 @@ export const translations = {
             description: 'Replacing missing buttons, snaps, and other fasteners.',
         },
     },
-    AIPoweredForm: {
-      title: 'AI Alteration Assistant',
-      description: 'Upload a photo to get started.',
-      uploadCTA: 'Click to upload or drag and drop',
-      fileTypes: 'PNG, JPG, or WEBP',
-      submitButton: 'Get Suggestions',
-      loading: 'Analyzing...',
-      suggestionsTitle: 'Our Suggestions:',
-      noFileTitle: 'No file selected',
-      noFileDescription: 'Please upload an image of your clothing item first.',
-      errorTitle: 'Error',
-      fileReadErrorTitle: 'File Read Error',
-      fileReadErrorDescription: 'There was an issue processing your image file. Please try again.',
-    },
     Footer: {
-      tagline: 'Bringing new life to your favorite clothes with expert alterations and a touch of AI magic.',
+      tagline: 'Bringing new life to your favorite clothes with expert alterations and convenient service.',
       rights: 'All rights reserved.',
       formTitle: 'Send Us a Message',
       form: {
@@ -106,31 +90,29 @@ export const translations = {
   es: {
     logo: 'Arreglos Express',
     Header: {
-      getSuggestions: 'Obtener Sugerencias',
+      services: 'Servicios',
+      contact: 'Contacto',
     },
     Hero: {
       title: 'El Ajuste Perfecto, Entregado a Ti.',
-      description: 'No dejes que la ropa que no te queda bien ocupe espacio en tu armario. Sube una foto y deja que nuestra IA te sugiera los arreglos perfectos. Rápido, fácil y desde la comodidad de tu casa.',
+      description: 'No dejes que la ropa que no te queda bien ocupe espacio en tu armario. Ofrecemos servicios profesionales de arreglos con recogida y entrega a domicilio.',
+      contactButton: 'Contáctanos',
     },
     HowItWorks: {
       badge: 'Cómo Funciona',
-      title: 'Un Proceso Sencillo de 4 Pasos',
+      title: 'Un Proceso Sencillo de 3 Pasos',
       description: 'Arreglar tu ropa nunca ha sido tan fácil. Sigue estos sencillos pasos para un ajuste perfecto.',
       step1: {
-        title: '1. Sube una Foto',
-        description: 'Toma una foto de tu prenda y súbela a nuestra herramienta con IA.',
+        title: '1. Contáctanos',
+        description: 'Ponte en contacto por WhatsApp o nuestro formulario para decirnos qué necesitas.',
       },
       step2: {
-        title: '2. Obtén Sugerencias',
-        description: 'Nuestra IA analiza tu foto y sugiere arreglos profesionales en segundos.',
+        title: '2. Recogemos',
+        description: 'Coordinamos una hora conveniente para recoger tus prendas directamente en tu casa.',
       },
       step3: {
-        title: '3. Solicita el Servicio',
-        description: '¿Te gustan las sugerencias? Contáctanos por WhatsApp para confirmar tu solicitud de servicio.',
-      },
-      step4: {
-        title: '4. Nosotros nos Encargamos',
-        description: 'Organizamos la recogida y la entrega, devolviendo tu ropa perfectamente arreglada a tu puerta.',
+        title: '3. Entregamos',
+        description: 'Devolvemos tu ropa perfectamente arreglada en tu puerta, lista para usar.',
       },
     },
     AlterationExamples: {
@@ -165,22 +147,8 @@ export const translations = {
             description: 'Reemplazar botones, broches y otros cierres perdidos.',
         },
     },
-    AIPoweredForm: {
-      title: 'Asistente de Arreglos con IA',
-      description: 'Sube una foto para empezar.',
-      uploadCTA: 'Haz clic para subir o arrastra y suelta',
-      fileTypes: 'PNG, JPG, o WEBP',
-      submitButton: 'Obtener Sugerencias',
-      loading: 'Analizando...',
-      suggestionsTitle: 'Nuestras Sugerencias:',
-      noFileTitle: 'No se seleccionó ningún archivo',
-      noFileDescription: 'Por favor, sube primero una imagen de tu prenda de vestir.',
-      errorTitle: 'Error',
-      fileReadErrorTitle: 'Error al leer el archivo',
-      fileReadErrorDescription: 'Hubo un problema al procesar tu archivo de imagen. Por favor, inténtalo de nuevo.',
-    },
     Footer: {
-      tagline: 'Dando nueva vida a tu ropa favorita con arreglos expertos y un toque de magia de IA.',
+      tagline: 'Dando nueva vida a tu ropa favorita con arreglos expertos y un servicio conveniente.',
       rights: 'Todos los derechos reservados.',
       formTitle: 'Envíanos un Mensaje',
       form: {
