@@ -10,15 +10,18 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { useToast } from '@/hooks/use-toast';
 import Logo from '@/components/icons/Logo';
 import { Send } from 'lucide-react';
-
-const formSchema = z.object({
-  name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
-  email: z.string().email({ message: 'Please enter a valid email.' }),
-  message: z.string().min(10, { message: 'Message must be at least 10 characters.' }),
-});
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Footer() {
+  const { t } = useLanguage();
   const { toast } = useToast();
+
+  const formSchema = z.object({
+    name: z.string().min(2, { message: t('Footer.validation.name') }),
+    email: z.string().email({ message: t('Footer.validation.email') }),
+    message: z.string().min(10, { message: t('Footer.validation.message') }),
+  });
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: { name: '', email: '', message: '' },
@@ -27,8 +30,8 @@ export default function Footer() {
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
     toast({
-      title: 'Message Sent!',
-      description: "Thanks for reaching out. We'll get back to you shortly.",
+      title: t('Footer.toast.title'),
+      description: t('Footer.toast.description'),
     });
     form.reset();
   }
@@ -39,15 +42,15 @@ export default function Footer() {
         <div className="space-y-4">
           <Logo />
           <p className="text-muted-foreground">
-            Bringing new life to your favorite clothes with expert alterations and a touch of AI magic.
+            {t('Footer.tagline')}
           </p>
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Arreglos Express. All rights reserved.
+            &copy; {new Date().getFullYear()} {t('logo')}. {t('Footer.rights')}
           </p>
         </div>
         
         <div className="md:col-span-2">
-            <h3 className="text-lg font-semibold mb-4">Send Us a Message</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('Footer.formTitle')}</h3>
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -56,9 +59,9 @@ export default function Footer() {
                             name="name"
                             render={({ field }) => (
                                 <FormItem>
-                                <FormLabel>Name</FormLabel>
+                                <FormLabel>{t('Footer.form.name')}</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="Your Name" {...field} />
+                                    <Input placeholder={t('Footer.form.namePlaceholder')} {...field} />
                                 </FormControl>
                                 <FormMessage />
                                 </FormItem>
@@ -69,9 +72,9 @@ export default function Footer() {
                             name="email"
                             render={({ field }) => (
                                 <FormItem>
-                                <FormLabel>Email</FormLabel>
+                                <FormLabel>{t('Footer.form.email')}</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="your@email.com" {...field} />
+                                    <Input placeholder={t('Footer.form.emailPlaceholder')} {...field} />
                                 </FormControl>
                                 <FormMessage />
                                 </FormItem>
@@ -83,16 +86,16 @@ export default function Footer() {
                         name="message"
                         render={({ field }) => (
                             <FormItem>
-                            <FormLabel>Message</FormLabel>
+                            <FormLabel>{t('Footer.form.message')}</FormLabel>
                             <FormControl>
-                                <Textarea placeholder="How can we help you?" {...field} />
+                                <Textarea placeholder={t('Footer.form.messagePlaceholder')} {...field} />
                             </FormControl>
                             <FormMessage />
                             </FormItem>
                         )}
                     />
                     <Button type="submit" className="w-full sm:w-auto" variant="accent">
-                        Send Message
+                        {t('Footer.form.submit')}
                         <Send className="ml-2 h-4 w-4"/>
                     </Button>
                 </form>

@@ -10,6 +10,7 @@ import { Label } from '@/components/ui/label';
 import { getAISuggestions } from '@/app/actions';
 import { useToast } from '@/hooks/use-toast';
 import { Skeleton } from './ui/skeleton';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function AIPoweredForm() {
   const [file, setFile] = useState<File | null>(null);
@@ -18,6 +19,7 @@ export default function AIPoweredForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const { toast } = useToast();
+  const { t } = useLanguage();
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = event.target.files?.[0];
@@ -33,8 +35,8 @@ export default function AIPoweredForm() {
     event.preventDefault();
     if (!file) {
       toast({
-        title: 'No file selected',
-        description: 'Please upload an image of your clothing item first.',
+        title: t('AIPoweredForm.noFileTitle'),
+        description: t('AIPoweredForm.noFileDescription'),
         variant: 'destructive',
       });
       return;
@@ -55,7 +57,7 @@ export default function AIPoweredForm() {
       } else {
         setError(result.error);
         toast({
-          title: 'Error',
+          title: t('AIPoweredForm.errorTitle'),
           description: result.error,
           variant: 'destructive',
         });
@@ -63,10 +65,10 @@ export default function AIPoweredForm() {
       setIsLoading(false);
     };
     reader.onerror = () => {
-        setError("Failed to read the file.");
+        setError(t('AIPoweredForm.fileReadErrorDescription'));
         toast({
-            title: 'File Read Error',
-            description: 'There was an issue processing your image file. Please try again.',
+            title: t('AIPoweredForm.fileReadErrorTitle'),
+            description: t('AIPoweredForm.fileReadErrorDescription'),
             variant: 'destructive',
         });
         setIsLoading(false);
@@ -80,9 +82,9 @@ export default function AIPoweredForm() {
       <CardHeader>
         <CardTitle className="flex items-center gap-2 text-2xl">
           <Sparkles className="text-accent" />
-          AI Alteration Assistant
+          {t('AIPoweredForm.title')}
         </CardTitle>
-        <CardDescription>Upload a photo to get started.</CardDescription>
+        <CardDescription>{t('AIPoweredForm.description')}</CardDescription>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -95,8 +97,8 @@ export default function AIPoweredForm() {
                 ) : (
                   <div className="flex flex-col items-center justify-center pt-5 pb-6">
                     <UploadCloud className="w-10 h-10 mb-3 text-muted-foreground" />
-                    <p className="mb-2 text-sm text-muted-foreground"><span className="font-semibold">Click to upload</span> or drag and drop</p>
-                    <p className="text-xs text-muted-foreground">PNG, JPG, or WEBP</p>
+                    <p className="mb-2 text-sm text-muted-foreground"><span className="font-semibold">{t('AIPoweredForm.uploadCTA')}</span></p>
+                    <p className="text-xs text-muted-foreground">{t('AIPoweredForm.fileTypes')}</p>
                   </div>
                 )}
               </label>
@@ -104,7 +106,7 @@ export default function AIPoweredForm() {
             </div>
           </div>
           <Button type="submit" className="w-full" disabled={isLoading || !file}>
-            {isLoading ? 'Analyzing...' : 'Get Suggestions'}
+            {isLoading ? t('AIPoweredForm.loading') : t('AIPoweredForm.submitButton')}
           </Button>
         </form>
 
@@ -120,7 +122,7 @@ export default function AIPoweredForm() {
 
         {suggestions && (
           <div className="mt-6">
-            <h3 className="text-lg font-semibold mb-3">Our Suggestions:</h3>
+            <h3 className="text-lg font-semibold mb-3">{t('AIPoweredForm.suggestionsTitle')}</h3>
             <ul className="space-y-3">
               {suggestions.map((suggestion, index) => {
                 const Icon = suggestionIcons[index % suggestionIcons.length];

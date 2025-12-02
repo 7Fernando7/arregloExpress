@@ -1,8 +1,10 @@
+'use client';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Badge } from '@/components/ui/badge';
+import { useLanguage } from '@/context/LanguageContext';
 
 type Example = {
   title: string;
@@ -11,6 +13,7 @@ type Example = {
 };
 
 export default function AlterationExamples() {
+  const { t } = useLanguage();
   const examples: Example[] = [
     {
       title: 'Jeans Hemming',
@@ -39,9 +42,9 @@ export default function AlterationExamples() {
       <div className="container px-4 md:px-6 mx-auto">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">See the Transformation</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">{t('AlterationExamples.title')}</h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Browse our gallery of before-and-after photos to see the magic we perform on everyday clothing.
+              {t('AlterationExamples.description')}
             </p>
           </div>
         </div>
@@ -53,12 +56,12 @@ export default function AlterationExamples() {
                   <div className="p-1">
                     <Card className="overflow-hidden">
                       <CardHeader>
-                        <CardTitle>{example.title}</CardTitle>
+                        <CardTitle>{t(`AlterationExamples.examples.${example.title.replace(/ /g, '')}`)}</CardTitle>
                       </CardHeader>
                       <CardContent>
                         <div className="grid grid-cols-2 gap-4">
                           <div className="space-y-2">
-                             <Badge variant="outline">Before</Badge>
+                             <Badge variant="outline">{t('AlterationExamples.before')}</Badge>
                             <div className="aspect-[3/4] overflow-hidden rounded-lg">
                               <Image
                                 src={example.before.imageUrl}
@@ -71,7 +74,7 @@ export default function AlterationExamples() {
                             </div>
                           </div>
                           <div className="space-y-2">
-                            <Badge variant="default" className="bg-accent text-accent-foreground">After</Badge>
+                            <Badge variant="default" className="bg-accent text-accent-foreground">{t('AlterationExamples.after')}</Badge>
                             <div className="aspect-[3/4] overflow-hidden rounded-lg">
                             <Image
                               src={example.after.imageUrl}

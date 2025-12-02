@@ -1,9 +1,12 @@
+'use client';
 import Image from 'next/image';
 import AIPoweredForm from '@/components/AIPoweredForm';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Hero() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-image');
+  const { t } = useLanguage();
 
   return (
     <section id="suggest-alterations" className="relative w-full py-20 md:py-32 lg:py-40 overflow-hidden">
@@ -23,10 +26,10 @@ export default function Hero() {
         <div className="grid gap-8 md:grid-cols-2">
           <div className="flex flex-col justify-center space-y-4">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-primary-foreground drop-shadow-lg">
-              Perfect Fit, Delivered to You.
+              {t('Hero.title')}
             </h1>
             <p className="max-w-[600px] text-lg text-primary-foreground/90 md:text-xl drop-shadow-md">
-              Don't let ill-fitting clothes sit in your closet. Upload a photo and let our AI suggest the perfect alterations. Quick, easy, and from the comfort of your home.
+              {t('Hero.description')}
             </p>
           </div>
           <div className="flex items-center justify-center">
