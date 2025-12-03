@@ -5,54 +5,6 @@
       "description": "A well-lit tailor's workshop with fabrics and sewing machines.",
       "imageUrl": "https://images.unsplash.com/photo-1753164597569-9434542ff330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx0YWlsb3IlMjB3b3Jrc2hvcHxlbnwwfHx8fDE3NjQ2OTgzNjd8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "tailor workshop"
-    },
-    {
-      "id": "jeans-hem-before",
-      "description": "A person wearing jeans that are too long.",
-      "imageUrl": "https://images.unsplash.com/photo-1539154308435-ca11e00f2e66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxsb25nJTIwamVhbnN8ZW58MHx8fHwxNzY0Njk4MzY3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "long jeans"
-    },
-    {
-      "id": "jeans-hem-after",
-      "description": "The same person wearing perfectly hemmed jeans.",
-      "imageUrl": "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoZW1tZWQlMjBqZWFuc3xlbnwwfHx8fDE3NjQ2OTgzNjZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "hemmed jeans"
-    },
-    {
-      "id": "shirt-taper-before",
-      "description": "A person wearing a button-up shirt that is too wide and baggy.",
-      "imageUrl": "https://images.unsplash.com/photo-1762745188344-e453c5474d79?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxiYWdneSUyMHNoaXJ0fGVufDB8fHx8MTc2NDY5ODM2Nnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "baggy shirt"
-    },
-    {
-      "id": "shirt-taper-after",
-      "description": "The same person wearing the shirt after it has been tapered to fit well.",
-      "imageUrl": "https://images.unsplash.com/photo-1603252109612-24fa03d145c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxmaXR0ZWQlMjBzaGlydHxlbnwwfHx8fDE3NjQ2OTgzNjd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "fitted shirt"
-    },
-    {
-      "id": "dress-shorten-before",
-      "description": "A person wearing a dress that is too long, touching the floor.",
-      "imageUrl": "https://images.unsplash.com/photo-1612336307429-8a898d10e223?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxsb25nJTIwZHJlc3N8ZW58MHx8fHwxNzY0Njk4MzY3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "long dress"
-    },
-    {
-      "id": "dress-shorten-after",
-      "description": "The same person wearing the dress at a stylish, shorter length.",
-      "imageUrl": "https://images.unsplash.com/photo-1704957869647-e26556190a89?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzaG9ydGVuZWQlMjBkcmVzc3xlbnwwfHx8fDE3NjQ2OTgzNjd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "shortened dress"
-    },
-    {
-      "id": "jacket-sleeves-before",
-      "description": "A person wearing a suit jacket with sleeves that are too long.",
-      "imageUrl": "https://images.unsplash.com/photo-1668239448724-9ae1286a1c5b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxsb25nJTIwc2xlZXZlc3xlbnwwfHx8fDE3NjQ2OTgzNjd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "long sleeves"
-    },
-    {
-      "id": "jacket-sleeves-after",
-      "description": "The same person wearing the suit jacket with perfectly shortened sleeves.",
-      "imageUrl": "https://images.unsplash.com/photo-1748840176432-4b2474189d52?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxmaXR0ZWQlMjBzbGVldmVzfGVufDB8fHx8MTc2NDY5ODM2Nnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "fitted sleeves"
     }
   ]
 }

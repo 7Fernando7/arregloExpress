@@ -27,18 +27,6 @@ export const translations = {
         description: 'We return your perfectly altered clothing to your doorstep, ready to wear.',
       },
     },
-    AlterationExamples: {
-        title: 'See the Transformation',
-        description: 'Browse our gallery of before-and-after photos to see the magic we perform on everyday clothing.',
-        before: 'Before',
-        after: 'After',
-        examples: {
-            JeansHemming: 'Jeans Hemming',
-            ShirtTapering: 'Shirt Tapering',
-            DressShortening: 'Dress Shortening',
-            JacketSleeveAdjustment: 'Jacket Sleeve Adjustment',
-        }
-    },
     Services: {
         title: 'Our Services',
         description: 'We offer a wide range of professional alteration services to breathe new life into your wardrobe.',
@@ -129,18 +117,6 @@ export const translations = {
         title: '3. Entregamos',
         description: 'Devolvemos tu ropa perfectamente arreglada en tu puerta, lista para usar.',
       },
-    },
-    AlterationExamples: {
-        title: 'Mira la Transformación',
-        description: 'Navega por nuestra galería de fotos de antes y después para ver la magia que hacemos en la ropa de todos los días.',
-        before: 'Antes',
-        after: 'Después',
-        examples: {
-            JeansHemming: 'Bajos de Vaqueros',
-            ShirtTapering: 'Entallar Camisa',
-            DressShortening: 'Acortar Vestido',
-            JacketSleeveAdjustment: 'Ajuste de Mangas de Chaqueta',
-        }
     },
     Services: {
         title: 'Nuestros Servicios',
