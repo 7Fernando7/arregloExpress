@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -19,6 +20,8 @@ import Logo from "@/components/icons/Logo";
 import { Send } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
+/* ================== VALIDACIÓN ================== */
+
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
 const ACCEPTED_IMAGE_TYPES = ["image/jpeg", "image/jpg", "image/png", "image/webp"];
 
@@ -29,34 +32,37 @@ const formSchema = z.object({
   image: z.any().optional(),
 });
 
+type FormValues = z.infer<typeof formSchema>;
+
 export default function Footer() {
   const { t } = useLanguage();
   const { toast } = useToast();
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
 
-  const form = useForm<z.infer<typeof formSchema>>({
+  const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
       email: "",
       message: "",
-      image: undefined,
     },
   });
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
-    const formData = new FormData();
+  /* ================== ENVÍO A NETLIFY ================== */
 
+  async function onSubmit(values: FormValues) {
+    const formData = new FormData();
     formData.append("form-name", "contact");
     formData.append("name", values.name);
     formData.append("email", values.email);
     formData.append("message", values.message);
 
-    if (values.image && values.image.length > 0) {
-      formData.append("image", values.image[0]);
+    if (fileInputRef.current?.files?.[0]) {
+      formData.append("image", fileInputRef.current.files[0]);
     }
 
     try {
-      await fetch("/", {
+      await fetch("/?no-cache=" + Date.now(), {
         method: "POST",
         body: formData,
       });
@@ -66,13 +72,19 @@ export default function Footer() {
         description: t("Footer.toast.description"),
       });
 
-      form.reset(); // ✅ LIMPIA TODOS LOS CAMPOS
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "No se pudo enviar el formulario",
-        variant: "destructive",
+      // ✅ LIMPIAR FORMULARIO
+      form.reset({
+        name: "",
+        email: "",
+        message: "",
       });
+
+      // ✅ LIMPIAR INPUT FILE SIN CRASH
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
+    } catch (error) {
+      console.error("FORM ERROR:", error);
     }
   }
 
@@ -92,7 +104,7 @@ export default function Footer() {
             {t("Footer.formTitle")}
           </h3>
 
-          {/* ✅ FORMULARIO NETLIFY REAL */}
+          {/* ✅ FORMULARIO NETLIFY */}
           <Form {...form}>
             <form
               name="contact"
@@ -112,7 +124,7 @@ export default function Footer() {
                     <FormItem>
                       <FormLabel>{t("Footer.form.name")}</FormLabel>
                       <FormControl>
-                        <Input {...field} />
+                        <Input {...field} name="name" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -126,7 +138,7 @@ export default function Footer() {
                     <FormItem>
                       <FormLabel>{t("Footer.form.email")}</FormLabel>
                       <FormControl>
-                        <Input {...field} />
+                        <Input {...field} name="email" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -141,32 +153,25 @@ export default function Footer() {
                   <FormItem>
                     <FormLabel>{t("Footer.form.message")}</FormLabel>
                     <FormControl>
-                      <Textarea {...field} />
+                      <Textarea {...field} name="message" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
 
-              {/* ✅ SUBIDA DE IMAGEN FUNCIONANDO */}
-              <FormField
-                control={form.control}
-                name="image"
-                render={({ field: { onChange, ...rest } }) => (
-                  <FormItem>
-                    <FormLabel>{t("Footer.form.image")}</FormLabel>
-                    <FormControl>
-                      <Input
-                        type="file"
-                        accept="image/png, image/jpeg, image/webp"
-                        onChange={(e) => onChange(e.target.files)}
-                        {...rest}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+              {/* ✅ INPUT IMAGEN FUNCIONANDO */}
+              <FormItem>
+                <FormLabel>{t("Footer.form.image")}</FormLabel>
+                <FormControl>
+                  <Input
+                    ref={fileInputRef}
+                    type="file"
+                    name="image"
+                    accept="image/png, image/jpeg, image/webp"
+                  />
+                </FormControl>
+              </FormItem>
 
               <Button type="submit" className="w-full sm:w-auto">
                 {t("Footer.form.submit")}
