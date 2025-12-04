@@ -1,6 +1,5 @@
 "use client";
 
-import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -19,27 +18,20 @@ import { useToast } from "@/hooks/use-toast";
 import Logo from "@/components/icons/Logo";
 import { Send } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
-
-/* ================== VALIDACIÓN ================== */
-
-const MAX_FILE_SIZE = 5 * 1024 * 1024;
-const ACCEPTED_IMAGE_TYPES = ["image/jpeg", "image/jpg", "image/png", "image/webp"];
+import { useRef } from "react";
 
 const formSchema = z.object({
   name: z.string().min(2),
   email: z.string().email(),
   message: z.string().min(10),
-  image: z.any().optional(),
 });
-
-type FormValues = z.infer<typeof formSchema>;
 
 export default function Footer() {
   const { t } = useLanguage();
   const { toast } = useToast();
-  const fileInputRef = useRef<HTMLInputElement | null>(null);
+  const fileRef = useRef<HTMLInputElement | null>(null);
 
-  const form = useForm<FormValues>({
+  const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
@@ -48,49 +40,25 @@ export default function Footer() {
     },
   });
 
-  /* ================== ENVÍO A NETLIFY ================== */
+  function onSubmit() {
+    toast({
+      title: t("Footer.toast.title"),
+      description: t("Footer.toast.description"),
+    });
 
-  async function onSubmit(values: FormValues) {
-    const formData = new FormData();
-    formData.append("form-name", "contact");
-    formData.append("name", values.name);
-    formData.append("email", values.email);
-    formData.append("message", values.message);
+    // ✅ Limpia inputs de texto
+    form.reset();
 
-    if (fileInputRef.current?.files?.[0]) {
-      formData.append("image", fileInputRef.current.files[0]);
-    }
-
-    try {
-      await fetch("/?no-cache=" + Date.now(), {
-        method: "POST",
-        body: formData,
-      });
-
-      toast({
-        title: t("Footer.toast.title"),
-        description: t("Footer.toast.description"),
-      });
-
-      // ✅ LIMPIAR FORMULARIO
-      form.reset({
-        name: "",
-        email: "",
-        message: "",
-      });
-
-      // ✅ LIMPIAR INPUT FILE SIN CRASH
-      if (fileInputRef.current) {
-        fileInputRef.current.value = "";
-      }
-    } catch (error) {
-      console.error("FORM ERROR:", error);
+    // ✅ Limpia input de archivo
+    if (fileRef.current) {
+      fileRef.current.value = "";
     }
   }
 
   return (
     <footer id="contact" className="w-full bg-secondary/50">
       <div className="container grid grid-cols-1 md:grid-cols-3 gap-12 py-12 mx-auto">
+
         <div className="space-y-4">
           <Logo />
           <p className="text-muted-foreground">{t("Footer.tagline")}</p>
@@ -104,13 +72,13 @@ export default function Footer() {
             {t("Footer.formTitle")}
           </h3>
 
-          {/* ✅ FORMULARIO NETLIFY */}
+          {/* ✅ FORMULARIO NETLIFY REAL */}
           <Form {...form}>
             <form
               name="contact"
               method="POST"
-              data-netlify="true"
               encType="multipart/form-data"
+              data-netlify="true"
               onSubmit={form.handleSubmit(onSubmit)}
               className="space-y-4"
             >
@@ -160,14 +128,14 @@ export default function Footer() {
                 )}
               />
 
-              {/* ✅ INPUT IMAGEN FUNCIONANDO */}
+              {/* ✅ INPUT DE IMAGEN CORRECTO PARA NETLIFY */}
               <FormItem>
                 <FormLabel>{t("Footer.form.image")}</FormLabel>
                 <FormControl>
                   <Input
-                    ref={fileInputRef}
                     type="file"
                     name="image"
+                    ref={fileRef}
                     accept="image/png, image/jpeg, image/webp"
                   />
                 </FormControl>
