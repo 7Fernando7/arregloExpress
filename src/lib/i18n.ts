@@ -178,7 +178,7 @@ export const translations = {
         name: "Nombre",
         namePlaceholder: "Tu Nombre",
         email: "Correo Electrónico",
-        emailPlaceholder: "fernandopaivap7@gmail.com",
+        emailPlaceholder: "email@gmail.com",
         message: "Mensaje",
         messagePlaceholder: "¿Cómo podemos ayudarte?",
         image: "Adjuntar Imagen (Opcional)",
