@@ -22,27 +22,58 @@ import { useLanguage } from "@/context/LanguageContext";
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
 const ACCEPTED_IMAGE_TYPES = ["image/jpeg", "image/jpg", "image/png", "image/webp"];
 
+const formSchema = z.object({
+  name: z.string().min(2),
+  email: z.string().email(),
+  message: z.string().min(10),
+  image: z.any().optional(),
+});
+
 export default function Footer() {
   const { t } = useLanguage();
   const { toast } = useToast();
 
-  const formSchema = z.object({
-    name: z.string().min(2),
-    email: z.string().email(),
-    message: z.string().min(10),
-    image: z.any().optional(),
-  });
-
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: { name: "", email: "", message: "" },
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+      image: undefined,
+    },
   });
 
-  function onSubmit() {
-    toast({
-      title: t("Footer.toast.title"),
-      description: t("Footer.toast.description"),
-    });
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    const formData = new FormData();
+
+    formData.append("form-name", "contact");
+    formData.append("name", values.name);
+    formData.append("email", values.email);
+    formData.append("message", values.message);
+
+    if (values.image && values.image.length > 0) {
+      formData.append("image", values.image[0]);
+    }
+
+    try {
+      await fetch("/", {
+        method: "POST",
+        body: formData,
+      });
+
+      toast({
+        title: t("Footer.toast.title"),
+        description: t("Footer.toast.description"),
+      });
+
+      form.reset(); // ✅ LIMPIA TODOS LOS CAMPOS
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "No se pudo enviar el formulario",
+        variant: "destructive",
+      });
+    }
   }
 
   return (
@@ -61,7 +92,7 @@ export default function Footer() {
             {t("Footer.formTitle")}
           </h3>
 
-          {/* ✅ FORMULARIO CONECTADO A NETLIFY */}
+          {/* ✅ FORMULARIO NETLIFY REAL */}
           <Form {...form}>
             <form
               name="contact"
@@ -81,7 +112,7 @@ export default function Footer() {
                     <FormItem>
                       <FormLabel>{t("Footer.form.name")}</FormLabel>
                       <FormControl>
-                        <Input {...field} name="name" />
+                        <Input {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -95,7 +126,7 @@ export default function Footer() {
                     <FormItem>
                       <FormLabel>{t("Footer.form.email")}</FormLabel>
                       <FormControl>
-                        <Input {...field} name="email" />
+                        <Input {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -110,24 +141,32 @@ export default function Footer() {
                   <FormItem>
                     <FormLabel>{t("Footer.form.message")}</FormLabel>
                     <FormControl>
-                      <Textarea {...field} name="message" />
+                      <Textarea {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
 
-              {/* ✅ BOTÓN DE SUBIR IMAGEN RESTAURADO */}
-              <FormItem>
-                <FormLabel>{t("Footer.form.image")}</FormLabel>
-                <FormControl>
-                  <Input
-                    type="file"
-                    name="image"
-                    accept="image/png, image/jpeg, image/webp"
-                  />
-                </FormControl>
-              </FormItem>
+              {/* ✅ SUBIDA DE IMAGEN FUNCIONANDO */}
+              <FormField
+                control={form.control}
+                name="image"
+                render={({ field: { onChange, ...rest } }) => (
+                  <FormItem>
+                    <FormLabel>{t("Footer.form.image")}</FormLabel>
+                    <FormControl>
+                      <Input
+                        type="file"
+                        accept="image/png, image/jpeg, image/webp"
+                        onChange={(e) => onChange(e.target.files)}
+                        {...rest}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
               <Button type="submit" className="w-full sm:w-auto">
                 {t("Footer.form.submit")}
