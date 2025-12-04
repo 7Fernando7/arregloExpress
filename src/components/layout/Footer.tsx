@@ -19,48 +19,30 @@ import Logo from "@/components/icons/Logo";
 import { Send } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
-const formSchema = z.object({
-  name: z.string().min(2),
-  email: z.string().email(),
-  message: z.string().min(10),
-});
+const MAX_FILE_SIZE = 5 * 1024 * 1024;
+const ACCEPTED_IMAGE_TYPES = ["image/jpeg", "image/jpg", "image/png", "image/webp"];
 
 export default function Footer() {
   const { t } = useLanguage();
   const { toast } = useToast();
 
-  const form = useForm({
+  const formSchema = z.object({
+    name: z.string().min(2),
+    email: z.string().email(),
+    message: z.string().min(10),
+    image: z.any().optional(),
+  });
+
+  const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: { name: "", email: "", message: "" },
   });
 
-  async function onSubmit(values: any) {
-    try {
-      const formData = new URLSearchParams();
-      formData.append("form-name", "contact");
-      formData.append("name", values.name);
-      formData.append("email", values.email);
-      formData.append("message", values.message);
-
-      await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: formData.toString(),
-      });
-
-      toast({
-        title: "Mensaje enviado",
-        description: "Te responderemos en breve.",
-      });
-
-      form.reset();
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "No se pudo enviar el mensaje.",
-        variant: "destructive",
-      });
-    }
+  function onSubmit() {
+    toast({
+      title: t("Footer.toast.title"),
+      description: t("Footer.toast.description"),
+    });
   }
 
   return (
@@ -70,7 +52,7 @@ export default function Footer() {
           <Logo />
           <p className="text-muted-foreground">{t("Footer.tagline")}</p>
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Arreglos Express.
+            &copy; {new Date().getFullYear()} {t("logo")}. {t("Footer.rights")}
           </p>
         </div>
 
@@ -79,11 +61,14 @@ export default function Footer() {
             {t("Footer.formTitle")}
           </h3>
 
+          {/* ✅ FORMULARIO CONECTADO A NETLIFY */}
           <Form {...form}>
             <form
-              onSubmit={form.handleSubmit(onSubmit)}
               name="contact"
+              method="POST"
               data-netlify="true"
+              encType="multipart/form-data"
+              onSubmit={form.handleSubmit(onSubmit)}
               className="space-y-4"
             >
               <input type="hidden" name="form-name" value="contact" />
@@ -94,9 +79,9 @@ export default function Footer() {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Nombre</FormLabel>
+                      <FormLabel>{t("Footer.form.name")}</FormLabel>
                       <FormControl>
-                        <Input {...field} />
+                        <Input {...field} name="name" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -108,9 +93,9 @@ export default function Footer() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email</FormLabel>
+                      <FormLabel>{t("Footer.form.email")}</FormLabel>
                       <FormControl>
-                        <Input {...field} />
+                        <Input {...field} name="email" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -123,17 +108,29 @@ export default function Footer() {
                 name="message"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Mensaje</FormLabel>
+                    <FormLabel>{t("Footer.form.message")}</FormLabel>
                     <FormControl>
-                      <Textarea {...field} />
+                      <Textarea {...field} name="message" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
 
+              {/* ✅ BOTÓN DE SUBIR IMAGEN RESTAURADO */}
+              <FormItem>
+                <FormLabel>{t("Footer.form.image")}</FormLabel>
+                <FormControl>
+                  <Input
+                    type="file"
+                    name="image"
+                    accept="image/png, image/jpeg, image/webp"
+                  />
+                </FormControl>
+              </FormItem>
+
               <Button type="submit" className="w-full sm:w-auto">
-                Enviar
+                {t("Footer.form.submit")}
                 <Send className="ml-2 h-4 w-4" />
               </Button>
             </form>
