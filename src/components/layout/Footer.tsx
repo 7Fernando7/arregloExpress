@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -18,12 +19,12 @@ import { useToast } from "@/hooks/use-toast";
 import Logo from "@/components/icons/Logo";
 import { Send } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
-import { useRef } from "react";
 
 const formSchema = z.object({
   name: z.string().min(2),
   email: z.string().email(),
   message: z.string().min(10),
+  image: z.any().optional(),
 });
 
 export default function Footer() {
@@ -33,32 +34,37 @@ export default function Footer() {
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      message: "",
-    },
+    defaultValues: { name: "", email: "", message: "" },
   });
 
-  function onSubmit() {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    const formData = new FormData();
+    formData.append("form-name", "contact");
+    formData.append("name", values.name);
+    formData.append("email", values.email);
+    formData.append("message", values.message);
+
+    if (fileRef.current?.files?.[0]) {
+      formData.append("image", fileRef.current.files[0]);
+    }
+
+    await fetch("/", {
+      method: "POST",
+      body: formData,
+    });
+
     toast({
       title: t("Footer.toast.title"),
       description: t("Footer.toast.description"),
     });
 
-    // ✅ Limpia inputs de texto
     form.reset();
-
-    // ✅ Limpia input de archivo
-    if (fileRef.current) {
-      fileRef.current.value = "";
-    }
+    if (fileRef.current) fileRef.current.value = "";
   }
 
   return (
     <footer id="contact" className="w-full bg-secondary/50">
       <div className="container grid grid-cols-1 md:grid-cols-3 gap-12 py-12 mx-auto">
-
         <div className="space-y-4">
           <Logo />
           <p className="text-muted-foreground">{t("Footer.tagline")}</p>
@@ -72,13 +78,12 @@ export default function Footer() {
             {t("Footer.formTitle")}
           </h3>
 
-          {/* ✅ FORMULARIO NETLIFY REAL */}
           <Form {...form}>
             <form
               name="contact"
               method="POST"
-              encType="multipart/form-data"
               data-netlify="true"
+              encType="multipart/form-data"
               onSubmit={form.handleSubmit(onSubmit)}
               className="space-y-4"
             >
@@ -128,14 +133,13 @@ export default function Footer() {
                 )}
               />
 
-              {/* ✅ INPUT DE IMAGEN CORRECTO PARA NETLIFY */}
               <FormItem>
                 <FormLabel>{t("Footer.form.image")}</FormLabel>
                 <FormControl>
                   <Input
+                    ref={fileRef}
                     type="file"
                     name="image"
-                    ref={fileRef}
                     accept="image/png, image/jpeg, image/webp"
                   />
                 </FormControl>
