@@ -11,12 +11,17 @@ import Faq from "@/components/sections/Faq";
 import Contact from "@/components/sections/Contact";
 import WhatsappButton from "@/components/WhatsappButton";
 import { getWorks } from "@/lib/trabajos";
+import type { Metadata } from "next";
+import { JsonLd, localBusinessJsonLd } from "@/lib/site";
+
+export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 export default function Home() {
   const works = getWorks();
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
+      <JsonLd data={localBusinessJsonLd()} />
       <Header hasWorks={works.length > 0} />
       <main className="flex-grow">
         <Hero />

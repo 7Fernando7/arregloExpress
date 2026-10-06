@@ -1,8 +1,9 @@
 'use client';
-import { Scissors, Ruler, Replace, CircleDot, Sparkles, Layers, Home, MessageCircle } from 'lucide-react';
+import { Scissors, Ruler, Replace, CircleDot, Sparkles, Layers, Home, MessageCircle, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import Eyebrow from '@/components/Eyebrow';
 import { whatsappLink } from '@/lib/contact';
+import { SERVICIOS } from '@/content/servicios';
 
 export default function Services() {
   const { t } = useLanguage();
@@ -27,10 +28,11 @@ export default function Services() {
           <p className="text-lg text-muted-foreground">{t('Services.description')}</p>
         </div>
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map(({ icon: Icon, key }) => (
-            <article
+          {services.map(({ icon: Icon, key }, index) => (
+            <a
               key={key}
-              className="group rounded-lg border border-border bg-card p-6 transition-colors hover:border-dashed hover:border-accent"
+              href={`/arreglos/${SERVICIOS[index].slug}`}
+              className="group flex flex-col rounded-lg border border-border bg-card p-6 transition-colors hover:border-dashed hover:border-accent"
             >
               <span className="flex h-11 w-11 items-center justify-center rounded-md bg-background text-primary ring-1 ring-border transition-colors group-hover:text-accent">
                 <Icon className="h-5 w-5" />
@@ -38,10 +40,14 @@ export default function Services() {
               <h3 className="mt-5 font-headline text-xl font-semibold leading-snug">
                 {t(`Services.${key}.title`)}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {t(`Services.${key}.description`)}
               </p>
-            </article>
+              <span className="mt-4 flex items-center gap-1.5 text-sm font-semibold text-accent">
+                {t('Services.more')}
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </span>
+            </a>
           ))}
           <article className="flex flex-col justify-between rounded-lg bg-primary p-6 text-primary-foreground">
             <div>

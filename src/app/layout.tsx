@@ -1,24 +1,18 @@
 export const metadata: Metadata = {
-  title: "Arreglos Express Madrid | Arreglos de Ropa a Domicilio",
+  title: {
+    default: "Arreglos de Ropa a Domicilio en Madrid | Arreglos Express",
+    template: "%s | Arreglos Express",
+  },
   description:
-    "Servicio profesional de arreglos de ropa en Madrid con recogida y entrega a domicilio. Bajos, cremalleras, ajustes, confección y más.",
-  keywords: [
-    "arreglos de ropa madrid",
-    "costurera en madrid",
-    "arreglos a domicilio madrid",
-    "modista madrid",
-    "arreglos express madrid",
-    "arreglos de pantalones madrid",
-    "arreglos de vestidos madrid",
-  ],
+    "Arreglos de ropa con recogida y entrega a domicilio en Madrid capital: bajos, estrechar, cremalleras, botones y forros. Presupuesto por WhatsApp.",
   authors: [{ name: "Arreglos Express Madrid" }],
   creator: "Arreglos Express Madrid",
   publisher: "Arreglos Express Madrid",
   metadataBase: new URL("https://arreglosexpressmadrid.com"),
   openGraph: {
-    title: "Arreglos Express Madrid | Arreglos de Ropa a Domicilio",
+    title: "Arreglos de Ropa a Domicilio en Madrid | Arreglos Express",
     description:
-      "Arreglos de ropa profesionales en Madrid con recogida y entrega a domicilio.",
+      "Recogemos tus prendas en casa o en la oficina, las arreglamos y te las devolvemos. Todo Madrid capital.",
     url: "https://arreglosexpressmadrid.com",
     siteName: "Arreglos Express Madrid",
     locale: "es_ES",

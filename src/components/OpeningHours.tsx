@@ -1,14 +1,10 @@
 'use client';
 import { Clock } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+import { OPENING_HOURS } from '@/lib/site';
 import { cn } from '@/lib/utils';
 
-// Mismo horario que la ficha de Google Business
-const HOURS = [
-  { day: 'Hours.weekdays', time: '9:00–20:30' },
-  { day: 'Hours.saturday', time: '9:00–14:30' },
-  { day: 'Hours.sunday', time: null },
-];
+const time = (t: string) => t.replace(/^0/, '');
 
 export default function OpeningHours({ className, light = false }: { className?: string; light?: boolean }) {
   const { t } = useLanguage();
@@ -20,10 +16,10 @@ export default function OpeningHours({ className, light = false }: { className?:
         {t('Hours.title')}
       </p>
       <dl className={cn('grid grid-cols-[auto_1fr] gap-x-6 gap-y-1', light ? 'text-primary-foreground/70' : 'text-muted-foreground')}>
-        {HOURS.map(({ day, time }) => (
-          <div key={day} className="contents">
-            <dt>{t(day)}</dt>
-            <dd className="tabular-nums">{time ?? t('Hours.closed')}</dd>
+        {OPENING_HOURS.map(({ dayKey, opens, closes }) => (
+          <div key={dayKey} className="contents">
+            <dt>{t(dayKey)}</dt>
+            <dd className="tabular-nums">{opens && closes ? `${time(opens)}–${time(closes)}` : t('Hours.closed')}</dd>
           </div>
         ))}
       </dl>

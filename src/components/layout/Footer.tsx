@@ -6,9 +6,11 @@ import { WhatsappIcon } from "@/components/icons/WhatsappIcon";
 import { CONTACT_EMAIL, whatsappLink } from "@/lib/contact";
 import { Mail } from "lucide-react";
 import OpeningHours from "@/components/OpeningHours";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
   const { t } = useLanguage();
+  const home = usePathname() === "/" ? "" : "/";
   const links = [
     { href: "#how-it-works", label: t("Header.howItWorks") },
     { href: "#services", label: t("Header.services") },
@@ -31,7 +33,7 @@ export default function Footer() {
           <ul className="space-y-2 text-sm">
             {links.map((link) => (
               <li key={link.href}>
-                <a href={link.href} className="text-primary-foreground/80 transition-colors hover:text-primary-foreground">
+                <a href={home + link.href} className="text-primary-foreground/80 transition-colors hover:text-primary-foreground">
                   {link.label}
                 </a>
               </li>

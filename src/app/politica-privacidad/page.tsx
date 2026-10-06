@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Política de Privacidad - Arreglos Express Madrid",
+  title: "Política de privacidad",
+  alternates: { canonical: "/politica-privacidad" },
   description:
     "Política de privacidad de Arreglos Express Madrid. Información sobre el tratamiento de datos personales conforme al RGPD.",
 };

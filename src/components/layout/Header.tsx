@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { Menu } from 'lucide-react';
 import Logo from '@/components/icons/Logo';
 import LanguageSwitcher from '../LanguageSwitcher';
@@ -11,6 +12,8 @@ import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/s
 export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
   const { t } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
+  const isHome = usePathname() === '/';
+  const home = isHome ? '' : '/'; // desde otras páginas, las secciones están en la portada
   const links = [
     { href: '#how-it-works', label: t('Header.howItWorks') },
     { href: '#services', label: t('Header.services') },
@@ -30,6 +33,7 @@ export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
 
   // cerrar primero el panel y luego desplazarse (con el panel abierto el scroll está bloqueado)
   function goTo(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
+    if (!isHome) return; // navegación normal a /#seccion
     e.preventDefault();
     setMenuOpen(false);
     setTimeout(() => {
@@ -41,14 +45,14 @@ export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-dashed border-border bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/75">
       <div className="container mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 md:h-20 md:px-6">
-        <a href="#" aria-label="Arreglos Express Madrid">
+        <a href={isHome ? '#' : '/'} aria-label="Arreglos Express Madrid">
           <Logo className="h-11 md:h-14" />
         </a>
         <nav className="hidden items-center gap-7 lg:flex">
           {links.map((link) => (
             <a
               key={link.href}
-              href={link.href}
+              href={home + link.href}
               className="text-sm font-medium text-foreground/75 transition-colors hover:text-foreground"
             >
               {link.label}
@@ -56,9 +60,11 @@ export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
           ))}
         </nav>
         <div className="flex items-center gap-2 sm:gap-3">
-          <div className="hidden sm:block">
-            <LanguageSwitcher />
-          </div>
+          {isHome && (
+            <div className="hidden sm:block">
+              <LanguageSwitcher />
+            </div>
+          )}
           <a
             href={whatsappLink(t('Hero.whatsappMessage'))}
             target="_blank"
@@ -88,7 +94,7 @@ export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
                   {menuLinks.map((link) => (
                     <li key={link.href}>
                       <a
-                        href={link.href}
+                        href={home + link.href}
                         onClick={(e) => goTo(e, link.href)}
                         className="block rounded-md px-3 py-3 font-headline text-xl font-semibold text-foreground transition-colors hover:bg-card"
                       >
@@ -99,7 +105,7 @@ export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
                 </ul>
               </nav>
               <div className="space-y-4 border-t border-dashed border-border px-6 py-5">
-                <LanguageSwitcher />
+                {isHome && <LanguageSwitcher />}
                 <a
                   href={whatsappLink(t('Hero.whatsappMessage'))}
                   target="_blank"

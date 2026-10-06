@@ -174,9 +174,7 @@ export default function Zones() {
                   'cursor-pointer transition-colors',
                   p.cp === selected?.cp ? 'fill-transparent' : 'fill-primary/35 hover:fill-primary'
                 )}
-              >
-                <title>{p.cp}</title>
-              </circle>
+              />
             ))}
             {/* taller (Km 0) */}
             <rect x={-0.42} y={-0.42} width={0.84} height={0.84} rx={0.12} className="fill-primary" />
