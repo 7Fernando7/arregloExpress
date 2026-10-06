@@ -1,5 +1,5 @@
 'use client';
-import { Camera, Truck, Scissors } from 'lucide-react';
+import { CalendarClock, Camera, Truck, Scissors } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import Eyebrow from '@/components/Eyebrow';
 
@@ -39,6 +39,10 @@ export default function HowItWorks() {
             </li>
           ))}
         </ol>
+        <p className="mx-auto mt-12 flex max-w-2xl items-start gap-3 rounded-lg border border-dashed border-accent/60 bg-background p-4 text-sm leading-relaxed text-foreground sm:items-center sm:px-6">
+          <CalendarClock className="mt-0.5 h-5 w-5 shrink-0 text-accent sm:mt-0" />
+          {t('HowItWorks.leadTime')}
+        </p>
       </div>
     </section>
   );

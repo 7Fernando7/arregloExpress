@@ -24,6 +24,8 @@ export const translations = {
       photoAlt: "Hands sewing a garment in a tailoring workshop",
       badgeTitle: "Send us a photo",
       badgeText: "and we'll tell you the price of your alteration.",
+      badgeButton: "Open WhatsApp",
+      badgeMessage: "Hi! I'm sending you a photo of the garment I'd like altered.",
     },
     HowItWorks: {
       eyebrow: "How it works",
@@ -39,8 +41,10 @@ export const translations = {
       },
       step3: {
         title: "We bring it back altered",
-        description: "Once it's ready, we deliver it to your door.",
+        description: "At least 3 days after pickup, we deliver it to your door.",
       },
+      leadTime:
+        "We need at least 3 days between pickup and delivery. If you need it sooner, ask us and we'll try — but we can't guarantee it.",
     },
     Services: {
       eyebrow: "Services",
@@ -94,7 +98,7 @@ export const translations = {
       distance: "{cp} · about {km} km from our workshop",
       totalLabel: "pickup + delivery",
       approx: "approx.",
-      note: "Indicative estimate. We'll confirm the final price on WhatsApp before pickup.",
+      note: "Indicative estimate. We'll confirm the final price on WhatsApp before pickup. At least 3 days between pickup and delivery.",
       whatsappButton: "Book pickup via WhatsApp",
       whatsappMessage:
         "Hi! I'd like a pickup. My postal code is {cp} (estimate: {price}).",
@@ -112,7 +116,7 @@ export const translations = {
       q3: "Where do you pick up?",
       a3: "Anywhere in Madrid city (postal codes 28001 to 28055): at home, at the office or wherever suits you best.",
       q4: "How long does it take?",
-      a4: "It depends on the alteration; we'll tell you the timeframe along with the quote. If you need it for a specific date (a wedding, an event), let us know.",
+      a4: "We need at least 3 days between pickup and delivery. If you need it sooner (a wedding, an event), let us know and we'll try to do it earlier, but we can't guarantee it.",
       q5: "How can I contact you?",
       a5: "Via WhatsApp or the form on this page. We'll reply through the same channel.",
     },
@@ -189,6 +193,8 @@ export const translations = {
       photoAlt: "Manos cosiendo una prenda en un taller de costura",
       badgeTitle: "Mándanos una foto",
       badgeText: "y te decimos el precio de tu arreglo.",
+      badgeButton: "Abrir WhatsApp",
+      badgeMessage: "¡Hola! Os mando una foto de la prenda que quiero arreglar.",
     },
     HowItWorks: {
       eyebrow: "Cómo funciona",
@@ -204,8 +210,10 @@ export const translations = {
       },
       step3: {
         title: "Te la devolvemos arreglada",
-        description: "Cuando está lista, te la llevamos a la puerta de casa.",
+        description: "Como mínimo 3 días después de la recogida, te la llevamos a la puerta de casa.",
       },
+      leadTime:
+        "Necesitamos un mínimo de 3 días entre la recogida y la entrega. Si lo necesitas antes, pregúntanos e intentaremos hacerlo, pero no podemos garantizarlo.",
     },
     Services: {
       eyebrow: "Servicios",
@@ -259,7 +267,7 @@ export const translations = {
       distance: "{cp} · a unos {km} km de nuestro taller",
       totalLabel: "recogida + entrega",
       approx: "aprox.",
-      note: "Estimación orientativa. Te confirmamos el precio final por WhatsApp antes de recoger.",
+      note: "Estimación orientativa. Te confirmamos el precio final por WhatsApp antes de recoger. Mínimo 3 días entre recogida y entrega.",
       whatsappButton: "Pedir recogida por WhatsApp",
       whatsappMessage:
         "¡Hola! Quiero pedir una recogida. Mi código postal es {cp} (estimación: {price}).",
@@ -277,7 +285,7 @@ export const translations = {
       q3: "¿Dónde recogéis?",
       a3: "En todo Madrid capital (códigos postales del 28001 al 28055): en casa, en la oficina o donde mejor te venga.",
       q4: "¿Cuánto tardáis?",
-      a4: "Depende del arreglo; te decimos el plazo junto con el presupuesto. Si lo necesitas para una fecha concreta (una boda, un evento), dínoslo.",
+      a4: "Necesitamos un mínimo de 3 días entre la recogida y la entrega. Si lo necesitas antes (una boda, un evento), dínoslo e intentaremos hacerlo antes, pero no podemos garantizarlo.",
       q5: "¿Cómo os contacto?",
       a5: "Por WhatsApp o con el formulario de esta página. Te respondemos por el mismo medio.",
     },
