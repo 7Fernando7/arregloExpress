@@ -26,7 +26,7 @@ export function getWorks(): Work[] {
     const dated = base.match(/^(\d{4}-\d{2}-\d{2})[-_ ]*(.*)$/);
     const date = dated?.[1];
     const rest = dated ? dated[2] : base;
-    const suffix = rest.match(/^(.*?)[-_ ]+(antes|despues|después|d{1,2})$/i);
+    const suffix = rest.match(/^(.*?)[-_ ]+(antes|despues|después|\d{1,2})$/i);
     const name = suffix ? suffix[1] : rest;
     const tag = suffix?.[2].toLowerCase();
     const label = tag === "antes" ? "before" : tag && /^desp/.test(tag) ? "after" : undefined;
