@@ -34,7 +34,7 @@ export default function PoliticaPrivacidad() {
               <strong>Nombre comercial:</strong> Arreglos Express Madrid
             </p>
             <p className="mb-2">
-              <strong>Dirección:</strong> Juan de Olías 37, Madrid, España
+              <strong>Dirección:</strong> Calle de los Madrazo 14, 28014 Madrid, España
             </p>
             <p className="mb-2">
               <strong>Teléfono:</strong> +34 611 605 751

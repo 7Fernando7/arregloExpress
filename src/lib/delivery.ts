@@ -1,8 +1,8 @@
 // Estimación del precio de recogida + entrega según el código postal.
 // Solo Madrid capital (28001–28055). Coordenadas: centroides de GeoNames.
 
-// Km 0, Puerta del Sol
-export const ORIGIN = { lat: 40.4169, lng: -3.7035 };
+// Taller: Calle de los Madrazo 14, 28014 Madrid (OpenStreetMap)
+export const ORIGIN = { lat: 40.4175, lng: -3.6976 };
 
 // TODO: calibrar con las tarifas reales de Glovo / Cabify Envíos
 export const PRICING = {
