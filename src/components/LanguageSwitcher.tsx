@@ -13,7 +13,7 @@ export default function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <div className="flex items-center rounded-md border border-border p-0.5 text-xs font-semibold">
+    <div className="inline-flex items-center rounded-md border border-border p-0.5 text-xs font-semibold">
       {LANGUAGES.map((lang) => (
         <button
           key={lang.code}
