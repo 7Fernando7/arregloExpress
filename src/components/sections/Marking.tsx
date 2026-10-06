@@ -1,4 +1,5 @@
 'use client';
+import { Shirt } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import Eyebrow from '@/components/Eyebrow';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
@@ -99,6 +100,10 @@ export default function Marking() {
               </li>
             ))}
           </ul>
+          <p className="mt-4 flex items-start gap-2.5 border-t border-dashed border-accent/40 pt-4 text-sm font-medium leading-relaxed text-foreground">
+            <Shirt className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+            {t('Marking.reference')}
+          </p>
         </div>
 
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

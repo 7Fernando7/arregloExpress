@@ -58,6 +58,8 @@ export const translations = {
       tip2: "Try the garment on with the shoes and clothes you'll wear it with.",
       tip3: "Better with someone's help and in front of a mirror.",
       tip4: "Mark one side only (one leg, one sleeve): we'll match the other.",
+      reference:
+        "Don't want to mark it? Send us another garment that fits you the way you want, and we'll use it as a reference.",
       altLabel: "Alternative",
       pants: {
         title: "Trouser hems",
@@ -70,20 +72,20 @@ export const translations = {
         title: "Skirt or dress hems",
         s1: "With your shoes on, fold the hem inwards at the front to the length you want.",
         s2: "Hold it with 2–3 safety pins.",
-        alt: "Tell us how many cm from the floor you want it, with your shoes on.",
+        alt: "Send us a skirt or dress that's the right length for you, or tell us how many cm from the floor you want it, with your shoes on.",
       },
       sleeves: {
         title: "Sleeves",
         s1: "With your arms relaxed, fold the sleeve inwards to where it should end (usually at the wrist bone).",
         s2: "Hold it with a safety pin.",
-        alt: "Tell us how many cm shorter you want it.",
+        alt: "Send us a garment whose sleeves fit you well, or tell us how many cm shorter you want them.",
       },
       takeIn: {
         title: "Taking in (waist, sides, jacket)",
         s1: "Put the garment on inside out.",
         s2: "Pinch the extra fabric at the side seam.",
         s3: "Hold it with safety pins vertically, following the seam.",
-        alt: "Send us a photo wearing it, from the front and the side, and we'll tell you.",
+        alt: "Send us a similar garment that fits you well, or a photo wearing it, from the front and the side.",
       },
       zips: {
         title: "Zips and buttons",
@@ -302,6 +304,8 @@ export const translations = {
       tip2: "Pruébate la prenda con el calzado y la ropa con los que la vas a llevar.",
       tip3: "Mejor con ayuda de otra persona y frente a un espejo.",
       tip4: "Marca solo un lado (una pierna, una manga): nosotros igualamos el otro.",
+      reference:
+        "¿No quieres marcarla? Mándanos otra prenda que te quede como quieres y la usamos de referencia.",
       altLabel: "Alternativa",
       pants: {
         title: "Bajos de pantalón",
@@ -314,20 +318,20 @@ export const translations = {
         title: "Bajos de falda o vestido",
         s1: "Con los zapatos puestos, dobla el bajo hacia dentro por delante hasta el largo que quieres.",
         s2: "Sujétalo con 2 o 3 imperdibles.",
-        alt: "Dinos a cuántos cm del suelo lo quieres, con los zapatos puestos.",
+        alt: "Mándanos una falda o vestido que te quede bien de largo, o dinos a cuántos cm del suelo lo quieres, con los zapatos puestos.",
       },
       sleeves: {
         title: "Mangas",
         s1: "Con los brazos relajados, dobla la manga hacia dentro hasta donde quieras que termine (normalmente a la altura del hueso de la muñeca).",
         s2: "Sujétala con un imperdible.",
-        alt: "Dinos cuántos cm quieres acortarla.",
+        alt: "Mándanos una prenda con las mangas a tu medida, o dinos cuántos cm quieres acortarlas.",
       },
       takeIn: {
         title: "Estrechar (cintura, costados, chaqueta)",
         s1: "Ponte la prenda del revés.",
         s2: "Pellizca la tela que sobra en la costura lateral.",
         s3: "Sujétala con imperdibles en vertical, siguiendo la costura.",
-        alt: "Mándanos una foto con la prenda puesta, de frente y de lado, y te decimos.",
+        alt: "Mándanos una prenda parecida que te quede bien, o una foto con la prenda puesta, de frente y de lado.",
       },
       zips: {
         title: "Cremalleras y botones",
