@@ -6,7 +6,7 @@ import Logo from '@/components/icons/Logo';
 import LanguageSwitcher from '../LanguageSwitcher';
 import { useLanguage } from '@/context/LanguageContext';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
-import { whatsappLink } from '@/lib/contact';
+import { STRIPE_PAYMENT_URL, whatsappLink } from '@/lib/contact';
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 
 export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
@@ -20,6 +20,7 @@ export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
     ...(hasWorks ? [{ href: '#works', label: t('Header.works') }] : []),
     { href: '#reviews', label: t('Header.reviews') },
     { href: '#zones', label: t('Header.zones') },
+    ...(STRIPE_PAYMENT_URL ? [{ href: '#pay', label: t('Payment.menu') }] : []),
     { href: '#contact', label: t('Header.contact') },
   ];
   // en el menú del móvil caben todas las secciones

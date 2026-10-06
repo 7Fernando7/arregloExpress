@@ -7,6 +7,7 @@ import Services from "@/components/sections/Services";
 import Works from "@/components/sections/Works";
 import Reviews from "@/components/sections/Reviews";
 import Zones from "@/components/sections/Zones";
+import Payment from "@/components/sections/Payment";
 import Faq from "@/components/sections/Faq";
 import Contact from "@/components/sections/Contact";
 import WhatsappButton from "@/components/WhatsappButton";
@@ -31,6 +32,7 @@ export default function Home() {
         <Works works={works} />
         <Reviews />
         <Zones />
+        <Payment />
         <Faq />
         <Contact />
       </main>
