@@ -20,7 +20,7 @@ export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
     <header className="sticky top-0 z-50 w-full border-b border-dashed border-border bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/75">
       <div className="container mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 md:h-20 md:px-6">
         <a href="#" aria-label="Arreglos Express Madrid">
-          <Logo className="h-10 md:h-12" />
+          <Logo className="h-11 md:h-14" />
         </a>
         <nav className="hidden items-center gap-7 lg:flex">
           {links.map((link) => (

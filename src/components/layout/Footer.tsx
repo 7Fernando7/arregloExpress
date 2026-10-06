@@ -19,7 +19,7 @@ export default function Footer() {
     <footer className="w-full bg-primary text-primary-foreground">
       <div className="container mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-[1.4fr_1fr_1fr] md:px-6">
         <div className="space-y-4">
-          <Logo variant="light" className="h-16" />
+          <Logo variant="light" className="h-20" />
           <p className="max-w-xs text-sm leading-relaxed text-primary-foreground/70">{t("Footer.tagline")}</p>
         </div>
 
