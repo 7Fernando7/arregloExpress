@@ -11,9 +11,9 @@ export default function Logo({
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src={variant === 'light' ? '/brand/logo-v2-white.svg' : '/brand/logo-v2.svg'}
+      src={variant === 'light' ? '/brand/logo-v3-white.svg' : '/brand/logo-v3.svg'}
       alt="Arreglos Express Madrid"
-      width={264}
+      width={258}
       height={100}
       className={cn('h-12 w-auto', className)}
     />
