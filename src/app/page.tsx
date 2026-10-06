@@ -2,6 +2,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import HowItWorks from "@/components/sections/HowItWorks";
+import Marking from "@/components/sections/Marking";
 import Services from "@/components/sections/Services";
 import Works from "@/components/sections/Works";
 import Reviews from "@/components/sections/Reviews";
@@ -20,6 +21,7 @@ export default function Home() {
       <main className="flex-grow">
         <Hero />
         <HowItWorks />
+        <Marking />
         <Services />
         <Works works={works} />
         <Reviews />

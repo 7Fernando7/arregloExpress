@@ -9,4 +9,4 @@ export function whatsappLink(text?: string) {
 
 // Enlace "escribir reseña" de la ficha de Google Business (Pedir reseñas)
 // Vacío = las opiniones llegan por WhatsApp.
-export const GOOGLE_REVIEW_URL = "https://g.page/r/CbyxECDS3DmaEBM/review";
+export const GOOGLE_REVIEW_URL: string = "https://g.page/r/CbyxECDS3DmaEBM/review";

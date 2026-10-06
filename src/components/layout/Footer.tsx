@@ -13,6 +13,7 @@ export default function Footer() {
     { href: "#how-it-works", label: t("Header.howItWorks") },
     { href: "#services", label: t("Header.services") },
     { href: "#zones", label: t("Header.zones") },
+    { href: "#marking", label: t("Marking.link") },
     { href: "#faq", label: t("Header.faq") },
     { href: "#contact", label: t("Header.contact") },
   ];

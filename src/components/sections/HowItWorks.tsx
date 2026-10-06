@@ -36,6 +36,11 @@ export default function HowItWorks() {
               </span>
               <h3 className="mt-1 font-headline text-2xl font-semibold">{title}</h3>
               <p className="mt-2 max-w-xs text-muted-foreground">{description}</p>
+              {index === 0 && (
+                <a href="#marking" className="mt-2 text-sm font-semibold text-accent hover:underline">
+                  {t('Marking.link')} →
+                </a>
+              )}
             </li>
           ))}
         </ol>
