@@ -1,15 +1,21 @@
-import { Shirt } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
+import { cn } from '@/lib/utils';
 
-export default function Logo() {
-  const { t } = useLanguage();
-
+// Logo vectorial (public/brand). "light" = versión para fondos oscuros
+export default function Logo({
+  variant = 'default',
+  className,
+}: {
+  variant?: 'default' | 'light';
+  className?: string;
+}) {
   return (
-    <div className="flex items-center gap-2">
-      <Shirt className="h-7 w-7 text-primary" />
-      <span className="text-xl font-bold tracking-tight text-foreground">
-        {t('logo')}
-      </span>
-    </div>
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={variant === 'light' ? '/brand/logo-white.svg' : '/brand/logo.svg'}
+      alt="Arreglos Express Madrid"
+      width={230}
+      height={120}
+      className={cn('h-12 w-auto', className)}
+    />
   );
 }

@@ -1,51 +1,44 @@
 'use client';
-import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Phone, Truck, Scissors } from 'lucide-react';
+import { Camera, Truck, Scissors } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+import Eyebrow from '@/components/Eyebrow';
 
 export default function HowItWorks() {
   const { t } = useLanguage();
   const steps = [
-    {
-      icon: <Phone className="h-10 w-10 text-primary" />,
-      title: t('HowItWorks.step1.title'),
-      description: t('HowItWorks.step1.description'),
-    },
-    {
-      icon: <Truck className="h-10 w-10 text-primary" />,
-      title: t('HowItWorks.step2.title'),
-      description: t('HowItWorks.step2.description'),
-    },
-    {
-      icon: <Scissors className="h-10 w-10 text-primary" />,
-      title: t('HowItWorks.step3.title'),
-      description: t('HowItWorks.step3.description'),
-    },
+    { icon: Camera, title: t('HowItWorks.step1.title'), description: t('HowItWorks.step1.description') },
+    { icon: Truck, title: t('HowItWorks.step2.title'), description: t('HowItWorks.step2.description') },
+    { icon: Scissors, title: t('HowItWorks.step3.title'), description: t('HowItWorks.step3.description') },
   ];
 
   return (
-    <section id="how-it-works" className="w-full py-12 md:py-24 lg:py-32 bg-background">
-      <div className="container px-4 md:px-6 mx-auto">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm text-secondary-foreground">{t('HowItWorks.badge')}</div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">{t('HowItWorks.title')}</h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              {t('HowItWorks.description')}
-            </p>
-          </div>
+    <section id="how-it-works" className="w-full border-y border-dashed border-border bg-card/60 py-16 md:py-24">
+      <div className="container mx-auto max-w-6xl px-4 md:px-6">
+        <div className="mx-auto max-w-2xl space-y-4 text-center">
+          <Eyebrow center>{t('HowItWorks.eyebrow')}</Eyebrow>
+          <h2 className="font-headline text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
+            {t('HowItWorks.title')}
+          </h2>
         </div>
-        <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-1 md:gap-12 lg:grid-cols-3 lg:gap-10 mt-12">
-          {steps.map((step, index) => (
-            <Card key={index} className="text-center shadow-md hover:shadow-xl transition-shadow duration-300">
-              <CardHeader>
-                <div className="flex justify-center mb-4">{step.icon}</div>
-                <CardTitle>{step.title}</CardTitle>
-                <CardDescription>{step.description}</CardDescription>
-              </CardHeader>
-            </Card>
+        <ol className="relative mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
+          {/* costura que une los pasos */}
+          <span
+            aria-hidden
+            className="absolute left-[16.6%] right-[16.6%] top-7 hidden border-t-2 border-dashed border-accent/50 md:block"
+          />
+          {steps.map(({ icon: Icon, title, description }, index) => (
+            <li key={title} className="relative flex flex-col items-center text-center">
+              <span className="relative flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-md ring-8 ring-card">
+                <Icon className="h-6 w-6" />
+              </span>
+              <span className="mt-5 font-headline text-sm font-semibold uppercase tracking-[0.2em] text-accent">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <h3 className="mt-1 font-headline text-2xl font-semibold">{title}</h3>
+              <p className="mt-2 max-w-xs text-muted-foreground">{description}</p>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   );

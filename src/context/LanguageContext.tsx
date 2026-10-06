@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useState, useContext, ReactNode, useCallback } from 'react';
+import React, { createContext, useState, useContext, ReactNode, useCallback, useEffect } from 'react';
 import { translations, Language } from '@/lib/i18n';
 import get from 'lodash.get';
 
@@ -17,6 +17,10 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
 
   const t = useCallback((key: string): string => {
     return get(translations[language], key, key);
+  }, [language]);
+
+  useEffect(() => {
+    document.documentElement.lang = language;
   }, [language]);
 
   return (

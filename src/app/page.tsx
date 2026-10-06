@@ -3,6 +3,9 @@ import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import HowItWorks from "@/components/sections/HowItWorks";
 import Services from "@/components/sections/Services";
+import Zones from "@/components/sections/Zones";
+import Faq from "@/components/sections/Faq";
+import Contact from "@/components/sections/Contact";
 import WhatsappButton from "@/components/WhatsappButton";
 
 export default function Home() {
@@ -13,6 +16,9 @@ export default function Home() {
         <Hero />
         <HowItWorks />
         <Services />
+        <Zones />
+        <Faq />
+        <Contact />
       </main>
       <WhatsappButton />
       <Footer />
@@ -28,6 +34,7 @@ export default function Home() {
         <input type="hidden" name="form-name" value="contact" />
         <input type="text" name="name" />
         <input type="email" name="email" />
+        <input type="text" name="postal-code" />
         <textarea name="message"></textarea>
         <input type="file" name="image" />
       </form>

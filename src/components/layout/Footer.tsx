@@ -1,164 +1,63 @@
 "use client";
 
-import { useRef } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { useToast } from "@/hooks/use-toast";
 import Logo from "@/components/icons/Logo";
-import { Send } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
-
-const formSchema = z.object({
-  name: z.string().min(2),
-  email: z.string().email(),
-  message: z.string().min(10),
-  image: z.any().optional(),
-});
+import { WhatsappIcon } from "@/components/icons/WhatsappIcon";
+import { whatsappLink } from "@/lib/contact";
 
 export default function Footer() {
   const { t } = useLanguage();
-  const { toast } = useToast();
-  const fileRef = useRef<HTMLInputElement | null>(null);
-
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: { name: "", email: "", message: "" },
-  });
-
-  async function onSubmit(values: z.infer<typeof formSchema>) {
-    const formData = new FormData();
-    formData.append("form-name", "contact");
-    formData.append("name", values.name);
-    formData.append("email", values.email);
-    formData.append("message", values.message);
-
-    if (fileRef.current?.files?.[0]) {
-      formData.append("image", fileRef.current.files[0]);
-    }
-
-    await fetch("/", {
-      method: "POST",
-      body: formData,
-    });
-
-    toast({
-      title: t("Footer.toast.title"),
-      description: t("Footer.toast.description"),
-    });
-
-    form.reset();
-    if (fileRef.current) fileRef.current.value = "";
-  }
+  const links = [
+    { href: "#how-it-works", label: t("Header.howItWorks") },
+    { href: "#services", label: t("Header.services") },
+    { href: "#zones", label: t("Header.zones") },
+    { href: "#faq", label: t("Header.faq") },
+    { href: "#contact", label: t("Header.contact") },
+  ];
 
   return (
-    <footer id="contact" className="w-full bg-secondary/50">
-      <div className="container grid grid-cols-1 md:grid-cols-3 gap-12 py-12 mx-auto">
+    <footer className="w-full bg-primary text-primary-foreground">
+      <div className="container mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-[1.4fr_1fr_1fr] md:px-6">
         <div className="space-y-4">
-          <Logo />
-          <p className="text-muted-foreground">{t("Footer.tagline")}</p>
-          <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} {t("logo")}. {t("Footer.rights")}
-          </p>
-          <div className="mt-4">
-            <a
-              href="/politica-privacidad"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Política de Privacidad
-            </a>
-          </div>
+          <Logo variant="light" className="h-16" />
+          <p className="max-w-xs text-sm leading-relaxed text-primary-foreground/70">{t("Footer.tagline")}</p>
         </div>
 
-        <div className="md:col-span-2">
-          <h3 className="text-lg font-semibold mb-4">
-            {t("Footer.formTitle")}
-          </h3>
+        <nav className="space-y-3">
+          <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">{t("Footer.sectionsTitle")}</h3>
+          <ul className="space-y-2 text-sm">
+            {links.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} className="text-primary-foreground/80 transition-colors hover:text-primary-foreground">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
-          <Form {...form}>
-            <form
-              name="contact"
-              method="POST"
-              data-netlify="true"
-              encType="multipart/form-data"
-              onSubmit={form.handleSubmit(onSubmit)}
-              className="space-y-4"
-            >
-              <input type="hidden" name="form-name" value="contact" />
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>{t("Footer.form.name")}</FormLabel>
-                      <FormControl>
-                        <Input {...field} name="name" />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>{t("Footer.form.email")}</FormLabel>
-                      <FormControl>
-                        <Input {...field} name="email" />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
-
-              <FormField
-                control={form.control}
-                name="message"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>{t("Footer.form.message")}</FormLabel>
-                    <FormControl>
-                      <Textarea {...field} name="message" />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormItem>
-                <FormLabel>{t("Footer.form.image")}</FormLabel>
-                <FormControl>
-                  <Input
-                    ref={fileRef}
-                    type="file"
-                    name="image"
-                    accept="image/png, image/jpeg, image/webp"
-                  />
-                </FormControl>
-              </FormItem>
-
-              <Button type="submit" className="w-full sm:w-auto">
-                {t("Footer.form.submit")}
-                <Send className="ml-2 h-4 w-4" />
-              </Button>
-            </form>
-          </Form>
+        <div className="space-y-3">
+          <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">{t("Footer.contactTitle")}</h3>
+          <p className="text-sm text-primary-foreground/70">{t("Footer.contactText")}</p>
+          <a
+            href={whatsappLink(t("Hero.whatsappMessage"))}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-primary-foreground hover:underline"
+          >
+            <WhatsappIcon className="h-4 w-4" />
+            WhatsApp
+          </a>
+        </div>
+      </div>
+      <div className="border-t border-dashed border-primary-foreground/20">
+        <div className="container mx-auto flex max-w-6xl flex-col gap-2 px-4 py-5 text-xs text-primary-foreground/60 sm:flex-row sm:items-center sm:justify-between md:px-6">
+          <p>
+            &copy; {new Date().getFullYear()} {t("logo")}. {t("Footer.rights")}
+          </p>
+          <a href="/politica-privacidad" className="transition-colors hover:text-primary-foreground">
+            {t("Footer.privacy")}
+          </a>
         </div>
       </div>
     </footer>

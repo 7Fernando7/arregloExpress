@@ -57,6 +57,7 @@ export default function PoliticaPrivacidad() {
           <ul className="list-disc list-inside space-y-1 bg-muted/50 p-4 rounded-lg">
             <li>Nombre</li>
             <li>Correo electrónico</li>
+            <li>Código postal (opcional)</li>
             <li>Mensaje</li>
             <li>Imágenes adjuntas (opcional)</li>
             <li>Dirección IP</li>
