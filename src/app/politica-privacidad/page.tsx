@@ -37,7 +37,10 @@ export default function PoliticaPrivacidad() {
               <strong>Dirección:</strong> Calle de los Madrazo 14, 28014 Madrid, España
             </p>
             <p className="mb-2">
-              <strong>Teléfono:</strong> +34 611 605 751
+              <strong>Correo electrónico:</strong>{" "}
+              <a href="mailto:info@arreglosexpressmadrid.com" className="underline">
+                info@arreglosexpressmadrid.com
+              </a>
             </p>
           </div>
           <p className="mt-3">
@@ -138,7 +141,11 @@ export default function PoliticaPrivacidad() {
             <li>Portabilidad de los datos</li>
           </ul>
           <p className="mt-3">
-            Para ejercer estos derechos envíanos un mensaje através del formulario de consulta.
+            Para ejercer estos derechos, escríbenos a{" "}
+            <a href="mailto:info@arreglosexpressmadrid.com" className="underline">
+              info@arreglosexpressmadrid.com
+            </a>{" "}
+            o envíanos un mensaje a través del formulario de contacto.
           </p>
         </section>
 
