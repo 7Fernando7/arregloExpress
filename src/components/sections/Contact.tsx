@@ -20,6 +20,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import Eyebrow from "@/components/Eyebrow";
 import { WhatsappIcon } from "@/components/icons/WhatsappIcon";
 import { whatsappLink } from "@/lib/contact";
+import OpeningHours from "@/components/OpeningHours";
 
 export default function Contact() {
   const { t } = useLanguage();
@@ -102,6 +103,7 @@ export default function Contact() {
           <p className="border-t border-dashed border-border pt-6 text-muted-foreground">
             {t("Contact.formIntro")}
           </p>
+          <OpeningHours className="border-t border-dashed border-border pt-6" />
         </div>
 
         <div className="rounded-lg border border-border bg-background p-6 shadow-[0_8px_24px_-4px_rgba(19,41,75,0.08)] sm:p-8">

@@ -3,7 +3,9 @@
 import Logo from "@/components/icons/Logo";
 import { useLanguage } from "@/context/LanguageContext";
 import { WhatsappIcon } from "@/components/icons/WhatsappIcon";
-import { whatsappLink } from "@/lib/contact";
+import { CONTACT_EMAIL, whatsappLink } from "@/lib/contact";
+import { Mail } from "lucide-react";
+import OpeningHours from "@/components/OpeningHours";
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -48,6 +50,14 @@ export default function Footer() {
             <WhatsappIcon className="h-4 w-4" />
             WhatsApp
           </a>
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="flex items-center gap-2 text-sm font-semibold text-primary-foreground hover:underline"
+          >
+            <Mail className="h-4 w-4" />
+            {CONTACT_EMAIL}
+          </a>
+          <OpeningHours light className="pt-3" />
         </div>
       </div>
       <div className="border-t border-dashed border-primary-foreground/20">

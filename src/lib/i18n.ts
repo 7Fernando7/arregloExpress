@@ -175,11 +175,18 @@ export const translations = {
         errorDescription: "Please try again or message us on WhatsApp.",
       },
     },
+    Hours: {
+      title: "Opening hours",
+      weekdays: "Monday to Friday",
+      saturday: "Saturday",
+      sunday: "Sunday",
+      closed: "Closed",
+    },
     Footer: {
       tagline:
         "Clothing alterations with home pickup and delivery across Madrid city.",
       contactTitle: "Contact",
-      contactText: "We only handle orders via WhatsApp and the contact form.",
+      contactText: "We handle orders via WhatsApp, email and the contact form.",
       sectionsTitle: "Website",
       privacy: "Privacy policy",
       rights: "All rights reserved.",
@@ -365,11 +372,18 @@ export const translations = {
         errorDescription: "Inténtalo de nuevo o escríbenos por WhatsApp.",
       },
     },
+    Hours: {
+      title: "Horario",
+      weekdays: "Lunes a viernes",
+      saturday: "Sábado",
+      sunday: "Domingo",
+      closed: "Cerrado",
+    },
     Footer: {
       tagline:
         "Arreglos de ropa con recogida y entrega a domicilio en todo Madrid capital.",
       contactTitle: "Contacto",
-      contactText: "Solo atendemos pedidos por WhatsApp y por el formulario de contacto.",
+      contactText: "Atendemos por WhatsApp, por correo y por el formulario de contacto.",
       sectionsTitle: "La web",
       privacy: "Política de privacidad",
       rights: "Todos los derechos reservados.",
