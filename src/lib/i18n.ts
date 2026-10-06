@@ -143,6 +143,8 @@ export const translations = {
       after: "After",
       showAll: "See all ({n})",
       showLess: "See less",
+      prev: "Previous photo",
+      next: "Next photo",
     },
     Reviews: {
       eyebrow: "Reviews",
@@ -389,6 +391,8 @@ export const translations = {
       after: "Después",
       showAll: "Ver todos ({n})",
       showLess: "Ver menos",
+      prev: "Foto anterior",
+      next: "Foto siguiente",
     },
     Reviews: {
       eyebrow: "Opiniones",

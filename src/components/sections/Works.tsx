@@ -1,22 +1,24 @@
 'use client';
 import { useState } from 'react';
+import { Images } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import Eyebrow from '@/components/Eyebrow';
+import PhotoCarousel from '@/components/PhotoCarousel';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import type { Work } from '@/lib/trabajos';
-import { cn } from '@/lib/utils';
 
 const INITIAL = 8;
 
 export default function Works({ works }: { works: Work[] }) {
   const { t } = useLanguage();
   const [showAll, setShowAll] = useState(false);
-  const [open, setOpen] = useState<Work | null>(null);
+  const [open, setOpen] = useState<{ work: Work; index: number } | null>(null);
 
   if (works.length === 0) return null;
   const visible = showAll ? works : works.slice(0, INITIAL);
   const labelText = (label?: 'before' | 'after') =>
     label === 'before' ? t('Works.before') : label === 'after' ? t('Works.after') : null;
+  const nav = { prevLabel: t('Works.prev'), nextLabel: t('Works.next') };
 
   return (
     <section id="works" className="w-full py-16 md:py-24">
@@ -31,32 +33,28 @@ export default function Works({ works }: { works: Work[] }) {
 
         <ul className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
           {visible.map((work) => (
-            <li key={work.id}>
-              <button
-                type="button"
-                onClick={() => setOpen(work)}
-                className="group block w-full overflow-hidden rounded-lg border border-border bg-card text-left transition-colors hover:border-dashed hover:border-accent"
-              >
-                <div className={cn('grid aspect-square', work.images.length > 1 && 'grid-cols-2 gap-px bg-border')}>
-                  {work.images.slice(0, 2).map((img) => (
-                    <div key={img.src} className="relative h-full overflow-hidden">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={img.src}
-                        alt={work.caption}
-                        loading="lazy"
-                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-                      />
-                      {labelText(img.label) && (
-                        <span className="absolute left-2 top-2 rounded bg-background/90 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-foreground">
-                          {labelText(img.label)}
-                        </span>
-                      )}
-                    </div>
-                  ))}
-                </div>
-                <p className="px-3 py-2.5 text-sm font-medium text-foreground">{work.caption}</p>
-              </button>
+            <li
+              key={work.id}
+              className="overflow-hidden rounded-lg border border-border bg-card transition-colors hover:border-dashed hover:border-accent"
+            >
+              <PhotoCarousel
+                images={work.images}
+                alt={work.caption}
+                labelText={labelText}
+                className="aspect-square"
+                imgClassName="object-cover"
+                onImageClick={(index) => setOpen({ work, index })}
+                {...nav}
+              />
+              <p className="flex items-center justify-between gap-2 px-3 py-2.5 text-sm font-medium text-foreground">
+                {work.caption}
+                {work.images.length > 1 && (
+                  <span className="flex shrink-0 items-center gap-1 text-xs text-muted-foreground">
+                    <Images className="h-3.5 w-3.5" />
+                    {work.images.length}
+                  </span>
+                )}
+              </p>
             </li>
           ))}
         </ul>
@@ -75,21 +73,20 @@ export default function Works({ works }: { works: Work[] }) {
       </div>
 
       <Dialog open={open !== null} onOpenChange={(o) => !o && setOpen(null)}>
-        <DialogContent className="max-w-4xl border-border bg-background p-4 sm:p-6">
-          <DialogTitle className="font-headline text-2xl font-semibold">{open?.caption}</DialogTitle>
-          <div className={cn('grid gap-3', (open?.images.length ?? 0) > 1 && 'sm:grid-cols-2')}>
-            {open?.images.map((img) => (
-              <figure key={img.src} className="space-y-1.5">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={img.src} alt={open.caption} className="max-h-[70vh] w-full rounded-md object-contain" />
-                {labelText(img.label) && (
-                  <figcaption className="text-xs font-semibold uppercase tracking-wider text-accent">
-                    {labelText(img.label)}
-                  </figcaption>
-                )}
-              </figure>
-            ))}
-          </div>
+        <DialogContent className="max-w-3xl border-border bg-background p-4 sm:p-6">
+          <DialogTitle className="font-headline text-2xl font-semibold">{open?.work.caption}</DialogTitle>
+          {open && (
+            <PhotoCarousel
+              key={open.work.id}
+              images={open.work.images}
+              alt={open.work.caption}
+              labelText={labelText}
+              startIndex={open.index}
+              className="h-[70vh] rounded-md bg-card"
+              imgClassName="object-contain"
+              {...nav}
+            />
+          )}
         </DialogContent>
       </Dialog>
     </section>

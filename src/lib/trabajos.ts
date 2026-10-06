@@ -3,7 +3,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-export type WorkImage = { src: string; label?: "before" | "after" };
+export type WorkImage = { src: string; label?: "before" | "after"; order: number };
 export type Work = { id: string; caption: string; date?: string; images: WorkImage[] };
 
 // "bajo-vaquero" → "Bajo vaquero"
@@ -14,7 +14,8 @@ function humanize(name: string) {
 
 // Nombres admitidos (la fecha es opcional y sirve para ordenar):
 //   2026-10-06-bajo-vaquero.webp
-//   2026-10-06-falda-antes.webp + 2026-10-06-falda-despues.webp → una sola tarjeta antes/después
+//   …-falda.webp + …-falda-2.webp + …-falda-antes.webp + …-falda-despues.webp → una tarjeta con carrusel
+// Orden dentro del carrusel: foto principal, numeradas (-2, -3…), antes, después
 export function getWorks(): Work[] {
   const dir = path.join(process.cwd(), "public", "trabajos");
   if (!fs.existsSync(dir)) return [];
@@ -25,20 +26,22 @@ export function getWorks(): Work[] {
     const dated = base.match(/^(\d{4}-\d{2}-\d{2})[-_ ]*(.*)$/);
     const date = dated?.[1];
     const rest = dated ? dated[2] : base;
-    const pair = rest.match(/^(.*?)[-_ ]+(antes|despues|después)$/i);
-    const name = pair ? pair[1] : rest;
-    const label = pair ? (pair[2].toLowerCase() === "antes" ? "before" : "after") : undefined;
+    const suffix = rest.match(/^(.*?)[-_ ]+(antes|despues|después|d{1,2})$/i);
+    const name = suffix ? suffix[1] : rest;
+    const tag = suffix?.[2].toLowerCase();
+    const label = tag === "antes" ? "before" : tag && /^desp/.test(tag) ? "after" : undefined;
+    const order = !tag ? 0 : label === "before" ? 100 : label === "after" ? 101 : Number(tag);
 
     const id = `${date ?? ""}|${name.toLowerCase()}`;
     const work = works.get(id) ?? { id, caption: humanize(name), date, images: [] };
-    work.images.push({ src: `/trabajos/${encodeURIComponent(file)}`, label });
+    work.images.push({ src: `/trabajos/${encodeURIComponent(file)}`, label, order });
     works.set(id, work);
   }
 
   return [...works.values()]
     .map((w) => ({
       ...w,
-      images: w.images.sort((a, b) => (a.label === "before" ? -1 : b.label === "before" ? 1 : 0)),
+      images: w.images.sort((a, b) => a.order - b.order),
     }))
     .sort((a, b) => (b.date ?? "").localeCompare(a.date ?? "") || a.caption.localeCompare(b.caption));
 }

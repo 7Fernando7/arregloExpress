@@ -18,7 +18,9 @@ El nombre del archivo es el texto que se ve debajo de la foto:
 | `bajo-vaquero.jpg` | Bajo vaquero |
 | `2026-10-06-cremallera-abrigo.jpg` | Cremallera abrigo (las fechas ordenan: la más nueva, primero) |
 | `2026-10-06-falda-antes.jpg` + `2026-10-06-falda-despues.jpg` | Una tarjeta con el **antes** y el **después** |
+| `falda.jpg` + `falda-2.jpg` + `falda-3.jpg` | Una tarjeta con **carrusel** de 3 fotos |
 
+- Varias fotos del mismo arreglo: mismo nombre y al final `-antes`, `-despues` o un número (`-2`, `-3`…). Se ven en carrusel: primero la foto sin sufijo, luego las numeradas, luego antes y después.
 - Formatos: **JPG o PNG**. En iPhone: Ajustes → Cámara → Formatos → **Más compatible**.
 - No hace falta reducirlas: la web las optimiza sola y **borra la ubicación GPS** de la foto.
 - Que no salga la cara del cliente ni su casa/dirección sin su permiso.
