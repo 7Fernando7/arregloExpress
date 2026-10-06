@@ -5,13 +5,14 @@ import { useLanguage } from '@/context/LanguageContext';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 import { whatsappLink } from '@/lib/contact';
 
-export default function Header() {
+export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
   const { t } = useLanguage();
   const links = [
     { href: '#how-it-works', label: t('Header.howItWorks') },
     { href: '#services', label: t('Header.services') },
+    ...(hasWorks ? [{ href: '#works', label: t('Header.works') }] : []),
+    { href: '#reviews', label: t('Header.reviews') },
     { href: '#zones', label: t('Header.zones') },
-    { href: '#faq', label: t('Header.faq') },
     { href: '#contact', label: t('Header.contact') },
   ];
 

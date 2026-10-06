@@ -1,0 +1,4 @@
+# Fija cómo construye Netlify: `npm run build` ejecuta antes scripts/fotos-trabajos.mjs (prebuild)
+[build]
+  command = "npm run build"
+  publish = "out"

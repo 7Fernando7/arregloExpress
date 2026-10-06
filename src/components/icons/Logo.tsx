@@ -13,7 +13,7 @@ export default function Logo({
     <img
       src={variant === 'light' ? '/brand/logo-white.svg' : '/brand/logo.svg'}
       alt="Arreglos Express Madrid"
-      width={230}
+      width={220}
       height={120}
       className={cn('h-12 w-auto', className)}
     />

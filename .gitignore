@@ -43,3 +43,5 @@ next-env.d.ts
 # firebase
 firebase-debug.log
 firestore-debug.log
+# fotos optimizadas (se generan desde trabajos/ en cada build)
+/public/trabajos/
