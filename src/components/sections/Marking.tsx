@@ -149,18 +149,19 @@ export default function Marking() {
           {CASES.map(({ key }) => (
             <MarkingCard key={key} caseKey={key} />
           ))}
-          <article className="flex flex-col justify-between rounded-lg bg-primary p-6 text-primary-foreground">
-            <p className="font-headline text-xl font-semibold leading-snug">{t('Marking.help')}</p>
-            <a
-              href={whatsappLink(t('Marking.helpMessage'))}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 self-start rounded-md bg-accent px-4 py-2.5 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90"
-            >
-              <WhatsappIcon className="h-4 w-4" />
-              {t('Marking.helpButton')}
-            </a>
-          </article>
+        </div>
+
+        <div className="mt-4 flex flex-col gap-4 rounded-lg bg-primary p-6 text-primary-foreground sm:flex-row sm:items-center sm:justify-between">
+          <p className="font-headline text-xl font-semibold leading-snug">{t('Marking.help')}</p>
+          <a
+            href={whatsappLink(t('Marking.helpMessage'))}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex shrink-0 items-center gap-2 self-start rounded-md bg-accent px-4 py-2.5 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90 sm:self-auto"
+          >
+            <WhatsappIcon className="h-4 w-4" />
+            {t('Marking.helpButton')}
+          </a>
         </div>
       </div>
     </section>

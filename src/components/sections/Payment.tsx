@@ -25,7 +25,7 @@ export default function Payment() {
           <ol className="space-y-3 text-sm leading-relaxed text-foreground/85">
             {[1, 2, 3].map((n) => (
               <li key={n} className="flex gap-3">
-                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-semibold text-primary-foreground">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-semibold text-accent-foreground">
                   {n}
                 </span>
                 {t(`Payment.step${n}`)}
@@ -36,7 +36,7 @@ export default function Payment() {
             href={STRIPE_PAYMENT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 flex h-12 w-full items-center justify-center gap-2 rounded-md bg-primary font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+            className="mt-6 flex h-12 w-full items-center justify-center gap-2 rounded-md bg-accent font-semibold text-accent-foreground transition-colors hover:bg-accent/90"
           >
             <CreditCard className="h-5 w-5" />
             {t('Payment.button')}
