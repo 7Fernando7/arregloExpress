@@ -13,4 +13,4 @@ export const GOOGLE_REVIEW_URL: string = "https://g.page/r/CbyxECDS3DmaEBM/revie
 
 // Enlace de pago de Stripe con importe libre (Payment Link "el cliente elige cuánto pagar").
 // Vacío = la sección "Pagar mi arreglo" no se muestra.
-export const STRIPE_PAYMENT_URL: string = "";
+export const STRIPE_PAYMENT_URL: string = "https://buy.stripe.com/cNi6oG6XX53D8sF8pP7EQ00";

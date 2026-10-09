@@ -67,6 +67,12 @@ export default function PoliticaPrivacidad() {
             <li>Dirección IP</li>
             <li>Fecha y hora del envío</li>
           </ul>
+          <p className="mt-3">
+            Si pagas un arreglo desde la web, el pago lo gestiona Stripe, que
+            recoge tu nombre, correo electrónico, el nombre o número de
+            presupuesto que indiques y los datos del medio de pago. Nosotros
+            nunca vemos los datos completos de tu tarjeta.
+          </p>
         </section>
 
         <section>
@@ -80,6 +86,7 @@ export default function PoliticaPrivacidad() {
             <li>Gestionar solicitudes de contacto</li>
             <li>Atender presupuestos y consultas</li>
             <li>Prestar los servicios solicitados por el usuario</li>
+            <li>Cobrar los arreglos pagados a través de la web</li>
             <li>Comunicar información relacionada con el servicio</li>
           </ul>
           <p className="mt-3">
@@ -93,7 +100,8 @@ export default function PoliticaPrivacidad() {
           <p>
             La base legal para el tratamiento de los datos es el consentimiento
             del usuario, al marcar el checkbox de aceptación y enviar el
-            formulario.
+            formulario. Los datos del pago se tratan para ejecutar el servicio
+            contratado por el usuario.
           </p>
         </section>
 
@@ -106,6 +114,7 @@ export default function PoliticaPrivacidad() {
             <li>Durante el tiempo necesario para atender la solicitud</li>
             <li>Mientras exista una relación comercial</li>
             <li>O hasta que el usuario solicite su eliminación</li>
+            <li>Los datos de los pagos, durante los plazos que exija la ley</li>
           </ul>
         </section>
 
@@ -118,6 +127,7 @@ export default function PoliticaPrivacidad() {
           </p>
           <ul className="list-disc list-inside space-y-1 bg-muted/50 p-4 rounded-lg">
             <li>Netlify Forms (gestión de formularios)</li>
+            <li>Stripe Payments Europe, Ltd. (Irlanda), para el cobro de los pagos</li>
             <li>Servicios de alojamiento en la nube</li>
           </ul>
           <p className="mt-3">
