@@ -10,6 +10,9 @@ export const PRICING = {
   perKm: 0.7, // € por km de trayecto
   roadFactor: 1.35, // km por calle ≈ km en línea recta × factor
   minTrip: 4, // € mínimo por trayecto
+  // Trayectos por servicio: ir a recoger (taller → cliente), llevar al taller (cliente → taller),
+  // llevar la prenda arreglada (taller → cliente) y volver (cliente → taller)
+  trips: 4,
   roundTo: 0.5, // redondeo del total hacia arriba
 };
 
@@ -109,7 +112,7 @@ export function estimateDelivery(input: string): EstimateResult {
 
   const km = haversineKm(ORIGIN.lat, ORIGIN.lng, coords[0], coords[1]) * PRICING.roadFactor;
   const trip = Math.max(PRICING.minTrip, PRICING.base + PRICING.perKm * km);
-  const total = Math.ceil((trip * 2) / PRICING.roundTo) * PRICING.roundTo;
+  const total = Math.ceil((trip * PRICING.trips) / PRICING.roundTo) * PRICING.roundTo;
 
   return { status: "ok", estimate: { postalCode, km, total } };
 }
