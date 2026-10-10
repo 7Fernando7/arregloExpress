@@ -4,6 +4,7 @@ export const translations = {
     Header: {
       howItWorks: "How it works",
       services: "Services",
+      clothes: "Clothing alterations",
       works: "Our work",
       reviews: "Reviews",
       zones: "Pickup & delivery",
@@ -13,10 +14,10 @@ export const translations = {
       menu: "Menu",
     },
     Hero: {
-      eyebrow: "Alterations workshop · Madrid",
+      eyebrow: "Services: clothing, shoes & dry cleaning",
       title: "Clothing alterations, picked up and delivered at home in Madrid",
       description:
-        "We collect your garments at home or at the office, alter them in our workshop and bring them back ready to wear.",
+        "We collect your clothes and shoes at home or at the office, alter them or take them to the dry cleaner's, and bring them back ready to wear.",
       whatsappButton: "Order via WhatsApp",
       whatsappMessage: "Hi! I'd like a quote for an alteration.",
       estimateButton: "Calculate pickup",
@@ -255,7 +256,7 @@ export const translations = {
     },
     Footer: {
       tagline:
-        "Clothing alterations with home pickup and delivery across Madrid city.",
+        "Clothing and shoe repairs and dry cleaning, with home pickup and delivery across Madrid city.",
       contactTitle: "Contact",
       contactText: "We handle orders via WhatsApp, email and the contact form.",
       sectionsTitle: "Website",
@@ -272,6 +273,7 @@ export const translations = {
     Header: {
       howItWorks: "Cómo funciona",
       services: "Servicios",
+      clothes: "Arreglo de ropa",
       works: "Trabajos",
       reviews: "Opiniones",
       zones: "Recogida",
@@ -281,10 +283,10 @@ export const translations = {
       menu: "Menú",
     },
     Hero: {
-      eyebrow: "Taller de arreglos · Madrid",
+      eyebrow: "Servicios: ropa, zapatos y tintorería",
       title: "Arreglos de ropa con recogida y entrega a domicilio en Madrid",
       description:
-        "Recogemos tus prendas en casa o en la oficina, las arreglamos en nuestro taller y te las devolvemos listas para usar.",
+        "Recogemos tu ropa y tus zapatos en casa o en la oficina, los arreglamos o los llevamos a la tintorería y te los devolvemos listos para usar.",
       whatsappButton: "Pedir por WhatsApp",
       whatsappMessage: "¡Hola! Quiero presupuesto para un arreglo.",
       estimateButton: "Calcular recogida",
@@ -523,7 +525,7 @@ export const translations = {
     },
     Footer: {
       tagline:
-        "Arreglos de ropa con recogida y entrega a domicilio en todo Madrid capital.",
+        "Arreglos de ropa, zapatos y tintorería con recogida y entrega a domicilio en todo Madrid capital.",
       contactTitle: "Contacto",
       contactText: "Atendemos por WhatsApp, por correo y por el formulario de contacto.",
       sectionsTitle: "La web",

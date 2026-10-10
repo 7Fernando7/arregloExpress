@@ -75,6 +75,7 @@ export default async function ServicioPage({ params }: Params) {
               <ChevronRight className="h-3.5 w-3.5" />
               <span className="text-foreground">{s.nombre}</span>
             </nav>
+            <div className={s.imagen ? "grid items-center gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-16" : ""}>
             <div className="max-w-3xl space-y-6">
               <Eyebrow>A domicilio · Madrid</Eyebrow>
               <h1 className="font-headline text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl">{s.h1}</h1>
@@ -89,7 +90,7 @@ export default async function ServicioPage({ params }: Params) {
                   className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-primary px-6 font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
                 >
                   <WhatsappIcon className="h-5 w-5" />
-                  Pedir presupuesto por WhatsApp
+                  Pedir por WhatsApp
                 </a>
                 <a
                   href="/#zones"
@@ -104,6 +105,21 @@ export default async function ServicioPage({ params }: Params) {
                 <li className="flex items-start gap-2.5"><MessageCircle className="mt-0.5 h-4 w-4 shrink-0 text-accent" />Presupuesto sin compromiso con una foto</li>
                 <li className="flex items-start gap-2.5"><CalendarClock className="mt-0.5 h-4 w-4 shrink-0 text-accent" />Mínimo 3 días entre recogida y entrega</li>
               </ul>
+            </div>
+            {s.imagen && (
+              // mismo marco que la foto de portada
+              <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
+                <div aria-hidden className="absolute -bottom-3 -right-3 h-full w-full rounded-lg border-2 border-dashed border-accent/60" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={s.imagen.src}
+                  alt={s.imagen.alt}
+                  width={s.imagen.width}
+                  height={s.imagen.height}
+                  className="relative aspect-[4/3] w-full rounded-lg object-cover shadow-[0_12px_32px_-8px_rgba(19,41,75,0.25)]"
+                />
+              </div>
+            )}
             </div>
           </div>
         </section>

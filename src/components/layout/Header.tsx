@@ -1,17 +1,25 @@
 'use client';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { Menu } from 'lucide-react';
+import { ChevronDown, Menu } from 'lucide-react';
 import Logo from '@/components/icons/Logo';
 import LanguageSwitcher from '../LanguageSwitcher';
 import { useLanguage } from '@/context/LanguageContext';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 import { STRIPE_PAYMENT_URL, whatsappLink } from '@/lib/contact';
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { cn } from '@/lib/utils';
 
 export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
   const { t } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false); // submenú del móvil
   const isHome = usePathname() === '/';
   const home = isHome ? '' : '/'; // desde otras páginas, las secciones están en la portada
   const links = [
@@ -22,6 +30,12 @@ export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
     { href: '#zones', label: t('Header.zones') },
     ...(STRIPE_PAYMENT_URL ? [{ href: '#pay', label: t('Payment.menu') }] : []),
     { href: '#contact', label: t('Header.contact') },
+  ];
+  // los 3 servicios principales (los arreglos de ropa están en la sección de la portada)
+  const serviceLinks = [
+    { href: home + '#services', label: t('Header.clothes') },
+    { href: '/arreglos/arreglo-de-zapatos-madrid', label: t('Services.service8.title') },
+    { href: '/arreglos/tintoreria-a-domicilio-madrid', label: t('Services.service9.title') },
   ];
   // en el menú del móvil caben todas las secciones
   const menuLinks = [
@@ -50,15 +64,31 @@ export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
           <Logo className="h-11 md:h-14" />
         </a>
         <nav className="hidden items-center gap-7 lg:flex">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={home + link.href}
-              className="text-sm font-medium text-foreground/75 transition-colors hover:text-foreground"
-            >
-              {link.label}
-            </a>
-          ))}
+          {links.map((link) =>
+            link.href === '#services' ? (
+              <DropdownMenu key={link.href} modal={false}>
+                <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-foreground/75 outline-none transition-colors hover:text-foreground data-[state=open]:text-foreground">
+                  {link.label}
+                  <ChevronDown className="h-3.5 w-3.5 transition-transform [[data-state=open]>&]:rotate-180" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start" sideOffset={12} className="w-56 border-border bg-background p-1.5">
+                  {serviceLinks.map((sl) => (
+                    <DropdownMenuItem key={sl.href} asChild className="cursor-pointer rounded px-3 py-2 text-sm focus:bg-card">
+                      <a href={sl.href}>{sl.label}</a>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <a
+                key={link.href}
+                href={home + link.href}
+                className="text-sm font-medium text-foreground/75 transition-colors hover:text-foreground"
+              >
+                {link.label}
+              </a>
+            )
+          )}
         </nav>
         <div className="flex items-center gap-2 sm:gap-3">
           {isHome && (
@@ -92,17 +122,46 @@ export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
               </SheetTitle>
               <nav className="flex-1 overflow-y-auto px-3 py-4">
                 <ul className="space-y-1">
-                  {menuLinks.map((link) => (
-                    <li key={link.href}>
-                      <a
-                        href={home + link.href}
-                        onClick={(e) => goTo(e, link.href)}
-                        className="block rounded-md px-3 py-3 font-headline text-xl font-semibold text-foreground transition-colors hover:bg-card"
-                      >
-                        {link.label}
-                      </a>
-                    </li>
-                  ))}
+                  {menuLinks.map((link) =>
+                    link.href === '#services' ? (
+                      <li key={link.href}>
+                        <button
+                          type="button"
+                          onClick={() => setServicesOpen(!servicesOpen)}
+                          aria-expanded={servicesOpen}
+                          className="flex w-full items-center justify-between rounded-md px-3 py-3 text-left font-headline text-xl font-semibold text-foreground transition-colors hover:bg-card"
+                        >
+                          {link.label}
+                          <ChevronDown className={cn('h-5 w-5 text-accent transition-transform', servicesOpen && 'rotate-180')} />
+                        </button>
+                        {servicesOpen && (
+                          <ul className="mb-2 ml-3 space-y-0.5 border-l border-dashed border-accent/50 pl-3">
+                            {serviceLinks.map((sl) => (
+                              <li key={sl.href}>
+                                <a
+                                  href={sl.href}
+                                  onClick={(e) => (sl.href.endsWith('#services') ? goTo(e, '#services') : setMenuOpen(false))}
+                                  className="block rounded-md px-3 py-2 text-base text-foreground/85 hover:bg-card"
+                                >
+                                  {sl.label}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </li>
+                    ) : (
+                      <li key={link.href}>
+                        <a
+                          href={home + link.href}
+                          onClick={(e) => goTo(e, link.href)}
+                          className="block rounded-md px-3 py-3 font-headline text-xl font-semibold text-foreground transition-colors hover:bg-card"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    )
+                  )}
                 </ul>
               </nav>
               <div className="space-y-4 border-t border-dashed border-border px-6 py-5">

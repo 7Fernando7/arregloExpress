@@ -1,6 +1,6 @@
 export const metadata: Metadata = {
   title: {
-    default: "Arreglos de Ropa a Domicilio en Madrid | Arreglos Express",
+    default: "Arreglos de Ropa, Zapatos y Tintorería a Domicilio en Madrid",
     template: "%s | Arreglos Express",
   },
   description:
@@ -10,9 +10,9 @@ export const metadata: Metadata = {
   publisher: "Arreglos Express Madrid",
   metadataBase: new URL("https://arreglosexpressmadrid.com"),
   openGraph: {
-    title: "Arreglos de Ropa a Domicilio en Madrid | Arreglos Express",
+    title: "Arreglos de Ropa, Zapatos y Tintorería a Domicilio en Madrid",
     description:
-      "Recogemos tus prendas en casa o en la oficina, las arreglamos y te las devolvemos. Todo Madrid capital.",
+      "Recogemos tu ropa y tus zapatos en casa o en la oficina, los arreglamos o los llevamos a la tintorería. Todo Madrid capital.",
     url: "https://arreglosexpressmadrid.com",
     siteName: "Arreglos Express Madrid",
     locale: "es_ES",

@@ -11,6 +11,7 @@ export type Servicio = {
   metaTitle: string; // sin la marca (la añade la plantilla del layout)
   metaDescription: string;
   intro: string[];
+  imagen?: { src: string; alt: string; width: number; height: number }; // foto junto al título
   incluye: string[];
   incluyeNota?: string; // aviso bajo «Qué incluye» (p. ej. cuando son solo ejemplos)
   marcar?: MarkingKey; // guía de marcado (si la prenda se marca)
@@ -301,6 +302,8 @@ export const SERVICIOS: Servicio[] = [
     slug: "tintoreria-a-domicilio-madrid",
     nombre: "Tintorería",
     h1: "Tintorería a domicilio en Madrid",
+    // CC0 (rawpixel / Wikimedia Commons)
+    imagen: { src: "/brand/tintoreria.jpg", alt: "Trajes y abrigos con funda colgados en una tintorería", width: 1024, height: 684 },
     metaTitle: "Tintorería a domicilio en Madrid: recogida y entrega",
     metaDescription:
       "Tintorería con recogida y entrega a domicilio en Madrid capital: trajes, abrigos, vestidos y prendas delicadas. Presupuesto por WhatsApp.",
