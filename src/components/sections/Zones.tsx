@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useMemo, useState } from 'react';
-import { MapPin } from 'lucide-react';
+import { MapPin, Package } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import Eyebrow from '@/components/Eyebrow';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
@@ -130,6 +130,10 @@ export default function Zones() {
                     <span className="text-sm font-medium text-foreground">{t('Zones.totalLabel')}</span>
                   </p>
                   <p className="text-xs text-muted-foreground">{t('Zones.note')}</p>
+                  <p className="flex gap-2 rounded-md bg-accent/10 px-3 py-2 text-xs leading-relaxed text-foreground">
+                    <Package className="mt-0.5 h-3.5 w-3.5 shrink-0 text-accent" />
+                    {t('Zones.bulky')}
+                  </p>
                   <a
                     href={whatsappLink(
                       t('Zones.whatsappMessage').replace('{cp}', estimate.postalCode).replace('{price}', price)

@@ -179,6 +179,8 @@ export const translations = {
         "For now we only cover Madrid city (28001 to 28055). Message us on WhatsApp and we'll see what we can do.",
       distance: "{cp} · about {km} km from our workshop",
       totalLabel: "pickup + delivery",
+      bulky:
+        "Bulky items (wedding dresses, duvets, large curtains) may have a surcharge, and rugs need special transport: we'll give you the price on WhatsApp.",
       approx: "approx.",
       note: "Indicative estimate. We'll confirm the final price on WhatsApp before pickup. At least 3 days between pickup and delivery.",
       whatsappButton: "Book pickup via WhatsApp",
@@ -448,6 +450,8 @@ export const translations = {
         "De momento solo cubrimos Madrid capital (del 28001 al 28055). Escríbenos por WhatsApp y lo vemos.",
       distance: "{cp} · a unos {km} km de nuestro taller",
       totalLabel: "recogida + entrega",
+      bulky:
+        "Las prendas voluminosas (vestidos de novia, edredones, cortinas grandes) pueden llevar suplemento, y las alfombras necesitan un transporte especial: te damos el precio por WhatsApp.",
       approx: "aprox.",
       note: "Estimación orientativa. Te confirmamos el precio final por WhatsApp antes de recoger. Mínimo 3 días entre recogida y entrega.",
       whatsappButton: "Pedir recogida por WhatsApp",

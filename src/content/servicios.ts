@@ -326,7 +326,7 @@ export const SERVICIOS: Servicio[] = [
       "Trajes y americanas",
       "Abrigos y chaquetas",
       "Vestidos de fiesta y prendas delicadas",
-      "Textil del hogar: pregúntanos",
+      "Textil del hogar y alfombras: pregúntanos",
     ],
     incluyeNota: "Son ejemplos: mándanos una foto y te confirmamos qué se puede hacer en tu caso.",
     consejos: [
@@ -338,6 +338,10 @@ export const SERVICIOS: Servicio[] = [
       {
         p: "¿Qué prendas lleváis a la tintorería?",
         r: "Cuéntanos qué necesitas por WhatsApp, con una foto de la etiqueta, y te confirmamos el servicio y el precio antes de recoger.",
+      },
+      {
+        p: "¿Recogéis vestidos de novia, edredones o alfombras?",
+        r: "Sí, pero al ser voluminosos necesitan otro transporte (en coche, o especial en el caso de las alfombras), así que el precio de recogida cambia. Te lo damos por WhatsApp antes de recoger.",
       },
       {
         p: "¿Puedo juntar tintorería y arreglos?",
