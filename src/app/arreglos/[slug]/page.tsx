@@ -7,6 +7,8 @@ import HowItWorks from "@/components/sections/HowItWorks";
 import { MarkingCard } from "@/components/sections/Marking";
 import WhatsappButton from "@/components/WhatsappButton";
 import Eyebrow from "@/components/Eyebrow";
+import HeroPhoto from "@/components/HeroPhoto";
+import { getWorks } from "@/lib/trabajos";
 import { WhatsappIcon } from "@/components/icons/WhatsappIcon";
 import { ROPA_SLUG, SERVICIOS, servicioPorSlug } from "@/content/servicios";
 import { whatsappLink } from "@/lib/contact";
@@ -65,7 +67,7 @@ export default async function ServicioPage({ params }: Params) {
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <JsonLd data={jsonLd} />
-      <Header />
+      <Header hasWorks={getWorks().length > 0} />
       <main className="flex-grow">
         <section className="w-full">
           <div className="container mx-auto max-w-6xl px-4 py-10 md:px-6 md:py-16">
@@ -112,18 +114,13 @@ export default async function ServicioPage({ params }: Params) {
               </ul>
             </div>
             {s.imagen && (
-              // mismo marco que la foto de portada
-              <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
-                <div aria-hidden className="absolute -bottom-3 -right-3 h-full w-full rounded-lg border-2 border-dashed border-accent/60" />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={s.imagen.src}
-                  alt={s.imagen.alt}
-                  width={s.imagen.width}
-                  height={s.imagen.height}
-                  className="relative aspect-[4/3] w-full rounded-lg object-cover shadow-[0_12px_32px_-8px_rgba(19,41,75,0.25)]"
-                />
-              </div>
+              <HeroPhoto
+                {...s.imagen}
+                badgeTitle="Mándanos una foto"
+                badgeText={s.categoria === "tintoreria" ? "y te decimos el precio." : "y te decimos el precio de tu arreglo."}
+                badgeButton="Abrir WhatsApp"
+                whatsappMessage={s.whatsapp}
+              />
             )}
             </div>
           </div>

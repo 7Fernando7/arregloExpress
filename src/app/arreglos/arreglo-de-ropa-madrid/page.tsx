@@ -5,6 +5,8 @@ import Footer from "@/components/layout/Footer";
 import HowItWorks from "@/components/sections/HowItWorks";
 import WhatsappButton from "@/components/WhatsappButton";
 import Eyebrow from "@/components/Eyebrow";
+import HeroPhoto from "@/components/HeroPhoto";
+import { getWorks } from "@/lib/trabajos";
 import { WhatsappIcon } from "@/components/icons/WhatsappIcon";
 import { ROPA_SLUG, SERVICIOS, serviciosDeRopa } from "@/content/servicios";
 import { translations } from "@/lib/i18n";
@@ -73,7 +75,7 @@ export default function ArregloDeRopaPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <JsonLd data={jsonLd} />
-      <Header />
+      <Header hasWorks={getWorks().length > 0} />
       <main className="flex-grow">
         <section className="w-full">
           <div className="container mx-auto max-w-6xl px-4 py-10 md:px-6 md:py-16">
@@ -114,18 +116,16 @@ export default function ArregloDeRopaPage() {
                   <li className="flex items-start gap-2.5"><CalendarClock className="mt-0.5 h-4 w-4 shrink-0 text-accent" />Mínimo 3 días entre recogida y entrega</li>
                 </ul>
               </div>
-              {/* mismo marco que la foto de portada */}
-              <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
-                <div aria-hidden className="absolute -bottom-3 -right-3 h-full w-full rounded-lg border-2 border-dashed border-accent/60" />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/brand/taller.jpg"
-                  alt="Manos cosiendo una prenda en un taller de costura"
-                  width={1200}
-                  height={896}
-                  className="relative aspect-[4/3] w-full rounded-lg object-cover shadow-[0_12px_32px_-8px_rgba(19,41,75,0.25)]"
-                />
-              </div>
+              <HeroPhoto
+                src="/brand/taller.jpg"
+                alt="Manos cosiendo una prenda en un taller de costura"
+                width={1200}
+                height={896}
+                badgeTitle="Mándanos una foto"
+                badgeText="y te decimos el precio de tu arreglo."
+                badgeButton="Abrir WhatsApp"
+                whatsappMessage="¡Hola! Os mando una foto de la prenda que quiero arreglar."
+              />
             </div>
           </div>
         </section>
