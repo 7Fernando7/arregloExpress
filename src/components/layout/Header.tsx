@@ -15,6 +15,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { cn } from '@/lib/utils';
+import { ROPA_SLUG } from '@/content/servicios';
 
 export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
   const { t } = useLanguage();
@@ -31,9 +32,9 @@ export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
     ...(STRIPE_PAYMENT_URL ? [{ href: '#pay', label: t('Payment.menu') }] : []),
     { href: '#contact', label: t('Header.contact') },
   ];
-  // los 3 servicios principales (los arreglos de ropa están en la sección de la portada)
+  // los 3 servicios principales, cada uno con su página
   const serviceLinks = [
-    { href: home + '#services', label: t('Header.clothes') },
+    { href: `/arreglos/${ROPA_SLUG}`, label: t('Header.clothes') },
     { href: '/arreglos/arreglo-de-zapatos-madrid', label: t('Services.service8.title') },
     { href: '/arreglos/tintoreria-a-domicilio-madrid', label: t('Services.service9.title') },
   ];
@@ -140,7 +141,7 @@ export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
                               <li key={sl.href}>
                                 <a
                                   href={sl.href}
-                                  onClick={(e) => (sl.href.endsWith('#services') ? goTo(e, '#services') : setMenuOpen(false))}
+                                  onClick={() => setMenuOpen(false)}
                                   className="block rounded-md px-3 py-2 text-base text-foreground/85 hover:bg-card"
                                 >
                                   {sl.label}

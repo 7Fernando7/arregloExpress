@@ -6,6 +6,7 @@ export type MarkingKey = "pants" | "skirt" | "sleeves" | "takeIn" | "zips";
 
 export type Servicio = {
   slug: string;
+  categoria: "ropa" | "calzado" | "tintoreria";
   nombre: string; // texto corto para enlaces y migas de pan
   h1: string;
   metaTitle: string; // sin la marca (la añade la plantilla del layout)
@@ -23,6 +24,7 @@ export type Servicio = {
 export const SERVICIOS: Servicio[] = [
   {
     slug: "bajos-de-pantalon-madrid",
+    categoria: "ropa",
     nombre: "Bajos de pantalón",
     h1: "Bajos de pantalón a domicilio en Madrid",
     metaTitle: "Bajos de pantalón y vaqueros a domicilio en Madrid",
@@ -57,6 +59,7 @@ export const SERVICIOS: Servicio[] = [
   },
   {
     slug: "estrechar-chaqueta-madrid",
+    categoria: "ropa",
     nombre: "Estrechar chaquetas",
     h1: "Estrechar chaquetas, americanas y abrigos en Madrid",
     metaTitle: "Estrechar chaquetas, americanas y abrigos en Madrid",
@@ -91,6 +94,7 @@ export const SERVICIOS: Servicio[] = [
   },
   {
     slug: "cambio-de-cremallera-madrid",
+    categoria: "ropa",
     nombre: "Cambio de cremalleras",
     h1: "Cambio de cremalleras a domicilio en Madrid",
     metaTitle: "Cambio y arreglo de cremalleras a domicilio en Madrid",
@@ -125,6 +129,7 @@ export const SERVICIOS: Servicio[] = [
   },
   {
     slug: "coser-botones-madrid",
+    categoria: "ropa",
     nombre: "Botones y cierres",
     h1: "Coser y reforzar botones en Madrid",
     metaTitle: "Coser, reponer y reforzar botones a domicilio en Madrid",
@@ -159,6 +164,7 @@ export const SERVICIOS: Servicio[] = [
   },
   {
     slug: "arreglo-vestido-de-fiesta-madrid",
+    categoria: "ropa",
     nombre: "Trajes de ocasión",
     h1: "Arreglos de vestidos de fiesta y trajes de ocasión en Madrid",
     metaTitle: "Arreglos de vestidos de fiesta, bodas y comuniones en Madrid",
@@ -193,6 +199,7 @@ export const SERVICIOS: Servicio[] = [
   },
   {
     slug: "cambio-de-forro-madrid",
+    categoria: "ropa",
     nombre: "Cambio de forros",
     h1: "Cambio de forros de chaquetas y abrigos en Madrid",
     metaTitle: "Cambio de forro de chaquetas, abrigos y faldas en Madrid",
@@ -227,6 +234,7 @@ export const SERVICIOS: Servicio[] = [
   },
   {
     slug: "arreglo-de-cortinas-madrid",
+    categoria: "ropa",
     nombre: "Textil del hogar",
     h1: "Arreglo de cortinas, cojines y fundas en Madrid",
     metaTitle: "Arreglo de cortinas, cojines y fundas a domicilio en Madrid",
@@ -261,6 +269,7 @@ export const SERVICIOS: Servicio[] = [
   },
   {
     slug: "arreglo-de-zapatos-madrid",
+    categoria: "calzado",
     nombre: "Arreglo de zapatos",
     h1: "Arreglo de zapatos a domicilio en Madrid",
     imagen: { src: "/brand/zapatos.jpg", alt: "Manos de un zapatero cosiendo un zapato de piel en el taller", width: 1200, height: 900 },
@@ -301,6 +310,7 @@ export const SERVICIOS: Servicio[] = [
   },
   {
     slug: "tintoreria-a-domicilio-madrid",
+    categoria: "tintoreria",
     nombre: "Tintorería",
     h1: "Tintorería a domicilio en Madrid",
     // CC0 (rawpixel / Wikimedia Commons)
@@ -341,5 +351,8 @@ export const SERVICIOS: Servicio[] = [
     whatsapp: "¡Hola! Quiero presupuesto para la tintorería.",
   },
 ];
+
+export const ROPA_SLUG = "arreglo-de-ropa-madrid"; // página que agrupa los arreglos de ropa
+export const serviciosDeRopa = () => SERVICIOS.filter((s) => s.categoria === "ropa");
 
 export const servicioPorSlug = (slug: string) => SERVICIOS.find((s) => s.slug === slug);

@@ -8,7 +8,7 @@ import { MarkingCard } from "@/components/sections/Marking";
 import WhatsappButton from "@/components/WhatsappButton";
 import Eyebrow from "@/components/Eyebrow";
 import { WhatsappIcon } from "@/components/icons/WhatsappIcon";
-import { SERVICIOS, servicioPorSlug } from "@/content/servicios";
+import { ROPA_SLUG, SERVICIOS, servicioPorSlug } from "@/content/servicios";
 import { whatsappLink } from "@/lib/contact";
 import { BUSINESS_ID, JsonLd, SITE_NAME, SITE_URL, localBusinessJsonLd } from "@/lib/site";
 
@@ -37,6 +37,7 @@ export default async function ServicioPage({ params }: Params) {
   if (!s) notFound();
   const url = `${SITE_URL}/arreglos/${s.slug}`;
   const otros = SERVICIOS.filter((o) => o.slug !== s.slug);
+  const esRopa = s.categoria === "ropa";
 
   const jsonLd = [
     localBusinessJsonLd(),
@@ -55,8 +56,8 @@ export default async function ServicioPage({ params }: Params) {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Inicio", item: `${SITE_URL}/` },
-        { "@type": "ListItem", position: 2, name: "Arreglos", item: `${SITE_URL}/#services` },
-        { "@type": "ListItem", position: 3, name: s.nombre, item: url },
+        ...(esRopa ? [{ "@type": "ListItem", position: 2, name: "Arreglo de ropa", item: `${SITE_URL}/arreglos/${ROPA_SLUG}` }] : []),
+        { "@type": "ListItem", position: esRopa ? 3 : 2, name: s.nombre, item: url },
       ],
     },
   ];
@@ -71,8 +72,12 @@ export default async function ServicioPage({ params }: Params) {
             <nav aria-label="Migas de pan" className="mb-8 flex flex-wrap items-center gap-1 text-sm text-muted-foreground">
               <a href="/" className="hover:text-foreground">Inicio</a>
               <ChevronRight className="h-3.5 w-3.5" />
-              <a href="/#services" className="hover:text-foreground">Arreglos</a>
-              <ChevronRight className="h-3.5 w-3.5" />
+              {esRopa && (
+                <>
+                  <a href={`/arreglos/${ROPA_SLUG}`} className="hover:text-foreground">Arreglo de ropa</a>
+                  <ChevronRight className="h-3.5 w-3.5" />
+                </>
+              )}
               <span className="text-foreground">{s.nombre}</span>
             </nav>
             <div className={s.imagen ? "grid items-center gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-16" : ""}>
