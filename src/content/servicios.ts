@@ -1,4 +1,5 @@
 // Páginas por servicio (/arreglos/[slug]). Solo español: son las que posicionan en Google.
+// El orden importa: coincide con las tarjetas de la portada (Services.tsx, service1…service9).
 // Sin precios ni plazos inventados: el precio se da por WhatsApp y el mínimo es 3 días.
 
 export type MarkingKey = "pants" | "skirt" | "sleeves" | "takeIn" | "zips";
@@ -11,7 +12,9 @@ export type Servicio = {
   metaDescription: string;
   intro: string[];
   incluye: string[];
-  marcar: MarkingKey;
+  incluyeNota?: string; // aviso bajo «Qué incluye» (p. ej. cuando son solo ejemplos)
+  marcar?: MarkingKey; // guía de marcado (si la prenda se marca)
+  consejos?: string[]; // si no se marca: qué necesitamos saber
   preguntas: { p: string; r: string }[];
   whatsapp: string; // mensaje predefinido
 };
@@ -254,6 +257,84 @@ export const SERVICIOS: Servicio[] = [
       },
     ],
     whatsapp: "¡Hola! Quiero presupuesto para arreglar cortinas o textil del hogar.",
+  },
+  {
+    slug: "arreglo-de-zapatos-madrid",
+    nombre: "Arreglo de zapatos",
+    h1: "Arreglo de zapatos a domicilio en Madrid",
+    metaTitle: "Arreglo de zapatos y calzado a domicilio en Madrid",
+    metaDescription:
+      "Recogemos tus zapatos, botas o zapatillas en casa y te los devolvemos arreglados. Tapas, suelas, costuras y más en Madrid capital.",
+    intro: [
+      "Unos zapatos que te gustan no se tiran por una tapa gastada o una costura abierta. Recogemos tus zapatos, botas, sandalias o zapatillas en casa o en la oficina y te los devolvemos arreglados.",
+      "Cada arreglo es distinto: mándanos una foto por WhatsApp y te confirmamos si se puede hacer y el precio antes de recogerlos.",
+    ],
+    incluye: [
+      "Cambio de tapas y tacones",
+      "Suelas y medias suelas",
+      "Costuras abiertas",
+      "Cremalleras de botas",
+    ],
+    incluyeNota: "Son ejemplos: mándanos una foto y te confirmamos qué se puede hacer en tu caso.",
+    consejos: [
+      "Haz una foto de la parte del zapato que hay que arreglar y otra de la suela.",
+      "Dinos qué le pasa y, si lo sabes, de qué material es (piel, ante, tela…).",
+      "Si son varios pares, mándalos todos en el mismo mensaje y los recogemos juntos.",
+    ],
+    preguntas: [
+      {
+        p: "¿Qué arreglos de zapatos hacéis?",
+        r: "Mándanos una foto por WhatsApp de lo que necesita tu calzado y te confirmamos si podemos hacerlo antes de recogerlo.",
+      },
+      {
+        p: "¿Recogéis zapatos y ropa a la vez?",
+        r: "Sí, en la misma recogida puedes darnos zapatos y prendas para arreglar.",
+      },
+      {
+        p: "¿Cuánto tardáis?",
+        r: "Necesitamos un mínimo de 3 días entre la recogida y la entrega. Si lo necesitas antes, dínoslo e intentaremos hacerlo, pero no podemos garantizarlo.",
+      },
+    ],
+    whatsapp: "¡Hola! Quiero presupuesto para arreglar unos zapatos.",
+  },
+  {
+    slug: "tintoreria-a-domicilio-madrid",
+    nombre: "Tintorería",
+    h1: "Tintorería a domicilio en Madrid",
+    metaTitle: "Tintorería a domicilio en Madrid: recogida y entrega",
+    metaDescription:
+      "Tintorería con recogida y entrega a domicilio en Madrid capital: trajes, abrigos, vestidos y prendas delicadas. Presupuesto por WhatsApp.",
+    intro: [
+      "Llevar la ropa a la tintorería y volver a recogerla es justo lo que nunca da tiempo a hacer. Recogemos tus prendas en casa o en la oficina y te las devolvemos limpias.",
+      "Y si además necesitan un arreglo, lo hacemos en el mismo viaje.",
+    ],
+    incluye: [
+      "Trajes y americanas",
+      "Abrigos y chaquetas",
+      "Vestidos de fiesta y prendas delicadas",
+      "Textil del hogar: pregúntanos",
+    ],
+    incluyeNota: "Son ejemplos: mándanos una foto y te confirmamos qué se puede hacer en tu caso.",
+    consejos: [
+      "Dinos qué prendas son y mándanos una foto de la etiqueta de composición.",
+      "Avísanos de cualquier mancha y, si lo sabes, de qué es.",
+      "Si alguna prenda necesita además un arreglo, cuéntanoslo y lo hacemos todo a la vez.",
+    ],
+    preguntas: [
+      {
+        p: "¿Qué prendas lleváis a la tintorería?",
+        r: "Cuéntanos qué necesitas por WhatsApp, con una foto de la etiqueta, y te confirmamos el servicio y el precio antes de recoger.",
+      },
+      {
+        p: "¿Puedo juntar tintorería y arreglos?",
+        r: "Sí: en la misma recogida puedes darnos prendas para limpiar y prendas para arreglar.",
+      },
+      {
+        p: "¿Cuánto tardáis?",
+        r: "Necesitamos un mínimo de 3 días entre la recogida y la entrega.",
+      },
+    ],
+    whatsapp: "¡Hola! Quiero presupuesto para la tintorería.",
   },
 ];
 

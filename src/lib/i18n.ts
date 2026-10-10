@@ -131,6 +131,14 @@ export const translations = {
         description: "Curtains, cushions and covers.",
       },
       more: "Learn more",
+      service8: {
+        title: "Shoe repair",
+        description: "Heels and tips, soles, seams and boot zips.",
+      },
+      service9: {
+        title: "Dry cleaning",
+        description: "Suits, coats, party dresses and delicate garments.",
+      },
       askTitle: "Can't see your alteration?",
       askText: "Ask us on WhatsApp and we'll tell you if we can do it.",
       askButton: "Ask us",
@@ -391,6 +399,14 @@ export const translations = {
         description: "Cortinas, cojines y fundas.",
       },
       more: "Más información",
+      service8: {
+        title: "Arreglo de zapatos",
+        description: "Tapas y tacones, suelas, costuras y cremalleras de botas.",
+      },
+      service9: {
+        title: "Tintorería",
+        description: "Trajes, abrigos, vestidos de fiesta y prendas delicadas.",
+      },
       askTitle: "¿No ves tu arreglo?",
       askText: "Pregúntanos por WhatsApp y te decimos si podemos hacerlo.",
       askButton: "Preguntar",

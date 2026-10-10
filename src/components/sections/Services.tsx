@@ -1,5 +1,5 @@
 'use client';
-import { Scissors, Ruler, Replace, CircleDot, Sparkles, Layers, Home, MessageCircle, ArrowRight } from 'lucide-react';
+import { Scissors, Ruler, Replace, CircleDot, Sparkles, Layers, Home, Footprints, WashingMachine, MessageCircle, ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import Eyebrow from '@/components/Eyebrow';
 import { whatsappLink } from '@/lib/contact';
@@ -15,6 +15,8 @@ export default function Services() {
     { icon: Sparkles, key: 'service5' },
     { icon: Layers, key: 'service6' },
     { icon: Home, key: 'service7' },
+    { icon: Footprints, key: 'service8' },
+    { icon: WashingMachine, key: 'service9' },
   ];
 
   return (
@@ -49,7 +51,7 @@ export default function Services() {
               </span>
             </a>
           ))}
-          <article className="flex flex-col justify-between rounded-lg bg-primary p-6 text-primary-foreground">
+          <article className="flex flex-col justify-between gap-4 rounded-lg bg-primary p-6 text-primary-foreground lg:col-span-3 lg:flex-row lg:items-center">
             <div>
               <h3 className="font-headline text-xl font-semibold leading-snug">{t('Services.askTitle')}</h3>
               <p className="mt-2 text-sm leading-relaxed text-primary-foreground/80">{t('Services.askText')}</p>
@@ -58,7 +60,7 @@ export default function Services() {
               href={whatsappLink(t('Services.askMessage'))}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 self-start rounded-md bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90"
+              className="mt-2 inline-flex shrink-0 items-center gap-2 self-start rounded-md bg-accent px-4 py-2 text-sm lg:mt-0 lg:self-center font-semibold text-accent-foreground transition-colors hover:bg-accent/90"
             >
               <MessageCircle className="h-4 w-4" />
               {t('Services.askButton')}

@@ -76,7 +76,7 @@ export default async function ServicioPage({ params }: Params) {
               <span className="text-foreground">{s.nombre}</span>
             </nav>
             <div className="max-w-3xl space-y-6">
-              <Eyebrow>Arreglos a domicilio · Madrid</Eyebrow>
+              <Eyebrow>A domicilio · Madrid</Eyebrow>
               <h1 className="font-headline text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl">{s.h1}</h1>
               {s.intro.map((p) => (
                 <p key={p} className="text-lg leading-relaxed text-muted-foreground">{p}</p>
@@ -112,6 +112,7 @@ export default async function ServicioPage({ params }: Params) {
           <div className="container mx-auto grid max-w-6xl gap-10 px-4 md:px-6 lg:grid-cols-2 lg:gap-16">
             <div>
               <h2 className="font-headline text-3xl font-semibold tracking-tight sm:text-4xl">Qué incluye</h2>
+              {s.incluyeNota && <p className="mt-3 text-sm text-muted-foreground">{s.incluyeNota}</p>}
               <ul className="mt-6 space-y-3">
                 {s.incluye.map((item) => (
                   <li key={item} className="flex gap-3 text-foreground/85">
@@ -125,11 +126,27 @@ export default async function ServicioPage({ params }: Params) {
               </p>
             </div>
             <div className="space-y-3">
-              <h2 className="font-headline text-2xl font-semibold">Cómo preparar la prenda</h2>
-              <MarkingCard caseKey={s.marcar} />
-              <a href="/#marking" className="inline-block text-sm font-semibold text-accent hover:underline">
-                Ver la guía completa para marcar tu prenda →
-              </a>
+              {s.marcar ? (
+                <>
+                  <h2 className="font-headline text-2xl font-semibold">Cómo preparar la prenda</h2>
+                  <MarkingCard caseKey={s.marcar} />
+                  <a href="/#marking" className="inline-block text-sm font-semibold text-accent hover:underline">
+                    Ver la guía completa para marcar tu prenda →
+                  </a>
+                </>
+              ) : (
+                <>
+                  <h2 className="font-headline text-2xl font-semibold">Qué necesitamos saber</h2>
+                  <ul className="space-y-3 rounded-lg border border-border bg-background p-6 text-sm leading-relaxed text-foreground/85">
+                    {s.consejos?.map((c) => (
+                      <li key={c} className="flex gap-2.5">
+                        <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                        {c}
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
             </div>
           </div>
         </section>
