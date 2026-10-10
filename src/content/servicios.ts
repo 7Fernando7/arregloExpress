@@ -27,7 +27,7 @@ export const SERVICIOS: Servicio[] = [
     categoria: "ropa",
     nombre: "Bajos de pantalón",
     h1: "Bajos de pantalón a domicilio en Madrid",
-    metaTitle: "Bajos de pantalón y vaqueros a domicilio en Madrid",
+    metaTitle: "Bajos de pantalón a domicilio en Madrid",
     metaDescription:
       "Cogemos el bajo de tus pantalones, vaqueros, faldas y vestidos con recogida y entrega a domicilio en Madrid capital. Presupuesto por WhatsApp.",
     intro: [
@@ -62,7 +62,7 @@ export const SERVICIOS: Servicio[] = [
     categoria: "ropa",
     nombre: "Estrechar chaquetas",
     h1: "Estrechar chaquetas, americanas y abrigos en Madrid",
-    metaTitle: "Estrechar chaquetas, americanas y abrigos en Madrid",
+    metaTitle: "Estrechar chaquetas y abrigos en Madrid",
     metaDescription:
       "Ajustamos chaquetas, americanas, abrigos y otras prendas para que te queden a medida. Recogida y entrega a domicilio en Madrid capital.",
     intro: [
@@ -97,7 +97,7 @@ export const SERVICIOS: Servicio[] = [
     categoria: "ropa",
     nombre: "Cambio de cremalleras",
     h1: "Cambio de cremalleras a domicilio en Madrid",
-    metaTitle: "Cambio y arreglo de cremalleras a domicilio en Madrid",
+    metaTitle: "Cambio de cremalleras a domicilio, Madrid",
     metaDescription:
       "Cambiamos o reparamos cremalleras de pantalones, faldas, vestidos, chaquetas y abrigos. Recogida y entrega a domicilio en Madrid capital.",
     intro: [
@@ -132,7 +132,7 @@ export const SERVICIOS: Servicio[] = [
     categoria: "ropa",
     nombre: "Botones y cierres",
     h1: "Coser y reforzar botones en Madrid",
-    metaTitle: "Coser, reponer y reforzar botones a domicilio en Madrid",
+    metaTitle: "Coser y reforzar botones en Madrid",
     metaDescription:
       "Reponemos y reforzamos botones, broches y otros cierres de chaquetas, abrigos, camisas y pantalones. Recogida y entrega a domicilio en Madrid.",
     intro: [
@@ -167,7 +167,7 @@ export const SERVICIOS: Servicio[] = [
     categoria: "ropa",
     nombre: "Trajes de ocasión",
     h1: "Arreglos de vestidos de fiesta y trajes de ocasión en Madrid",
-    metaTitle: "Arreglos de vestidos de fiesta, bodas y comuniones en Madrid",
+    metaTitle: "Arreglo de vestidos de fiesta en Madrid",
     metaDescription:
       "Ajustamos vestidos de fiesta, de invitada, trajes de boda, comunión y disfraces. Recogida y entrega a domicilio en Madrid capital.",
     intro: [
@@ -202,7 +202,7 @@ export const SERVICIOS: Servicio[] = [
     categoria: "ropa",
     nombre: "Cambio de forros",
     h1: "Cambio de forros de chaquetas y abrigos en Madrid",
-    metaTitle: "Cambio de forro de chaquetas, abrigos y faldas en Madrid",
+    metaTitle: "Cambio de forros de abrigos en Madrid",
     metaDescription:
       "Cambiamos el forro interior roto o gastado de chaquetas, abrigos, americanas y faldas. Recogida y entrega a domicilio en Madrid capital.",
     intro: [
@@ -237,7 +237,7 @@ export const SERVICIOS: Servicio[] = [
     categoria: "ropa",
     nombre: "Textil del hogar",
     h1: "Arreglo de cortinas, cojines y fundas en Madrid",
-    metaTitle: "Arreglo de cortinas, cojines y fundas a domicilio en Madrid",
+    metaTitle: "Arreglo de cortinas a domicilio, Madrid",
     metaDescription:
       "Cogemos bajos de cortinas y arreglamos cojines, fundas y otro textil del hogar. Recogida y entrega a domicilio en Madrid capital.",
     intro: [
@@ -273,7 +273,7 @@ export const SERVICIOS: Servicio[] = [
     nombre: "Arreglo de zapatos",
     h1: "Arreglo de zapatos a domicilio en Madrid",
     imagen: { src: "/brand/zapatos.jpg", alt: "Manos de un zapatero cosiendo un zapato de piel en el taller", width: 1200, height: 900 },
-    metaTitle: "Arreglo de zapatos y calzado a domicilio en Madrid",
+    metaTitle: "Arreglo de zapatos a domicilio, Madrid",
     metaDescription:
       "Recogemos tus zapatos, botas o zapatillas en casa y te los devolvemos arreglados. Tapas, suelas, costuras y más en Madrid capital.",
     intro: [
@@ -315,7 +315,7 @@ export const SERVICIOS: Servicio[] = [
     h1: "Tintorería a domicilio en Madrid",
     // CC0 (rawpixel / Wikimedia Commons)
     imagen: { src: "/brand/tintoreria.jpg", alt: "Trajes y abrigos con funda colgados en una tintorería", width: 1024, height: 684 },
-    metaTitle: "Tintorería a domicilio en Madrid: recogida y entrega",
+    metaTitle: "Tintorería a domicilio en Madrid",
     metaDescription:
       "Tintorería con recogida y entrega a domicilio en Madrid capital: trajes, abrigos, vestidos y prendas delicadas. Presupuesto por WhatsApp.",
     intro: [
