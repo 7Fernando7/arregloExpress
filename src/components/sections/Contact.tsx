@@ -20,6 +20,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import Eyebrow from "@/components/Eyebrow";
 import { WhatsappIcon } from "@/components/icons/WhatsappIcon";
 import { whatsappLink } from "@/lib/contact";
+import { track } from "@/lib/analytics";
 import OpeningHours from "@/components/OpeningHours";
 
 export default function Contact() {
@@ -71,6 +72,7 @@ export default function Contact() {
       return;
     }
 
+    track("formulario-enviado");
     toast({
       title: t("Contact.toast.title"),
       description: t("Contact.toast.description"),
@@ -92,7 +94,7 @@ export default function Contact() {
           </h2>
           <p className="text-lg text-muted-foreground">{t("Contact.description")}</p>
           <a
-            href={whatsappLink(t("Hero.whatsappMessage"))}
+            data-umami-event="whatsapp" data-umami-event-origen="contacto" href={whatsappLink(t("Hero.whatsappMessage"))}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex h-12 items-center gap-2 rounded-md bg-[#25D366] px-6 text-base font-semibold text-white shadow-sm transition-colors hover:bg-[#1ebe5b]"

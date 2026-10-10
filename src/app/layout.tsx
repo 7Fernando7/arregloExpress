@@ -50,6 +50,8 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
+        {/* Analítica sin cookies: cloud.umami.is */}
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="5ddb600d-a58f-474d-b7aa-845c112f01a2" data-domains="arreglosexpressmadrid.com" />
       </head>
       <body className="font-body antialiased" suppressHydrationWarning={true}>
         <LanguageProvider>

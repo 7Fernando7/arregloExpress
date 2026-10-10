@@ -94,7 +94,7 @@ export default function ArregloDeRopaPage() {
                 </p>
                 <div className="flex flex-col gap-3 pt-2 sm:flex-row">
                   <a
-                    href={whatsappLink("¡Hola! Quiero presupuesto para un arreglo de ropa.")}
+                    data-umami-event="whatsapp" data-umami-event-origen="servicio-arreglo-de-ropa" href={whatsappLink("¡Hola! Quiero presupuesto para un arreglo de ropa.")}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-primary px-6 font-semibold text-primary-foreground transition-colors hover:bg-primary/90"

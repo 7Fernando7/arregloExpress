@@ -27,7 +27,7 @@ export default function Hero() {
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <a
-              href={whatsappLink(t("Hero.whatsappMessage"))}
+              data-umami-event="whatsapp" data-umami-event-origen="portada" href={whatsappLink(t("Hero.whatsappMessage"))}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-primary px-6 text-base font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"

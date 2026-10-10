@@ -33,7 +33,7 @@ export default function Payment() {
             ))}
           </ol>
           <a
-            href={STRIPE_PAYMENT_URL}
+            data-umami-event="pagar" href={STRIPE_PAYMENT_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-6 flex h-12 w-full items-center justify-center gap-2 rounded-md bg-accent font-semibold text-accent-foreground transition-colors hover:bg-accent/90"

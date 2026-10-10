@@ -57,7 +57,7 @@ export default function Services() {
               <p className="mt-2 text-sm leading-relaxed text-primary-foreground/80">{t('Services.askText')}</p>
             </div>
             <a
-              href={whatsappLink(t('Services.askMessage'))}
+              data-umami-event="whatsapp" data-umami-event-origen="servicios-preguntar" href={whatsappLink(t('Services.askMessage'))}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-2 inline-flex shrink-0 items-center gap-2 self-start rounded-md bg-accent px-4 py-2 text-sm lg:mt-0 lg:self-center font-semibold text-accent-foreground transition-colors hover:bg-accent/90"

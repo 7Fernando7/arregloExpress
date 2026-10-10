@@ -45,7 +45,7 @@ export default function Footer() {
           <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">{t("Footer.contactTitle")}</h3>
           <p className="text-sm text-primary-foreground/70">{t("Footer.contactText")}</p>
           <a
-            href={whatsappLink(t("Hero.whatsappMessage"))}
+            data-umami-event="whatsapp" data-umami-event-origen="pie" href={whatsappLink(t("Hero.whatsappMessage"))}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm font-semibold text-primary-foreground hover:underline"

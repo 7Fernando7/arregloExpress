@@ -91,7 +91,7 @@ export default async function ServicioPage({ params }: Params) {
               ))}
               <div className="flex flex-col gap-3 pt-2 sm:flex-row">
                 <a
-                  href={whatsappLink(s.whatsapp)}
+                  data-umami-event="whatsapp" data-umami-event-origen={`servicio-${s.slug}`} href={whatsappLink(s.whatsapp)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-primary px-6 font-semibold text-primary-foreground transition-colors hover:bg-primary/90"

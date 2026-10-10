@@ -98,7 +98,7 @@ export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
             </div>
           )}
           <a
-            href={whatsappLink(t('Hero.whatsappMessage'))}
+            data-umami-event="whatsapp" data-umami-event-origen="cabecera" href={whatsappLink(t('Hero.whatsappMessage'))}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={t('WhatsappButton.ariaLabel')}
@@ -168,7 +168,7 @@ export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
               <div className="space-y-4 border-t border-dashed border-border px-6 py-5">
                 {isHome && <LanguageSwitcher />}
                 <a
-                  href={whatsappLink(t('Hero.whatsappMessage'))}
+                  data-umami-event="whatsapp" data-umami-event-origen="menu-movil" href={whatsappLink(t('Hero.whatsappMessage'))}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex h-12 w-full items-center justify-center gap-2 rounded-md bg-[#25D366] font-semibold text-white transition-colors hover:bg-[#1ebe5b]"

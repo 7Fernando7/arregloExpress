@@ -7,6 +7,7 @@ import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 import { whatsappLink } from '@/lib/contact';
 import { estimateDelivery, POSTAL_CODES, toKm, type EstimateResult } from '@/lib/delivery';
 import { cn } from '@/lib/utils';
+import { track } from '@/lib/analytics';
 
 const RINGS_KM = [3, 6, 9];
 // contorno del color de fondo para que los textos del mapa se lean sobre los puntos
@@ -35,14 +36,18 @@ export default function Zones() {
 
   function calculate(value: string) {
     setPostalCode(value);
-    setResult(estimateDelivery(value));
+    const r = estimateDelivery(value);
+    setResult(r);
+    track('calcular-recogida', { cp: value, resultado: r.status });
   }
 
   function onChange(value: string) {
     const digits = value.replace(/\D/g, '').slice(0, 5);
     setPostalCode(digits);
     // calcula al completar las 5 cifras; mientras se escribe, sin mensajes de error
-    setResult(digits.length === 5 ? estimateDelivery(digits) : null);
+    const r = digits.length === 5 ? estimateDelivery(digits) : null;
+    setResult(r);
+    if (r) track('calcular-recogida', { cp: digits, resultado: r.status });
   }
 
   // enlace directo con el cálculo hecho: arreglosexpressmadrid.com/?cp=28010#zones
@@ -106,7 +111,7 @@ export default function Zones() {
                 <div className="space-y-3">
                   <p className="text-sm text-muted-foreground">{t('Zones.outside')}</p>
                   <a
-                    href={whatsappLink(t('Hero.whatsappMessage'))}
+                    data-umami-event="whatsapp" data-umami-event-origen="calculador-fuera-de-zona" href={whatsappLink(t('Hero.whatsappMessage'))}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"
@@ -135,7 +140,7 @@ export default function Zones() {
                     {t('Zones.bulky')}
                   </p>
                   <a
-                    href={whatsappLink(
+                    data-umami-event="pedir-recogida" href={whatsappLink(
                       t('Zones.whatsappMessage').replace('{cp}', estimate.postalCode).replace('{price}', price)
                     )}
                     target="_blank"

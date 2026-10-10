@@ -40,7 +40,7 @@ export default function HeroPhoto({
         className="relative aspect-[4/3] w-full rounded-lg object-cover shadow-[0_12px_32px_-8px_rgba(19,41,75,0.25)]"
       />
       <a
-        href={whatsappLink(whatsappMessage)}
+        data-umami-event="whatsapp" data-umami-event-origen="tarjeta-foto" href={whatsappLink(whatsappMessage)}
         target="_blank"
         rel="noopener noreferrer"
         className="group absolute -bottom-6 left-4 flex max-w-[18rem] items-start gap-3 rounded-lg border border-border bg-background p-4 shadow-[0_8px_24px_-4px_rgba(19,41,75,0.15)] transition-colors hover:border-accent sm:left-6"

@@ -128,6 +128,7 @@ export default function PoliticaPrivacidad() {
           <ul className="list-disc list-inside space-y-1 bg-muted/50 p-4 rounded-lg">
             <li>Netlify Forms (gestión de formularios)</li>
             <li>Stripe Payments Europe, Ltd. (Irlanda), para el cobro de los pagos</li>
+            <li>Umami (estadísticas anónimas de visitas, sin cookies)</li>
             <li>Servicios de alojamiento en la nube</li>
           </ul>
           <p className="mt-3">
@@ -174,11 +175,21 @@ export default function PoliticaPrivacidad() {
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold mb-3">9. Cookies</h2>
+          <h2 className="text-xl font-semibold mb-3">9. Cookies y estadísticas de uso</h2>
+          <p className="mb-3">
+            Este sitio web no utiliza cookies de seguimiento ni de publicidad.
+          </p>
+          <p className="mb-3">
+            Para saber cuántas personas visitan la web y qué secciones les
+            resultan útiles usamos Umami, una herramienta de analítica que no
+            instala cookies ni guarda datos que permitan identificarte. Solo
+            obtenemos estadísticas agregadas y anónimas: páginas vistas, país,
+            tipo de dispositivo y navegador, página de procedencia y botones
+            pulsados (por ejemplo, el de WhatsApp o el calculador de recogida).
+          </p>
           <p>
-            Este sitio web puede utilizar cookies técnicas necesarias para su
-            funcionamiento. Para más información, consulte la Política de
-            Cookies.
+            Los pagos se realizan en la página de Stripe, que aplica su propia
+            política de privacidad y de cookies.
           </p>
         </section>
 
