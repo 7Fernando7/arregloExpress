@@ -263,6 +263,7 @@ export const SERVICIOS: Servicio[] = [
     slug: "arreglo-de-zapatos-madrid",
     nombre: "Arreglo de zapatos",
     h1: "Arreglo de zapatos a domicilio en Madrid",
+    imagen: { src: "/brand/zapatos.jpg", alt: "Manos de un zapatero cosiendo un zapato de piel en el taller", width: 1200, height: 900 },
     metaTitle: "Arreglo de zapatos y calzado a domicilio en Madrid",
     metaDescription:
       "Recogemos tus zapatos, botas o zapatillas en casa y te los devolvemos arreglados. Tapas, suelas, costuras y más en Madrid capital.",
