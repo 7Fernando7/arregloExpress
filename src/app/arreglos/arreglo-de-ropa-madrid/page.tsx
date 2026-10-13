@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CalendarClock, ChevronRight, Home, MapPin, MessageCircle } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import HowItWorks from "@/components/sections/HowItWorks";
@@ -12,6 +12,7 @@ import { ROPA_SLUG, SERVICIOS, serviciosDeRopa } from "@/content/servicios";
 import { translations } from "@/lib/i18n";
 import { whatsappLink } from "@/lib/contact";
 import { BUSINESS_ID, JsonLd, SITE_NAME, SITE_URL, localBusinessJsonLd } from "@/lib/site";
+import Icono from "@/components/Icono";
 
 // Página que agrupa todos los arreglos de ropa (el desplegable «Servicios» lleva aquí)
 const TITLE = "Arreglos de ropa a domicilio en Madrid";
@@ -106,14 +107,14 @@ export default function ArregloDeRopaPage() {
                     href="/#zones"
                     className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-primary/25 px-6 font-semibold text-foreground transition-colors hover:border-primary"
                   >
-                    <Home className="h-5 w-5" />
+                    <Icono name="casa" className="h-5 w-5" />
                     Calcular recogida
                   </a>
                 </div>
                 <ul className="grid gap-3 border-t border-dashed border-border pt-6 text-sm font-medium text-foreground/85 sm:grid-cols-3">
-                  <li className="flex items-start gap-2.5"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" />Recogida y entrega en todo Madrid capital</li>
-                  <li className="flex items-start gap-2.5"><MessageCircle className="mt-0.5 h-4 w-4 shrink-0 text-accent" />Presupuesto sin compromiso con una foto</li>
-                  <li className="flex items-start gap-2.5"><CalendarClock className="mt-0.5 h-4 w-4 shrink-0 text-accent" />Mínimo 3 días entre recogida y entrega</li>
+                  <li className="flex items-start gap-2.5"><Icono name="ubicacion" className="h-5 w-5" />Recogida y entrega en todo Madrid capital</li>
+                  <li className="flex items-start gap-2.5"><Icono name="chat" className="h-5 w-5" />Presupuesto sin compromiso con una foto</li>
+                  <li className="flex items-start gap-2.5"><Icono name="calendario" className="h-5 w-5" />Mínimo 3 días entre recogida y entrega</li>
                 </ul>
               </div>
               <HeroPhoto

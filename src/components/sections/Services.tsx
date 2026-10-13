@@ -1,5 +1,6 @@
 'use client';
-import { Scissors, Ruler, Replace, CircleDot, Sparkles, Layers, Home, Footprints, WashingMachine, MessageCircle, ArrowRight } from 'lucide-react';
+import { MessageCircle, ArrowRight } from 'lucide-react';
+import Icono, { type IconoNombre } from '@/components/Icono';
 import { useLanguage } from '@/context/LanguageContext';
 import Eyebrow from '@/components/Eyebrow';
 import { whatsappLink } from '@/lib/contact';
@@ -8,15 +9,15 @@ import { SERVICIOS } from '@/content/servicios';
 export default function Services() {
   const { t } = useLanguage();
   const services = [
-    { icon: Scissors, key: 'service1' },
-    { icon: Ruler, key: 'service2' },
-    { icon: Replace, key: 'service3' },
-    { icon: CircleDot, key: 'service4' },
-    { icon: Sparkles, key: 'service5' },
-    { icon: Layers, key: 'service6' },
-    { icon: Home, key: 'service7' },
-    { icon: Footprints, key: 'service8' },
-    { icon: WashingMachine, key: 'service9' },
+    { icon: 'serv-bajos' as IconoNombre, key: 'service1' },
+    { icon: 'serv-estrechar' as IconoNombre, key: 'service2' },
+    { icon: 'serv-cremalleras' as IconoNombre, key: 'service3' },
+    { icon: 'serv-botones' as IconoNombre, key: 'service4' },
+    { icon: 'serv-ocasion' as IconoNombre, key: 'service5' },
+    { icon: 'serv-forros' as IconoNombre, key: 'service6' },
+    { icon: 'serv-hogar' as IconoNombre, key: 'service7' },
+    { icon: 'serv-zapatos' as IconoNombre, key: 'service8' },
+    { icon: 'serv-tintoreria' as IconoNombre, key: 'service9' },
   ];
 
   return (
@@ -30,15 +31,13 @@ export default function Services() {
           <p className="text-lg text-muted-foreground">{t('Services.description')}</p>
         </div>
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map(({ icon: Icon, key }, index) => (
+          {services.map(({ icon, key }, index) => (
             <a
               key={key}
               href={`/arreglos/${SERVICIOS[index].slug}`}
               className="group flex flex-col rounded-lg border border-border bg-card p-6 transition-colors hover:border-dashed hover:border-accent"
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-md bg-background text-primary ring-1 ring-border transition-colors group-hover:text-accent">
-                <Icon className="h-5 w-5" />
-              </span>
+              <Icono name={icon} className="h-16 w-16" />
               <h3 className="mt-5 font-headline text-xl font-semibold leading-snug">
                 {t(`Services.${key}.title`)}
               </h3>

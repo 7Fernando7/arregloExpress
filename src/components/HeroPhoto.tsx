@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { Camera } from "lucide-react";
 import { WhatsappIcon } from "@/components/icons/WhatsappIcon";
 import { whatsappLink } from "@/lib/contact";
+import Icono from "@/components/Icono";
 
 // Foto de cabecera con marco de costura y tarjeta «Mándanos una foto» (portada y páginas de servicio)
 export default function HeroPhoto({
@@ -45,9 +45,7 @@ export default function HeroPhoto({
         rel="noopener noreferrer"
         className="group absolute -bottom-6 left-4 flex max-w-[18rem] items-start gap-3 rounded-lg border border-border bg-background p-4 shadow-[0_8px_24px_-4px_rgba(19,41,75,0.15)] transition-colors hover:border-accent sm:left-6"
       >
-        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
-          <Camera className="h-5 w-5" />
-        </span>
+        <Icono name="camara" className="h-9 w-9" />
         <span className="text-sm leading-snug text-muted-foreground">
           <strong className="block font-semibold text-foreground">{badgeTitle}</strong>
           {badgeText}

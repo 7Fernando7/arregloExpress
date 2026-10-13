@@ -1,17 +1,17 @@
 "use client";
 import { useLanguage } from "@/context/LanguageContext";
 import HeroPhoto from "@/components/HeroPhoto";
-import { Camera, Home, MapPin, MessageCircle, Truck } from "lucide-react";
 import Eyebrow from "@/components/Eyebrow";
 import { WhatsappIcon } from "@/components/icons/WhatsappIcon";
 import { whatsappLink } from "@/lib/contact";
+import Icono from "@/components/Icono";
 
 export default function Hero() {
   const { t } = useLanguage();
   const trust = [
-    { icon: Truck, text: t("Hero.trust1") },
-    { icon: MapPin, text: t("Hero.trust2") },
-    { icon: MessageCircle, text: t("Hero.trust3") },
+    { icon: "moto" as const, text: t("Hero.trust1") },
+    { icon: "ubicacion" as const, text: t("Hero.trust2") },
+    { icon: "chat" as const, text: t("Hero.trust3") },
   ];
 
   return (
@@ -39,14 +39,14 @@ export default function Hero() {
               href="#zones"
               className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-primary/25 bg-background px-6 text-base font-semibold text-foreground transition-colors hover:border-primary"
             >
-              <Home className="h-5 w-5" />
+              <Icono name="casa" className="h-5 w-5" />
               {t("Hero.estimateButton")}
             </a>
           </div>
           <ul className="grid gap-3 border-t border-dashed border-border pt-6 sm:grid-cols-3">
-            {trust.map(({ icon: Icon, text }) => (
+            {trust.map(({ icon, text }) => (
               <li key={text} className="flex items-start gap-2.5 text-sm font-medium text-foreground/85">
-                <Icon className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                <Icono name={icon} className="h-5 w-5" />
                 {text}
               </li>
             ))}

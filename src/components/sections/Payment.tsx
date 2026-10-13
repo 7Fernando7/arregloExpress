@@ -1,8 +1,9 @@
 'use client';
-import { CreditCard, Lock } from 'lucide-react';
+import { CreditCard } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import Eyebrow from '@/components/Eyebrow';
 import { STRIPE_PAYMENT_URL } from '@/lib/contact';
+import Icono from "@/components/Icono";
 
 const METHODS = ['Visa', 'Mastercard', 'Apple Pay', 'Google Pay', 'Bizum'];
 
@@ -49,7 +50,7 @@ export default function Payment() {
             ))}
           </ul>
           <p className="mt-4 flex items-center justify-center gap-1.5 text-center text-xs text-muted-foreground">
-            <Lock className="h-3.5 w-3.5" />
+            <Icono name="candado" className="h-4 w-4" />
             {t('Payment.secure')}
           </p>
         </div>

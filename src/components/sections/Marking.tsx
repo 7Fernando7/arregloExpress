@@ -1,72 +1,9 @@
 'use client';
-import { Shirt } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import Eyebrow from '@/components/Eyebrow';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 import { whatsappLink } from '@/lib/contact';
-
-// Dibujos de línea (64x64): prenda en azul, marca de costura e imperdibles en terracota
-function Pin({ x, y, vertical = false }: { x: number; y: number; vertical?: boolean }) {
-  return (
-    <g transform={`translate(${x} ${y}) rotate(${vertical ? 90 : 0})`} className="stroke-accent">
-      <path d="M-4 0h7" strokeWidth={1.4} />
-      <circle cx={-4.6} cy={0} r={1.3} className="fill-accent" stroke="none" />
-    </g>
-  );
-}
-const Seam = (props: React.SVGProps<SVGPathElement>) => (
-  <path {...props} className="stroke-accent" strokeWidth={1.6} strokeDasharray="2.5 2" />
-);
-
-const ILLUSTRATIONS: Record<string, React.ReactNode> = {
-  pants: (
-    <>
-      <path d="M20 8h24l3 48H35l-3-32-3 32H17z" />
-      <path d="M20 13h24" />
-      <Seam d="M17.6 47h11.4" />
-      <Pin x={23} y={50.5} />
-    </>
-  ),
-  skirt: (
-    <>
-      <path d="M24 10h16l8 44H16z" />
-      <path d="M23.2 15h17.6" />
-      <Seam d="M17.6 45h28.8" />
-      <Pin x={26} y={48.5} />
-      <Pin x={38} y={48.5} />
-    </>
-  ),
-  sleeves: (
-    <>
-      <path d="M22 8l-6 2-10 20 6 3 6-11v34h28V22l6 11 6-3-10-20-6-2c-2 4-18 4-20 0z" />
-      <Seam d="M8.2 25.6l6.2 3" />
-      <Pin x={12} y={23} />
-    </>
-  ),
-  takeIn: (
-    <>
-      <path d="M22 8l-6 2-10 20 6 3 6-11v34h28V22l6 11 6-3-10-20-6-2c-2 4-18 4-20 0z" />
-      <Seam d="M22 26v26" />
-      <Seam d="M42 26v26" />
-      <Pin x={22} y={32} vertical />
-      <Pin x={22} y={44} vertical />
-      <Pin x={42} y={32} vertical />
-      <Pin x={42} y={44} vertical />
-    </>
-  ),
-  zips: (
-    <>
-      <path d="M14 8h36v48H14z" />
-      <path d="M32 12v34" className="stroke-accent" strokeWidth={1.4} />
-      {[15, 20, 25, 30, 35, 40].map((y) => (
-        <path key={y} d={`M29 ${y}h6`} strokeWidth={1.2} />
-      ))}
-      <path d="M30 46h4v6h-4z" className="fill-accent stroke-accent" />
-      <circle cx={22} cy={22} r={1.8} />
-      <circle cx={22} cy={34} r={1.8} />
-    </>
-  ),
-};
+import Icono, { type IconoNombre } from "@/components/Icono";
 
 const CASES: { key: string; steps: number; alt: boolean }[] = [
   { key: 'pants', steps: 3, alt: true },
@@ -82,18 +19,7 @@ export function MarkingCard({ caseKey: key }: { caseKey: string }) {
   const { steps, alt } = CASES.find((c) => c.key === key)!;
   return (
     <article className="flex flex-col rounded-lg border border-border bg-card p-6">
-      <svg
-        viewBox="0 0 64 64"
-        className="h-16 w-16 text-primary"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.8}
-        strokeLinejoin="round"
-        strokeLinecap="round"
-        aria-hidden
-      >
-        {ILLUSTRATIONS[key]}
-      </svg>
+      <Icono name={`marcar-${key}` as IconoNombre} className="h-16 w-16" />
       <h3 className="mt-4 font-headline text-xl font-semibold leading-snug">{t(`Marking.${key}.title`)}</h3>
       <ol className="mt-3 space-y-2 text-sm leading-relaxed text-muted-foreground">
         {Array.from({ length: steps }, (_, i) => (
@@ -140,7 +66,7 @@ export default function Marking() {
             ))}
           </ul>
           <p className="mt-4 flex items-start gap-2.5 border-t border-dashed border-accent/40 pt-4 text-sm font-medium leading-relaxed text-foreground">
-            <Shirt className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+            <Icono name="camiseta" className="h-5 w-5" />
             {t('Marking.reference')}
           </p>
         </div>

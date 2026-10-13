@@ -1,6 +1,5 @@
 'use client';
 import { useEffect, useMemo, useState } from 'react';
-import { MapPin, Package } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import Eyebrow from '@/components/Eyebrow';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
@@ -8,6 +7,7 @@ import { whatsappLink } from '@/lib/contact';
 import { estimateDelivery, POSTAL_CODES, toKm, type EstimateResult } from '@/lib/delivery';
 import { cn } from '@/lib/utils';
 import { track } from '@/lib/analytics';
+import Icono from "@/components/Icono";
 
 const RINGS_KM = [3, 6, 9];
 // contorno del color de fondo para que los textos del mapa se lean sobre los puntos
@@ -124,7 +124,7 @@ export default function Zones() {
               {estimate && (
                 <div className="space-y-4 border-t border-dashed border-border pt-4">
                   <p className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <MapPin className="h-4 w-4 text-accent" />
+                    <Icono name="ubicacion" className="h-5 w-5" />
                     {t('Zones.distance')
                       .replace('{cp}', estimate.postalCode)
                       .replace('{km}', formatKm(estimate.km))}
@@ -136,7 +136,7 @@ export default function Zones() {
                   </p>
                   <p className="text-xs text-muted-foreground">{t('Zones.note')}</p>
                   <p className="flex gap-2 rounded-md bg-accent/10 px-3 py-2 text-xs leading-relaxed text-foreground">
-                    <Package className="mt-0.5 h-3.5 w-3.5 shrink-0 text-accent" />
+                    <Icono name="paquete" className="h-5 w-5" />
                     {t('Zones.bulky')}
                   </p>
                   <a

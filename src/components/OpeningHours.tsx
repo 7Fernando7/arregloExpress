@@ -3,6 +3,7 @@ import { Clock } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { OPENING_HOURS } from '@/lib/site';
 import { cn } from '@/lib/utils';
+import Icono from "@/components/Icono";
 
 const time = (t: string) => t.replace(/^0/, '');
 
@@ -12,7 +13,7 @@ export default function OpeningHours({ className, light = false }: { className?:
   return (
     <div className={cn('space-y-2 text-sm', className)}>
       <p className={cn('flex items-center gap-2 font-semibold', light ? 'text-primary-foreground' : 'text-foreground')}>
-        <Clock className="h-4 w-4 text-accent" />
+        {light ? <Clock className="h-4 w-4 text-accent" /> : <Icono name="reloj" className="h-5 w-5" />}
         {t('Hours.title')}
       </p>
       <dl className={cn('grid grid-cols-[auto_1fr] gap-x-6 gap-y-1', light ? 'text-primary-foreground/70' : 'text-muted-foreground')}>

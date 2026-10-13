@@ -1,11 +1,11 @@
 'use client';
 import { useState } from 'react';
-import { Images } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import Eyebrow from '@/components/Eyebrow';
 import PhotoCarousel from '@/components/PhotoCarousel';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import type { Work } from '@/lib/trabajos';
+import Icono from "@/components/Icono";
 
 const INITIAL = 8;
 
@@ -50,7 +50,7 @@ export default function Works({ works }: { works: Work[] }) {
                 {work.caption}
                 {work.images.length > 1 && (
                   <span className="flex shrink-0 items-center gap-1 text-xs text-muted-foreground">
-                    <Images className="h-3.5 w-3.5" />
+                    <Icono name="fotos" className="h-4 w-4" />
                     {work.images.length}
                   </span>
                 )}
