@@ -45,3 +45,6 @@ firebase-debug.log
 firestore-debug.log
 # fotos optimizadas (se generan desde trabajos/ en cada build)
 /public/trabajos/
+
+# perfil de Chrome de tools/cdp.js
+/tools/.chrome-cdp/
