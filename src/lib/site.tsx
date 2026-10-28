@@ -21,7 +21,7 @@ export function localBusinessJsonLd() {
     "@id": BUSINESS_ID,
     name: SITE_NAME,
     description:
-      "Arreglos de ropa, zapatos y tintorería con recogida y entrega a domicilio en Madrid capital: bajos, estrechar, cremalleras, botones, forros, trajes de ocasión y textil del hogar.",
+      "Arreglos de ropa, zapatos, maletas y tintorería con recogida y entrega a domicilio en Madrid capital: bajos, estrechar, cremalleras, botones, forros, trajes de ocasión, textil del hogar y fundas de música y DJ.",
     url: SITE_URL,
     logo: `${SITE_URL}/brand/logo-mark-512.png`,
     image: `${SITE_URL}/opengraph-image.png`,
@@ -37,7 +37,7 @@ export function localBusinessJsonLd() {
     })),
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Arreglos de ropa, zapatos y tintorería",
+      name: "Arreglos de ropa, zapatos, maletas y tintorería",
       itemListElement: SERVICIOS.map((s) => ({
         "@type": "Offer",
         itemOffered: { "@type": "Service", name: s.nombre, url: `${SITE_URL}/arreglos/${s.slug}` },

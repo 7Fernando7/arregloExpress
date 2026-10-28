@@ -6,7 +6,7 @@ export type IconoNombre =
   | "aguja" | "calendario" | "camara" | "camiseta" | "candado" | "casa" | "chat" | "correo"
   | "estrella" | "fotos" | "moto" | "paquete" | "reloj" | "tarjeta" | "tijeras" | "ubicacion"
   | "serv-bajos" | "serv-estrechar" | "serv-cremalleras" | "serv-botones" | "serv-ocasion"
-  | "serv-forros" | "serv-hogar" | "serv-zapatos" | "serv-tintoreria"
+  | "serv-forros" | "serv-hogar" | "serv-zapatos" | "serv-tintoreria" | "serv-maletas"
   | "marcar-pants" | "marcar-skirt" | "marcar-sleeves" | "marcar-takeIn" | "marcar-zips"
   | "paso-1" | "paso-2" | "paso-3";
 

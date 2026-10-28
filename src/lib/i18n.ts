@@ -14,7 +14,7 @@ export const translations = {
       menu: "Menu",
     },
     Hero: {
-      eyebrow: "Services: clothing, shoes & dry cleaning",
+      eyebrow: "Services: clothing, shoes, luggage & dry cleaning",
       title: "Clothing alterations, picked up and delivered at home in Madrid",
       description:
         "We collect your clothes and shoes at home or at the office, alter them or take them to the dry cleaner's, and bring them back ready to wear.",
@@ -140,6 +140,10 @@ export const translations = {
         title: "Dry cleaning",
         description: "Suits, coats, party dresses and delicate garments.",
       },
+      service10: {
+        title: "Luggage and cases",
+        description: "Suitcase wheels, handles and zips, plus music and DJ gear cases.",
+      },
       askTitle: "Can't see your alteration?",
       askText: "Ask us on WhatsApp and we'll tell you if we can do it.",
       askButton: "Ask us",
@@ -180,7 +184,7 @@ export const translations = {
       distance: "{cp} · about {km} km from our workshop",
       totalLabel: "pickup + delivery",
       bulky:
-        "Bulky items (wedding dresses, duvets, large curtains) may have a surcharge, and rugs need special transport: we'll give you the price on WhatsApp.",
+        "Bulky items (wedding dresses, duvets, large curtains), suitcases and flight cases may have a surcharge, and rugs need special transport: we'll give you the price on WhatsApp.",
       approx: "approx.",
       note: "Indicative estimate. We'll confirm the final price on WhatsApp before pickup. At least 3 days between pickup and delivery.",
       whatsappButton: "Book pickup via WhatsApp",
@@ -258,7 +262,7 @@ export const translations = {
     },
     Footer: {
       tagline:
-        "Clothing and shoe repairs and dry cleaning, with home pickup and delivery across Madrid city.",
+        "Clothing, shoe and luggage repairs and dry cleaning, with home pickup and delivery across Madrid city.",
       contactTitle: "Contact",
       contactText: "We handle orders via WhatsApp, email and the contact form.",
       sectionsTitle: "Website",
@@ -285,7 +289,7 @@ export const translations = {
       menu: "Menú",
     },
     Hero: {
-      eyebrow: "Servicios: ropa, zapatos y tintorería",
+      eyebrow: "Servicios: ropa, zapatos, maletas y tintorería",
       title: "Arreglos de ropa con recogida y entrega a domicilio en Madrid",
       description:
         "Recogemos tu ropa y tus zapatos en casa o en la oficina, los arreglamos o los llevamos a la tintorería y te los devolvemos listos para usar.",
@@ -411,6 +415,10 @@ export const translations = {
         title: "Tintorería",
         description: "Trajes, abrigos, vestidos de fiesta y prendas delicadas.",
       },
+      service10: {
+        title: "Maletas y fundas",
+        description: "Ruedas, asas y cremalleras de maletas, y fundas de música y DJ.",
+      },
       askTitle: "¿No ves tu arreglo?",
       askText: "Pregúntanos por WhatsApp y te decimos si podemos hacerlo.",
       askButton: "Preguntar",
@@ -451,7 +459,7 @@ export const translations = {
       distance: "{cp} · a unos {km} km de nuestro taller",
       totalLabel: "recogida + entrega",
       bulky:
-        "Las prendas voluminosas (vestidos de novia, edredones, cortinas grandes) pueden llevar suplemento, y las alfombras necesitan un transporte especial: te damos el precio por WhatsApp.",
+        "Las prendas voluminosas (vestidos de novia, edredones, cortinas grandes), las maletas y los flight cases pueden llevar suplemento, y las alfombras necesitan un transporte especial: te damos el precio por WhatsApp.",
       approx: "aprox.",
       note: "Estimación orientativa. Te confirmamos el precio final por WhatsApp antes de recoger. Mínimo 3 días entre recogida y entrega.",
       whatsappButton: "Pedir recogida por WhatsApp",
@@ -529,7 +537,7 @@ export const translations = {
     },
     Footer: {
       tagline:
-        "Arreglos de ropa, zapatos y tintorería con recogida y entrega a domicilio en todo Madrid capital.",
+        "Arreglos de ropa, zapatos, maletas y tintorería con recogida y entrega a domicilio en todo Madrid capital.",
       contactTitle: "Contacto",
       contactText: "Atendemos por WhatsApp, por correo y por el formulario de contacto.",
       sectionsTitle: "La web",

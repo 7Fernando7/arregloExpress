@@ -32,11 +32,12 @@ export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
     ...(STRIPE_PAYMENT_URL ? [{ href: '#pay', label: t('Payment.menu') }] : []),
     { href: '#contact', label: t('Header.contact') },
   ];
-  // los 3 servicios principales, cada uno con su página
+  // los servicios principales, cada uno con su página
   const serviceLinks = [
     { href: `/arreglos/${ROPA_SLUG}`, label: t('Header.clothes') },
     { href: '/arreglos/arreglo-de-zapatos-madrid', label: t('Services.service8.title') },
     { href: '/arreglos/tintoreria-a-domicilio-madrid', label: t('Services.service9.title') },
+    { href: '/arreglos/arreglo-de-maletas-madrid', label: t('Services.service10.title') },
   ];
   // en el menú del móvil caben todas las secciones
   const menuLinks = [

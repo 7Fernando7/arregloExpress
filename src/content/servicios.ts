@@ -1,12 +1,12 @@
 // Páginas por servicio (/arreglos/[slug]). Solo español: son las que posicionan en Google.
-// El orden importa: coincide con las tarjetas de la portada (Services.tsx, service1…service9).
+// El orden importa: coincide con las tarjetas de la portada (Services.tsx, service1…service10).
 // Sin precios ni plazos inventados: el precio se da por WhatsApp y el mínimo es 3 días.
 
 export type MarkingKey = "pants" | "skirt" | "sleeves" | "takeIn" | "zips";
 
 export type Servicio = {
   slug: string;
-  categoria: "ropa" | "calzado" | "tintoreria";
+  categoria: "ropa" | "calzado" | "tintoreria" | "maletas";
   nombre: string; // texto corto para enlaces y migas de pan
   h1: string;
   metaTitle: string; // sin la marca (la añade la plantilla del layout)
@@ -353,6 +353,52 @@ export const SERVICIOS: Servicio[] = [
       },
     ],
     whatsapp: "¡Hola! Quiero presupuesto para la tintorería.",
+  },
+  {
+    slug: "arreglo-de-maletas-madrid",
+    categoria: "maletas",
+    nombre: "Arreglo de maletas y fundas",
+    h1: "Arreglo de maletas y fundas a domicilio en Madrid",
+    imagen: { src: "/brand/maletas.jpg", alt: "Manos de un artesano cosiendo el asa de una maleta en el taller, junto a una funda acolchada de DJ", width: 1200, height: 900 },
+    metaTitle: "Arreglo de maletas y fundas de DJ, Madrid",
+    metaDescription:
+      "Recogemos tu maleta o la funda de tu equipo de música o DJ en casa y te la devolvemos arreglada: ruedas, asas, cremalleras y cierres. Madrid capital.",
+    intro: [
+      "Una maleta con una rueda rota o una cremallera que ya no cierra no tiene por qué acabar en la basura. Recogemos tu maleta de viaje, la funda de tu guitarra o teclado, o el flight case o la bolsa de tu equipo de DJ, y te la devolvemos arreglada.",
+      "Cada arreglo es distinto: mándanos una foto por WhatsApp y te confirmamos si se puede hacer y el precio antes de recogerla.",
+    ],
+    incluye: [
+      "Ruedas y asas telescópicas de maletas",
+      "Asas, tiradores y correas",
+      "Cremalleras y cursores",
+      "Costuras y tela rota en fundas acolchadas",
+      "Cierres, bisagras y esquineras de flight cases",
+    ],
+    incluyeNota: "Son ejemplos: mándanos una foto y te confirmamos qué se puede hacer en tu caso.",
+    consejos: [
+      "Haz una foto de lo que hay que arreglar y otra de la maleta o la funda entera.",
+      "Dinos la marca y el modelo si los sabes: ayudan a encontrar la pieza de recambio (ruedas, asas, cierres).",
+      "Vacía la maleta o la funda antes de la recogida: solo nos llevamos la maleta o la funda, no el equipo.",
+    ],
+    preguntas: [
+      {
+        p: "¿Qué arreglos de maletas hacéis?",
+        r: "Mándanos una foto por WhatsApp de lo que le pasa a tu maleta o funda y te confirmamos si podemos hacerlo y el precio antes de recogerla.",
+      },
+      {
+        p: "¿Arregláis fundas y flight cases de música y DJ?",
+        r: "Sí: fundas de guitarra, bajo o teclado, bolsas de controladora y de discos, y flight cases. Mándanos una foto y te decimos qué se puede hacer.",
+      },
+      {
+        p: "¿La recogida cuesta lo mismo?",
+        r: "Una maleta o un flight case no cabe en la moto, así que la recogida va en coche y el precio cambia. Te lo damos por WhatsApp antes de recoger.",
+      },
+      {
+        p: "¿Cuánto tardáis?",
+        r: "Necesitamos un mínimo de 3 días entre la recogida y la entrega. Si hay que pedir una pieza de recambio puede tardar más: te lo decimos con el presupuesto.",
+      },
+    ],
+    whatsapp: "¡Hola! Quiero presupuesto para arreglar una maleta o una funda.",
   },
 ];
 

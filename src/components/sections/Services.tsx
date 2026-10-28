@@ -18,6 +18,7 @@ export default function Services() {
     { icon: 'serv-hogar' as IconoNombre, key: 'service7' },
     { icon: 'serv-zapatos' as IconoNombre, key: 'service8' },
     { icon: 'serv-tintoreria' as IconoNombre, key: 'service9' },
+    { icon: 'serv-maletas' as IconoNombre, key: 'service10' },
   ];
 
   return (
@@ -50,7 +51,7 @@ export default function Services() {
               </span>
             </a>
           ))}
-          <article className="flex flex-col justify-between gap-4 rounded-lg bg-primary p-6 text-primary-foreground lg:col-span-3 lg:flex-row lg:items-center">
+          <article className="flex flex-col justify-between gap-4 rounded-lg bg-primary p-6 text-primary-foreground sm:col-span-2 lg:flex-row lg:items-center">
             <div>
               <h3 className="font-headline text-xl font-semibold leading-snug">{t('Services.askTitle')}</h3>
               <p className="mt-2 text-sm leading-relaxed text-primary-foreground/80">{t('Services.askText')}</p>
