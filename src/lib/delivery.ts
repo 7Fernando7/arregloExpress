@@ -1,4 +1,4 @@
-// Estimación del precio de recogida + entrega según el código postal.
+// Estimación del precio de recogida + entrega según el código postal o la dirección exacta.
 // Solo Madrid capital (28001–28055). Coordenadas: centroides de GeoNames.
 
 // Taller: Calle de los Madrazo 14, 28014 Madrid (OpenStreetMap)
@@ -95,6 +95,9 @@ export function toKm(lat: number, lng: number) {
 
 export type DeliveryEstimate = {
   postalCode: string;
+  address?: string; // solo si se calculó con la dirección exacta
+  lat: number;
+  lng: number;
   km: number; // distancia aproximada por calle, un trayecto
   total: number; // recogida + entrega
 };
@@ -104,15 +107,22 @@ export type EstimateResult =
   | { status: "invalid" }
   | { status: "outside" };
 
+export function estimateFromCoords(
+  lat: number,
+  lng: number,
+  postalCode: string,
+  address?: string
+): DeliveryEstimate {
+  const km = haversineKm(ORIGIN.lat, ORIGIN.lng, lat, lng) * PRICING.roadFactor;
+  const trip = Math.max(PRICING.minTrip, PRICING.base + PRICING.perKm * km);
+  const total = Math.ceil((trip * PRICING.trips) / PRICING.roundTo) * PRICING.roundTo;
+  return { postalCode, address, lat, lng, km, total };
+}
+
 export function estimateDelivery(input: string): EstimateResult {
   const postalCode = input.trim();
   if (!/^\d{5}$/.test(postalCode)) return { status: "invalid" };
   const coords = POSTAL_CODES[postalCode];
   if (!coords) return { status: "outside" };
-
-  const km = haversineKm(ORIGIN.lat, ORIGIN.lng, coords[0], coords[1]) * PRICING.roadFactor;
-  const trip = Math.max(PRICING.minTrip, PRICING.base + PRICING.perKm * km);
-  const total = Math.ceil((trip * PRICING.trips) / PRICING.roundTo) * PRICING.roundTo;
-
-  return { status: "ok", estimate: { postalCode, km, total } };
+  return { status: "ok", estimate: estimateFromCoords(coords[0], coords[1], postalCode) };
 }

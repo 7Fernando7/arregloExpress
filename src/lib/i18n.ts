@@ -174,14 +174,18 @@ export const translations = {
       eyebrow: "Pickup & delivery",
       title: "Calculate your pickup and delivery",
       description:
-        "We cover all of Madrid city. Enter your postal code and get an instant estimate.",
-      label: "Your postal code",
-      placeholder: "e.g. 28010",
+        "We cover all of Madrid city. Enter your address or postal code and get an instant estimate.",
+      label: "Your address or postal code",
+      placeholder: "e.g. Calle Alcalá 100 or 28010",
       button: "Calculate",
       invalid: "Enter a 5-digit postal code.",
+      notFound:
+        "We couldn't find that address in Madrid city. Try street and number, or your postal code.",
+      addNumber: "add the number",
+      attribution: "Addresses: © CartoCiudad (IGN)",
       outside:
         "For now we only cover Madrid city (28001 to 28055). Message us on WhatsApp and we'll see what we can do.",
-      distance: "{cp} · about {km} km from our workshop",
+      distance: "{place} · about {km} km from our workshop",
       totalLabel: "pickup + delivery",
       bulky:
         "Bulky items (wedding dresses, duvets, large curtains), suitcases and flight cases may have a surcharge, and rugs need special transport: we'll give you the price on WhatsApp.",
@@ -190,6 +194,8 @@ export const translations = {
       whatsappButton: "Book pickup via WhatsApp",
       whatsappMessage:
         "Hi! I'd like a pickup. My postal code is {cp} (estimate: {price}).",
+      whatsappMessageAddress:
+        "Hi! I'd like a pickup. My address is {address}, {cp} (estimate: {price}).",
       mapTitle: "Madrid city",
       mapOrigin: "Our workshop",
       mapHint: "Tap a dot to see its postal code",
@@ -449,14 +455,18 @@ export const translations = {
       eyebrow: "Recogida y entrega",
       title: "Calcula tu recogida y entrega",
       description:
-        "Cubrimos todo Madrid capital. Escribe tu código postal y te damos una estimación al momento.",
-      label: "Tu código postal",
-      placeholder: "Ej. 28010",
+        "Cubrimos todo Madrid capital. Escribe tu dirección o tu código postal y te damos una estimación al momento.",
+      label: "Tu dirección o código postal",
+      placeholder: "Ej. Calle Alcalá 100 o 28010",
       button: "Calcular",
       invalid: "Introduce un código postal de 5 cifras.",
+      notFound:
+        "No encontramos esa dirección en Madrid capital. Prueba con calle y número, o con tu código postal.",
+      addNumber: "añade el número",
+      attribution: "Direcciones: © CartoCiudad (IGN)",
       outside:
         "De momento solo cubrimos Madrid capital (del 28001 al 28055). Escríbenos por WhatsApp y lo vemos.",
-      distance: "{cp} · a unos {km} km de nuestro taller",
+      distance: "{place} · a unos {km} km de nuestro taller",
       totalLabel: "recogida + entrega",
       bulky:
         "Las prendas voluminosas (vestidos de novia, edredones, cortinas grandes), las maletas y los flight cases pueden llevar suplemento, y las alfombras necesitan un transporte especial: te damos el precio por WhatsApp.",
@@ -465,6 +475,8 @@ export const translations = {
       whatsappButton: "Pedir recogida por WhatsApp",
       whatsappMessage:
         "¡Hola! Quiero pedir una recogida. Mi código postal es {cp} (estimación: {price}).",
+      whatsappMessageAddress:
+        "¡Hola! Quiero pedir una recogida. Mi dirección es {address}, {cp} (estimación: {price}).",
       mapTitle: "Madrid capital",
       mapOrigin: "Nuestro taller",
       mapHint: "Toca un punto para ver su código postal",

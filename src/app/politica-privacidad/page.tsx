@@ -129,6 +129,10 @@ export default function PoliticaPrivacidad() {
             <li>Netlify Forms (gestión de formularios)</li>
             <li>Stripe Payments Europe, Ltd. (Irlanda), para el cobro de los pagos</li>
             <li>Umami (estadísticas anónimas de visitas, sin cookies)</li>
+            <li>
+              CartoCiudad (Instituto Geográfico Nacional), solo para localizar la
+              dirección que escribes en el calculador de recogida; no la guardamos
+            </li>
             <li>Servicios de alojamiento en la nube</li>
           </ul>
           <p className="mt-3">
