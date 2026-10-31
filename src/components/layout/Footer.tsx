@@ -9,7 +9,7 @@ import OpeningHours from "@/components/OpeningHours";
 import { usePathname } from "next/navigation";
 
 export default function Footer() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const home = usePathname() === "/" ? "" : "/";
   const links = [
     { href: "#how-it-works", label: t("Header.howItWorks") },
@@ -26,6 +26,20 @@ export default function Footer() {
         <div className="space-y-4">
           <Logo variant="light" className="h-20" />
           <p className="max-w-xs text-sm leading-relaxed text-primary-foreground/70">{t("Footer.tagline")}</p>
+          {/* otra web nuestra; sin noreferrer para que HostMyBag vea de dónde llega la visita */}
+          <a
+            data-umami-event="hostmybag"
+            href={`https://hostmybag.es/${language}`}
+            target="_blank"
+            rel="noopener"
+            className="group block max-w-xs rounded-md border border-dashed border-primary-foreground/25 p-3 transition-colors hover:border-primary-foreground/50"
+          >
+            <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">{t("Footer.otherProject")}</span>
+            <span className="mt-1 block text-sm font-semibold text-primary-foreground">
+              HostMyBag <span aria-hidden className="inline-block transition-transform group-hover:translate-x-0.5">→</span>
+            </span>
+            <span className="block text-xs leading-relaxed text-primary-foreground/70">{t("Footer.hostMyBag")}</span>
+          </a>
         </div>
 
         <nav className="space-y-3">
