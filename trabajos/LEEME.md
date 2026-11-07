@@ -21,6 +21,7 @@ El nombre del archivo es el texto que se ve debajo de la foto:
 | `falda.jpg` + `falda-2.jpg` + `falda-3.jpg` | Una tarjeta con **carrusel** de 3 fotos |
 
 - Varias fotos del mismo arreglo: mismo nombre y al final `-antes`, `-despues` o un número (`-2`, `-3`…). Se ven en carrusel: primero la foto sin sufijo, luego las numeradas, luego antes y después.
+- Descripción (opcional): un archivo de texto con el mismo nombre que la foto principal y terminado en `.txt` (`2026-10-06-falda.txt`). Su texto sale debajo del título. En GitHub: **Add file → Create new file**.
 - Formatos: **JPG o PNG**. En iPhone: Ajustes → Cámara → Formatos → **Más compatible**.
 - No hace falta reducirlas: la web las optimiza sola y **borra la ubicación GPS** de la foto.
 - Que no salga la cara del cliente ni su casa/dirección sin su permiso.

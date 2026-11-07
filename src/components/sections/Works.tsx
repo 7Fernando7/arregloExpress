@@ -46,15 +46,20 @@ export default function Works({ works }: { works: Work[] }) {
                 onImageClick={(index) => setOpen({ work, index })}
                 {...nav}
               />
-              <p className="flex items-center justify-between gap-2 px-3 py-2.5 text-sm font-medium text-foreground">
-                {work.caption}
-                {work.images.length > 1 && (
-                  <span className="flex shrink-0 items-center gap-1 text-xs text-muted-foreground">
-                    <Icono name="fotos" className="h-4 w-4" />
-                    {work.images.length}
-                  </span>
+              <div className="px-3 py-2.5">
+                <p className="flex items-center justify-between gap-2 text-sm font-medium text-foreground">
+                  {work.caption}
+                  {work.images.length > 1 && (
+                    <span className="flex shrink-0 items-center gap-1 text-xs text-muted-foreground">
+                      <Icono name="fotos" className="h-4 w-4" />
+                      {work.images.length}
+                    </span>
+                  )}
+                </p>
+                {work.description && (
+                  <p className="mt-1 line-clamp-3 text-xs leading-relaxed text-muted-foreground">{work.description}</p>
                 )}
-              </p>
+              </div>
             </li>
           ))}
         </ul>
@@ -75,6 +80,9 @@ export default function Works({ works }: { works: Work[] }) {
       <Dialog open={open !== null} onOpenChange={(o) => !o && setOpen(null)}>
         <DialogContent className="max-w-3xl border-border bg-background p-4 sm:p-6">
           <DialogTitle className="font-headline text-2xl font-semibold">{open?.work.caption}</DialogTitle>
+          {open?.work.description && (
+            <p className="whitespace-pre-line text-sm leading-relaxed text-muted-foreground">{open.work.description}</p>
+          )}
           {open && (
             <PhotoCarousel
               key={open.work.id}
