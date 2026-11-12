@@ -12,8 +12,25 @@ type LanguageContextType = {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+const STORAGE_KEY = 'idioma';
+
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState<Language>('es');
+  // el HTML estático sale en español (es lo que indexa Google); el idioma elegido se recuerda al cambiar de página
+  const [language, setLanguageState] = useState<Language>('es');
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved === 'en' || saved === 'es') setLanguageState(saved);
+    } catch {}
+  }, []);
+
+  const setLanguage = useCallback((value: Language) => {
+    setLanguageState(value);
+    try {
+      localStorage.setItem(STORAGE_KEY, value);
+    } catch {}
+  }, []);
 
   const t = useCallback((key: string): string => {
     return get(translations[language], key, key);

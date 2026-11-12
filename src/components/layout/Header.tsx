@@ -93,11 +93,9 @@ export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
           )}
         </nav>
         <div className="flex items-center gap-2 sm:gap-3">
-          {isHome && (
-            <div className="hidden sm:block">
-              <LanguageSwitcher />
-            </div>
-          )}
+          <div className="hidden sm:block">
+            <LanguageSwitcher />
+          </div>
           <a
             data-umami-event="whatsapp" data-umami-event-origen="cabecera" href={whatsappLink(t('Hero.whatsappMessage'))}
             target="_blank"
@@ -167,7 +165,7 @@ export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
                 </ul>
               </nav>
               <div className="space-y-4 border-t border-dashed border-border px-6 py-5">
-                {isHome && <LanguageSwitcher />}
+                <LanguageSwitcher />
                 <a
                   data-umami-event="whatsapp" data-umami-event-origen="menu-movil" href={whatsappLink(t('Hero.whatsappMessage'))}
                   target="_blank"

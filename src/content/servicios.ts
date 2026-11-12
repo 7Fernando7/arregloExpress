@@ -1,4 +1,5 @@
-// Páginas por servicio (/arreglos/[slug]). Solo español: son las que posicionan en Google.
+// Páginas por servicio (/arreglos/[slug]). El HTML sale en español (son las que posicionan en Google);
+// la versión en inglés del texto está en servicios.en.ts y se muestra en el navegador al elegir EN.
 // El orden importa: coincide con las tarjetas de la portada (Services.tsx, service1…service10).
 // Sin precios ni plazos inventados: el precio se da por WhatsApp y el mínimo es 3 días.
 

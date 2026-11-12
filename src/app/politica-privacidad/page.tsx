@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import { getWorks } from "@/lib/trabajos";
 
 export const metadata: Metadata = {
   title: "Política de privacidad",
@@ -9,7 +12,9 @@ export const metadata: Metadata = {
 
 export default function PoliticaPrivacidad() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
+    <div className="flex min-h-screen flex-col bg-background">
+      <Header hasWorks={getWorks().length > 0} />
+      <main className="container mx-auto max-w-4xl flex-grow px-4 py-12">
       <h1 className="text-3xl font-bold mb-8 text-center">
         🔐 POLÍTICA DE PRIVACIDAD – ARREGLOS EXPRESS MADRID
       </h1>
@@ -233,6 +238,8 @@ export default function PoliticaPrivacidad() {
           ← Volver al inicio
         </a>
       </div>
+      </main>
+      <Footer />
     </div>
   );
 }
