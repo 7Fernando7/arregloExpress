@@ -47,7 +47,7 @@ export const translations = {
         description: "At least 3 days after pickup, we deliver it to your door.",
       },
       leadTime:
-        "We need at least 3 days between pickup and delivery. If you need it sooner, ask us and we'll try — but we can't guarantee it.",
+        "The usual turnaround is 3 days between pickup and delivery. In a hurry? Next-day express alterations for €5 extra: ask us.",
     },
     Marking: {
       eyebrow: "Before pickup",
@@ -221,7 +221,7 @@ export const translations = {
       q3: "Where do you pick up?",
       a3: "Anywhere in Madrid city (postal codes 28001 to 28055): at home, at the office or wherever suits you best.",
       q4: "How long does it take?",
-      a4: "We need at least 3 days between pickup and delivery. If you need it sooner (a wedding, an event), let us know and we'll try to do it earlier, but we can't guarantee it.",
+      a4: "The usual turnaround is 3 days between pickup and delivery. If you need it sooner (a wedding, an event), we offer next-day express alterations for €5 extra: ask us on WhatsApp whether your alteration qualifies.",
       q5: "How can I contact you?",
       a5: "Via WhatsApp or the form on this page. We'll reply through the same channel.",
     },
@@ -307,7 +307,7 @@ export const translations = {
       faq2q: "Do I need to come in to be measured?",
       faq2a: "No. You can mark the garment yourself at home with safety pins, following our guide, or send us another garment that fits the way you want.",
       faq3q: "How long does it take?",
-      faq3a: "We need at least 3 days between pickup and delivery. If you need it sooner, tell us and we'll try, but we can't guarantee it.",
+      faq3a: "The usual turnaround is 3 days between pickup and delivery. In a hurry? We offer a next-day express service for €5 extra: ask us on WhatsApp whether your alteration qualifies.",
     },
     Footer: {
       tagline:
@@ -373,7 +373,7 @@ export const translations = {
         description: "Como mínimo 3 días después de la recogida, te la llevamos a la puerta de casa.",
       },
       leadTime:
-        "Necesitamos un mínimo de 3 días entre la recogida y la entrega. Si lo necesitas antes, pregúntanos e intentaremos hacerlo, pero no podemos garantizarlo.",
+        "Lo normal son 3 días entre la recogida y la entrega. ¿Tienes prisa? Arreglos express de un día para otro por 5 € más: pregúntanos.",
     },
     Marking: {
       eyebrow: "Antes de la recogida",
@@ -547,7 +547,7 @@ export const translations = {
       q3: "¿Dónde recogéis?",
       a3: "En todo Madrid capital (códigos postales del 28001 al 28055): en casa, en la oficina o donde mejor te venga.",
       q4: "¿Cuánto tardáis?",
-      a4: "Necesitamos un mínimo de 3 días entre la recogida y la entrega. Si lo necesitas antes (una boda, un evento), dínoslo e intentaremos hacerlo antes, pero no podemos garantizarlo.",
+      a4: "Lo normal son 3 días entre la recogida y la entrega. Si lo necesitas antes (una boda, un evento), tenemos arreglos express de un día para otro por 5 € más: pregúntanos por WhatsApp si tu arreglo entra.",
       q5: "¿Cómo os contacto?",
       a5: "Por WhatsApp o con el formulario de esta página. Te respondemos por el mismo medio.",
     },
@@ -633,7 +633,7 @@ export const translations = {
       faq2q: "¿Tengo que ir a que me tomen medidas?",
       faq2a: "No. Puedes marcar la prenda tú en casa con imperdibles, siguiendo nuestra guía, o mandarnos otra prenda que te quede como quieres.",
       faq3q: "¿Cuánto tardáis?",
-      faq3a: "Necesitamos un mínimo de 3 días entre la recogida y la entrega. Si lo necesitas antes, dínoslo e intentaremos hacerlo, pero no podemos garantizarlo.",
+      faq3a: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro por 5 € más: pregúntanos por WhatsApp si tu arreglo entra.",
     },
     Footer: {
       tagline:

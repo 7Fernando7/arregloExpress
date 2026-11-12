@@ -53,7 +53,7 @@ export const SERVICIOS: Servicio[] = [
       },
       {
         p: "¿Cuánto tardáis?",
-        r: "Necesitamos un mínimo de 3 días entre la recogida y la entrega. Si lo necesitas antes, dínoslo e intentaremos hacerlo, pero no podemos garantizarlo.",
+        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro por 5 € más: pregúntanos por WhatsApp si tu arreglo entra.",
       },
     ],
     whatsapp: "¡Hola! Quiero presupuesto para coger un bajo.",
@@ -88,7 +88,7 @@ export const SERVICIOS: Servicio[] = [
       },
       {
         p: "¿Cuánto tardáis?",
-        r: "Necesitamos un mínimo de 3 días entre la recogida y la entrega.",
+        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro por 5 € más: pregúntanos por WhatsApp si tu arreglo entra.",
       },
     ],
     whatsapp: "¡Hola! Quiero presupuesto para estrechar una prenda.",
@@ -123,7 +123,7 @@ export const SERVICIOS: Servicio[] = [
       },
       {
         p: "¿Cuánto tardáis?",
-        r: "Necesitamos un mínimo de 3 días entre la recogida y la entrega.",
+        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro por 5 € más: pregúntanos por WhatsApp si tu arreglo entra.",
       },
     ],
     whatsapp: "¡Hola! Quiero presupuesto para cambiar una cremallera.",
@@ -158,7 +158,7 @@ export const SERVICIOS: Servicio[] = [
       },
       {
         p: "¿Cuánto tardáis?",
-        r: "Necesitamos un mínimo de 3 días entre la recogida y la entrega.",
+        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro por 5 € más: pregúntanos por WhatsApp si tu arreglo entra.",
       },
     ],
     whatsapp: "¡Hola! Quiero presupuesto para unos botones.",
@@ -185,7 +185,7 @@ export const SERVICIOS: Servicio[] = [
     preguntas: [
       {
         p: "Lo necesito para una fecha concreta, ¿llegáis?",
-        r: "Necesitamos un mínimo de 3 días entre la recogida y la entrega. Cuanto antes nos escribas, más fácil es cuadrarlo.",
+        r: "Lo normal son 3 días entre la recogida y la entrega. Si vas justo de tiempo, tenemos servicio urgente de un día para otro por 5 € más: escríbenos cuanto antes para confirmarlo.",
       },
       {
         p: "¿Cómo marco el largo de un vestido largo?",
@@ -228,7 +228,7 @@ export const SERVICIOS: Servicio[] = [
       },
       {
         p: "¿Cuánto tardáis?",
-        r: "Necesitamos un mínimo de 3 días entre la recogida y la entrega.",
+        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro por 5 € más: pregúntanos por WhatsApp si tu arreglo entra.",
       },
     ],
     whatsapp: "¡Hola! Quiero presupuesto para cambiar un forro.",
@@ -263,7 +263,7 @@ export const SERVICIOS: Servicio[] = [
       },
       {
         p: "¿Cuánto tardáis?",
-        r: "Necesitamos un mínimo de 3 días entre la recogida y la entrega.",
+        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro por 5 € más: pregúntanos por WhatsApp si tu arreglo entra.",
       },
     ],
     whatsapp: "¡Hola! Quiero presupuesto para arreglar cortinas o textil del hogar.",
@@ -272,20 +272,22 @@ export const SERVICIOS: Servicio[] = [
     slug: "arreglo-de-zapatos-madrid",
     categoria: "calzado",
     nombre: "Arreglo de zapatos",
-    h1: "Arreglo de zapatos a domicilio en Madrid",
+    h1: "Arreglo de zapatos y botas a domicilio en Madrid",
     imagen: { src: "/brand/zapatos.jpg", alt: "Manos de un zapatero cosiendo un zapato de piel en el taller", width: 1200, height: 900 },
-    metaTitle: "Arreglo de zapatos a domicilio, Madrid",
+    metaTitle: "Arreglo de zapatos y botas en Madrid",
     metaDescription:
-      "Recogemos tus zapatos, botas o zapatillas en casa y te los devolvemos arreglados. Tapas, suelas, costuras y más en Madrid capital.",
+      "Recogemos tus zapatos, botas o zapatillas en casa y te los devolvemos arreglados: tapas, suelas, cremalleras de botas, costuras y botas que rozan. Madrid capital.",
     intro: [
       "Unos zapatos que te gustan no se tiran por una tapa gastada o una costura abierta. Recogemos tus zapatos, botas, sandalias o zapatillas en casa o en la oficina y te los devolvemos arreglados.",
+      "También arreglamos botas y botines: cremalleras que no suben, tapas y suelas gastadas, o botas que aprietan o rozan el talón, que ablandamos y damos de sí con horma.",
       "Cada arreglo es distinto: mándanos una foto por WhatsApp y te confirmamos si se puede hacer y el precio antes de recogerlos.",
     ],
     incluye: [
       "Cambio de tapas y tacones",
       "Suelas y medias suelas",
       "Costuras abiertas",
-      "Cremalleras de botas",
+      "Cremalleras de botas y botines",
+      "Dar de sí zapatos y botas que aprietan o rozan",
     ],
     incluyeNota: "Son ejemplos: mándanos una foto y te confirmamos qué se puede hacer en tu caso.",
     consejos: [
@@ -297,6 +299,14 @@ export const SERVICIOS: Servicio[] = [
       {
         p: "¿Qué arreglos de zapatos hacéis?",
         r: "Mándanos una foto por WhatsApp de lo que necesita tu calzado y te confirmamos si podemos hacerlo antes de recogerlo.",
+      },
+      {
+        p: "¿Arregláis botas?",
+        r: "Sí, botas y botines. Lo más habitual es cambiar tapas y suelas, arreglar o cambiar la cremallera y dar de sí las que aprietan o rozan.",
+      },
+      {
+        p: "Mis botas me rozan el talón, ¿tiene arreglo?",
+        r: "Muchas veces sí: ablandamos el contrafuerte (la pieza rígida del talón) y damos de sí la bota con horma para que deje de rozar. Mándanos una foto y te decimos si en las tuyas se puede.",
       },
       {
         p: "¿Recogéis zapatos y ropa a la vez?",
@@ -321,12 +331,14 @@ export const SERVICIOS: Servicio[] = [
       "Tintorería con recogida y entrega a domicilio en Madrid capital: trajes, abrigos, vestidos y prendas delicadas. Presupuesto por WhatsApp.",
     intro: [
       "Llevar la ropa a la tintorería y volver a recogerla es justo lo que nunca da tiempo a hacer. Recogemos tus prendas en casa o en la oficina y te las devolvemos limpias.",
+      "Funciona así: nos escribes por WhatsApp, pasamos a recoger, llevamos tus prendas a la tintorería y te las devolvemos en la puerta de casa, listas para usar.",
       "Y si además necesitan un arreglo, lo hacemos en el mismo viaje.",
     ],
     incluye: [
       "Trajes y americanas",
       "Abrigos y chaquetas",
       "Vestidos de fiesta y prendas delicadas",
+      "Edredones, cortinas y vestidos de novia (la recogida lleva suplemento por volumen)",
       "Textil del hogar y alfombras: pregúntanos",
     ],
     incluyeNota: "Son ejemplos: mándanos una foto y te confirmamos qué se puede hacer en tu caso.",
@@ -336,6 +348,14 @@ export const SERVICIOS: Servicio[] = [
       "Si alguna prenda necesita además un arreglo, cuéntanoslo y lo hacemos todo a la vez.",
     ],
     preguntas: [
+      {
+        p: "¿Cómo funciona la tintorería a domicilio?",
+        r: "Nos escribes por WhatsApp con las prendas que quieres limpiar, quedamos para recogerlas en tu casa o tu oficina, las llevamos a la tintorería y te las devolvemos en la puerta. No tienes que desplazarte.",
+      },
+      {
+        p: "¿En qué zonas de Madrid recogéis?",
+        r: "En todo Madrid capital. En la portada puedes calcular el precio de la recogida y la entrega con tu dirección o tu código postal.",
+      },
       {
         p: "¿Qué prendas lleváis a la tintorería?",
         r: "Cuéntanos qué necesitas por WhatsApp, con una foto de la etiqueta, y te confirmamos el servicio y el precio antes de recoger.",

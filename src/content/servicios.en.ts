@@ -10,6 +10,8 @@ export type ServicioTexto = Pick<
 const EXAMPLES_NOTE = "These are examples: send us a photo and we'll confirm what can be done in your case.";
 const HOW_LONG = "How long does it take?";
 const THREE_DAYS = "We need at least 3 days between pickup and delivery.";
+const URGENT =
+  "The usual turnaround is 3 days between pickup and delivery. In a hurry? We offer a next-day express service for €5 extra: ask us on WhatsApp whether your alteration qualifies.";
 const THREE_DAYS_RUSH =
   "We need at least 3 days between pickup and delivery. If you need it sooner, tell us and we'll try, but we can't guarantee it.";
 
@@ -36,7 +38,7 @@ export const SERVICIOS_EN: Record<string, ServicioTexto> = {
         p: "Can you keep the original hem on jeans?",
         r: "Tell us when you ask for a quote and send a photo of the hem: we'll let you know whether it's possible on your garment.",
       },
-      { p: HOW_LONG, r: THREE_DAYS_RUSH },
+      { p: HOW_LONG, r: URGENT },
     ],
     whatsapp: "Hi! I'd like a quote for a hem.",
   },
@@ -62,7 +64,7 @@ export const SERVICIOS_EN: Record<string, ServicioTexto> = {
         p: "Can any jacket be taken in?",
         r: "It depends on how it's made and how much needs to come off. Send us a photo and we'll tell you what's possible before we pick it up.",
       },
-      { p: HOW_LONG, r: THREE_DAYS },
+      { p: HOW_LONG, r: URGENT },
     ],
     whatsapp: "Hi! I'd like a quote for taking in a garment.",
   },
@@ -88,7 +90,7 @@ export const SERVICIOS_EN: Record<string, ServicioTexto> = {
         p: "Does the whole zip always need replacing?",
         r: "Not always: sometimes replacing the slider is enough. With a photo we can tell you what your garment needs.",
       },
-      { p: HOW_LONG, r: THREE_DAYS },
+      { p: HOW_LONG, r: URGENT },
     ],
     whatsapp: "Hi! I'd like a quote for replacing a zip.",
   },
@@ -114,7 +116,7 @@ export const SERVICIOS_EN: Record<string, ServicioTexto> = {
         p: "Is it worth it for a single button?",
         r: "Ask us with no obligation: it's often a good moment to reinforce the rest of the buttons on the garment.",
       },
-      { p: HOW_LONG, r: THREE_DAYS },
+      { p: HOW_LONG, r: URGENT },
     ],
     whatsapp: "Hi! I'd like a quote for some buttons.",
   },
@@ -134,7 +136,7 @@ export const SERVICIOS_EN: Record<string, ServicioTexto> = {
     preguntas: [
       {
         p: "I need it for a specific date. Will it be ready?",
-        r: "We need at least 3 days between pickup and delivery. The sooner you write to us, the easier it is to fit it in.",
+        r: "The usual turnaround is 3 days between pickup and delivery. If time is tight, we offer a next-day express service for €5 extra: write to us as soon as you can to confirm it.",
       },
       {
         p: "How do I mark the length of a long dress?",
@@ -169,7 +171,7 @@ export const SERVICIOS_EN: Record<string, ServicioTexto> = {
         p: "Can I choose the lining colour?",
         r: "Yes, tell us your preference when you ask for a quote and we'll look for the closest match.",
       },
-      { p: HOW_LONG, r: THREE_DAYS },
+      { p: HOW_LONG, r: URGENT },
     ],
     whatsapp: "Hi! I'd like a quote for replacing a lining.",
   },
@@ -195,19 +197,26 @@ export const SERVICIOS_EN: Record<string, ServicioTexto> = {
         p: "Do you pick up large curtains?",
         r: "Yes, within Madrid city. Tell us how many there are and their size when you ask for a quote.",
       },
-      { p: HOW_LONG, r: THREE_DAYS },
+      { p: HOW_LONG, r: URGENT },
     ],
     whatsapp: "Hi! I'd like a quote for altering curtains or home textiles.",
   },
   "arreglo-de-zapatos-madrid": {
     nombre: "Shoe repair",
-    h1: "Shoe repair with home pickup in Madrid",
+    h1: "Shoe and boot repair with home pickup in Madrid",
     imagenAlt: "A cobbler's hands stitching a leather shoe in the workshop",
     intro: [
       "Shoes you like shouldn't be thrown away over a worn heel tip or an open seam. We pick up your shoes, boots, sandals or trainers from your home or office and bring them back repaired.",
+      "We also repair boots and ankle boots: zips that won't close, worn heel tips and soles, or boots that pinch or rub at the heel, which we soften and stretch on a last.",
       "Every repair is different: send us a photo on WhatsApp and we'll confirm whether it can be done and the price before we pick them up.",
     ],
-    incluye: ["Heel tips and heels", "Soles and half soles", "Open seams", "Boot zips"],
+    incluye: [
+      "Heel tips and heels",
+      "Soles and half soles",
+      "Open seams",
+      "Zips on boots and ankle boots",
+      "Stretching shoes and boots that pinch or rub",
+    ],
     incluyeNota: EXAMPLES_NOTE,
     consejos: [
       "Take a photo of the part of the shoe that needs repairing and another of the sole.",
@@ -218,6 +227,14 @@ export const SERVICIOS_EN: Record<string, ServicioTexto> = {
       {
         p: "What shoe repairs do you do?",
         r: "Send us a photo on WhatsApp of what your shoes need and we'll confirm whether we can do it before we pick them up.",
+      },
+      {
+        p: "Do you repair boots?",
+        r: "Yes, boots and ankle boots. The most common jobs are replacing heel tips and soles, repairing or replacing the zip, and stretching boots that pinch or rub.",
+      },
+      {
+        p: "My boots rub my heel. Can that be fixed?",
+        r: "Often, yes: we soften the heel counter (the stiff piece at the heel) and stretch the boot on a last so it stops rubbing. Send us a photo and we'll tell you whether it can be done on yours.",
       },
       {
         p: "Do you pick up shoes and clothes at the same time?",
@@ -233,12 +250,14 @@ export const SERVICIOS_EN: Record<string, ServicioTexto> = {
     imagenAlt: "Suits and coats in garment covers hanging at a dry cleaner's",
     intro: [
       "Taking clothes to the dry cleaner's and going back for them is exactly what there's never time for. We pick up your garments from your home or office and bring them back clean.",
+      "Here's how it works: you message us on WhatsApp, we come to pick up, take your garments to the dry cleaner's and bring them back to your door, ready to wear.",
       "And if they also need an alteration, we do it in the same trip.",
     ],
     incluye: [
       "Suits and blazers",
       "Coats and jackets",
       "Party dresses and delicate garments",
+      "Duvets, curtains and wedding dresses (pickup carries a surcharge for bulky items)",
       "Home textiles and rugs: ask us",
     ],
     incluyeNota: EXAMPLES_NOTE,
@@ -248,6 +267,14 @@ export const SERVICIOS_EN: Record<string, ServicioTexto> = {
       "If a garment also needs an alteration, tell us and we'll do it all at once.",
     ],
     preguntas: [
+      {
+        p: "How does dry cleaning with home pickup work?",
+        r: "You message us on WhatsApp with the garments you want cleaned, we arrange a pickup at your home or office, take them to the dry cleaner's and bring them back to your door. You don't have to go anywhere.",
+      },
+      {
+        p: "Which areas of Madrid do you cover?",
+        r: "All of Madrid city. On the home page you can calculate the pickup and delivery price with your address or postal code.",
+      },
       {
         p: "Which garments do you take to the dry cleaner's?",
         r: "Tell us what you need on WhatsApp, with a photo of the label, and we'll confirm the service and the price before pickup.",
