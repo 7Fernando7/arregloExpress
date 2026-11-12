@@ -102,7 +102,7 @@ export const translations = {
       eyebrow: "Services",
       title: "What we alter",
       description:
-        "Every garment is different: send us a photo on WhatsApp and we'll give you the exact price.",
+        "The alterations your local seamstress, dressmaker or tailor would do, plus shoes, luggage and dry cleaning. Every garment is different: send us a photo on WhatsApp and we'll give you the exact price.",
       service1: {
         title: "Hems on any garment",
         description: "Trousers, jeans, skirts, dresses and more.",
@@ -204,6 +204,7 @@ export const translations = {
       zoneBeyond: "More than {km} km",
       zoneFrom: "from {price}",
       zonesNote: "Pickup + delivery, by distance from our workshop. One price for all your garments.",
+      zonesApprox: "Neighbourhoods are a guide: enter your address to see your exact price.",
       zonesBulky: "Heavy or bulky items (suitcases, duvets, large curtains, rugs) need different transport, so the price changes: we'll confirm it on WhatsApp before pickup.",
     },
     Payment: {
@@ -299,6 +300,8 @@ export const translations = {
       title: "Clothing alterations with home pickup in Madrid",
       intro:
         "Hems, adjustments, zips, buttons, linings, occasion wear and home textiles. We pick up your garments from your home or office, alter them in the workshop and bring them back ready to wear.",
+      intro2:
+        "It's like taking your clothes to your local seamstress, dressmaker or tailor, without leaving home: a professional seamstress does the alterations in the workshop and we take care of pickup and delivery.",
       whatsapp: "Hi! I'd like a quote for a clothing alteration.",
       photoAlt: "Hands sewing a garment in a tailoring workshop",
       photoMessage: "Hi! Here's a photo of the garment I'd like altered.",
@@ -434,7 +437,7 @@ export const translations = {
       eyebrow: "Servicios",
       title: "Qué arreglamos",
       description:
-        "Cada prenda es distinta: mándanos una foto por WhatsApp y te damos el precio exacto.",
+        "Los arreglos y composturas de siempre, los de la costurera, la modista o el sastre del barrio, y además zapatos, maletas y tintorería. Cada prenda es distinta: mándanos una foto por WhatsApp y te damos el precio exacto.",
       service1: {
         title: "Bajos de cualquier prenda",
         description: "Pantalones, vaqueros, faldas, vestidos y más.",
@@ -536,6 +539,7 @@ export const translations = {
       zoneBeyond: "Más de {km} km",
       zoneFrom: "desde {price}",
       zonesNote: "Recogida + entrega, según la distancia al taller. El mismo precio para una prenda que para diez.",
+      zonesApprox: "Los barrios son orientativos: escribe tu dirección para ver tu precio exacto.",
       zonesBulky: "Lo pesado o voluminoso (maletas, edredones, cortinas grandes, alfombras) necesita otro transporte y el precio cambia: te lo confirmamos por WhatsApp antes de recoger.",
     },
     Payment: {
@@ -631,10 +635,12 @@ export const translations = {
       title: "Arreglos de ropa a domicilio en Madrid",
       intro:
         "Bajos, ajustes, cremalleras, botones, forros, trajes de ocasión y textil del hogar. Recogemos tus prendas en casa o en la oficina, las arreglamos en el taller y te las devolvemos listas para usar.",
+      intro2:
+        "Es como llevar la ropa a la costurera, a la modista o al sastre del barrio, pero sin salir de casa: una costurera profesional hace las composturas en el taller y nosotros nos encargamos de recogerlas y entregarlas.",
       whatsapp: "¡Hola! Quiero presupuesto para un arreglo de ropa.",
       photoAlt: "Manos cosiendo una prenda en un taller de costura",
       photoMessage: "¡Hola! Os mando una foto de la prenda que quiero arreglar.",
-      whatWeFix: "Qué arreglamos",
+      whatWeFix: "Arreglos y composturas que hacemos",
       whatWeFixText: "Cada prenda es distinta: mándanos una foto por WhatsApp y te damos el precio exacto.",
       more: "Más información",
       markTitle: "¿Te toca marcar la prenda?",
@@ -649,7 +655,7 @@ export const translations = {
     },
     Footer: {
       tagline:
-        "Arreglos de ropa, zapatos, maletas y tintorería con recogida y entrega a domicilio en todo Madrid capital.",
+        "Arreglos y composturas de ropa, zapatos y maletas, y tintorería, con recogida y entrega a domicilio en todo Madrid capital.",
       contactTitle: "Contacto",
       contactText: "Atendemos por WhatsApp, por correo y por el formulario de contacto.",
       sectionsTitle: "La web",

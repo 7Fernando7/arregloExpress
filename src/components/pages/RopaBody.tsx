@@ -38,6 +38,7 @@ export default function RopaBody() {
               <Eyebrow>{t("ServicePage.eyebrow")}</Eyebrow>
               <h1 className="font-headline text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl">{t("RopaPage.title")}</h1>
               <p className="text-lg leading-relaxed text-muted-foreground">{t("RopaPage.intro")}</p>
+              <p className="text-lg leading-relaxed text-muted-foreground">{t("RopaPage.intro2")}</p>
               <div className="flex flex-col gap-3 pt-2 sm:flex-row">
                 <a
                   data-umami-event="whatsapp" data-umami-event-origen="servicio-arreglo-de-ropa" href={whatsappLink(t("RopaPage.whatsapp"))}

@@ -67,7 +67,7 @@ export const SERVICIOS: Servicio[] = [
     metaDescription:
       "Ajustamos chaquetas, americanas, abrigos y otras prendas para que te queden a medida. Recogida y entrega a domicilio en Madrid capital.",
     intro: [
-      "Una chaqueta que te queda ancha de cintura o de costados pierde toda la forma. Estrechamos chaquetas, americanas, blazers y abrigos, y también camisas, vestidos y pantalones que te quedan grandes.",
+      "Una chaqueta que te queda ancha de cintura o de costados pierde toda la forma. Estrechamos chaquetas, americanas, blazers y abrigos, y también camisas, vestidos y pantalones que te quedan grandes. Son arreglos de sastrería, hechos en el taller por una costurera profesional.",
       "Te decimos por WhatsApp qué se puede ajustar en tu prenda antes de recogerla, sin compromiso.",
     ],
     incluye: [
@@ -172,7 +172,7 @@ export const SERVICIOS: Servicio[] = [
     metaDescription:
       "Ajustamos vestidos de fiesta, de invitada, trajes de boda, comunión y disfraces. Recogida y entrega a domicilio en Madrid capital.",
     intro: [
-      "Para una boda, una comunión o un evento quieres que la ropa te quede perfecta. Arreglamos vestidos de fiesta y de invitada, trajes de ceremonia, trajes de comunión y disfraces.",
+      "Para una boda, una comunión o un evento quieres que la ropa te quede perfecta. Arreglamos vestidos de fiesta y de invitada, trajes de ceremonia, trajes de comunión y disfraces. Un trabajo de modista, con recogida y entrega en tu casa.",
       "Si lo necesitas para una fecha concreta, dínoslo desde el primer mensaje para organizar la recogida con tiempo.",
     ],
     incluye: [

@@ -46,7 +46,7 @@ export const SERVICIOS_EN: Record<string, ServicioTexto> = {
     nombre: "Taking in jackets",
     h1: "Taking in jackets, blazers and coats in Madrid",
     intro: [
-      "A jacket that is too loose at the waist or the sides loses its shape. We take in jackets, blazers and coats, as well as shirts, dresses and trousers that are too big for you.",
+      "A jacket that is too loose at the waist or the sides loses its shape. We take in jackets, blazers and coats, as well as shirts, dresses and trousers that are too big for you. This is tailoring work, done in the workshop by a professional seamstress.",
       "We'll tell you on WhatsApp what can be adjusted on your garment before we pick it up, with no obligation.",
     ],
     incluye: [
@@ -124,7 +124,7 @@ export const SERVICIOS_EN: Record<string, ServicioTexto> = {
     nombre: "Occasion wear",
     h1: "Alterations for party dresses and occasion wear in Madrid",
     intro: [
-      "For a wedding, a communion or an event you want your clothes to fit perfectly. We alter party and wedding-guest dresses, formal suits, communion outfits and costumes.",
+      "For a wedding, a communion or an event you want your clothes to fit perfectly. We alter party and wedding-guest dresses, formal suits, communion outfits and costumes. Dressmaker's work, with pickup and delivery at your home.",
       "If you need it for a specific date, tell us in your first message so we can plan the pickup in good time.",
     ],
     incluye: [

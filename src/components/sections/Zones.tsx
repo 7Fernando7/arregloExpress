@@ -12,6 +12,13 @@ import Icono from "@/components/Icono";
 
 const RINGS_KM = [3, 6, 9];
 // zonas de precio del mapa: del anillo interior (más barato) al exterior
+// barrios y distritos de cada anillo (según el centro de cada código postal): orientativo
+const ZONE_AREAS = [
+  'Sol, Barrio de las Letras, Lavapiés, La Latina, Malasaña, Chueca, Chamberí, Argüelles, Salamanca, Retiro y Arganzuela',
+  'Tetuán, Chamartín, Ciudad Universitaria, Ventas, Ciudad Lineal, Moratalaz, Puente de Vallecas, Usera, Carabanchel y Puerta del Ángel',
+  'Hortaleza, San Blas, Vicálvaro, Villa de Vallecas, Villaverde, Aluche, Fuencarral y Aravaca',
+];
+const ZONE_AREAS_BEYOND = 'Barajas, Canillejas, Sanchinarro, Las Tablas, Valdebebas y El Pardo';
 const ZONE_FILLS = ['fill-accent/30', 'fill-accent/[0.18]', 'fill-accent/[0.08]'];
 // los discos se superponen, así que el color visible de cada anillo es la suma de los que tiene encima
 const ZONE_CHIPS = ['bg-accent/[0.47]', 'bg-accent/25', 'bg-accent/[0.08]'];
@@ -364,23 +371,35 @@ export default function Zones() {
             )}
           </svg>
           <figcaption className="mt-3 space-y-3 text-xs text-muted-foreground">
-            <ul className="mx-auto grid max-w-xs gap-1.5">
+            <ul className="grid gap-3 text-left">
               {zones.map((z, i) => (
-                <li key={z.label} className="flex items-center gap-2.5">
-                  <span aria-hidden className={cn('h-3.5 w-3.5 shrink-0 rounded-full border border-accent/40', ZONE_CHIPS[i])} />
-                  <span className="flex-1">{z.label}</span>
-                  <span className="font-semibold tabular-nums text-foreground">{z.prices}</span>
+                <li key={z.label} className="flex gap-2.5">
+                  <span aria-hidden className={cn('mt-0.5 h-3.5 w-3.5 shrink-0 rounded-full border border-accent/40', ZONE_CHIPS[i])} />
+                  <span className="min-w-0 flex-1">
+                    <span className="flex items-baseline justify-between gap-3 text-foreground">
+                      <span className="font-medium">{z.label}</span>
+                      <span className="shrink-0 font-semibold tabular-nums">{z.prices}</span>
+                    </span>
+                    <span className="block leading-relaxed">{ZONE_AREAS[i]}</span>
+                  </span>
                 </li>
               ))}
-              <li className="flex items-center gap-2.5">
-                <span aria-hidden className="h-3.5 w-3.5 shrink-0 rounded-full border border-dashed border-accent/40" />
-                <span className="flex-1">{t('Zones.zoneBeyond').replace('{km}', String(lastRing))}</span>
-                <span className="font-semibold tabular-nums text-foreground">
-                  {t('Zones.zoneFrom').replace('{price}', formatPrice(totalAtStraightKm(lastRing)))}
+              <li className="flex gap-2.5">
+                <span aria-hidden className="mt-0.5 h-3.5 w-3.5 shrink-0 rounded-full border border-dashed border-accent/40" />
+                <span className="min-w-0 flex-1">
+                  <span className="flex items-baseline justify-between gap-3 text-foreground">
+                    <span className="font-medium">{t('Zones.zoneBeyond').replace('{km}', String(lastRing))}</span>
+                    <span className="shrink-0 font-semibold tabular-nums">
+                      {t('Zones.zoneFrom').replace('{price}', formatPrice(totalAtStraightKm(lastRing)))}
+                    </span>
+                  </span>
+                  <span className="block leading-relaxed">{ZONE_AREAS_BEYOND}</span>
                 </span>
               </li>
             </ul>
-            <p className="text-center">{t('Zones.zonesNote')}</p>
+            <p className="text-center">
+              {t('Zones.zonesNote')} {t('Zones.zonesApprox')}
+            </p>
             <p className="flex gap-2 rounded-md bg-accent/10 px-3 py-2 text-left leading-relaxed text-foreground">
               <Icono name="paquete" className="h-5 w-5" />
               {t('Zones.zonesBulky')}

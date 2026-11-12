@@ -10,7 +10,7 @@ import { BUSINESS_ID, JsonLd, SITE_NAME, SITE_URL, localBusinessJsonLd } from "@
 // Página que agrupa todos los arreglos de ropa (el desplegable «Servicios» lleva aquí)
 const TITLE = "Arreglos de ropa a domicilio en Madrid";
 const DESCRIPTION =
-  "Bajos, estrechar, cremalleras, botones, forros, trajes de ocasión y textil del hogar con recogida y entrega a domicilio en Madrid capital.";
+  "Arreglos y composturas de ropa con recogida y entrega a domicilio en Madrid: bajos, estrechar, cremalleras, botones y forros. Tu costurera, sin salir de casa.";
 const URL = `/arreglos/${ROPA_SLUG}`;
 
 export const metadata: Metadata = {
