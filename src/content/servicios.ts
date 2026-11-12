@@ -1,7 +1,7 @@
 // Páginas por servicio (/arreglos/[slug]). El HTML sale en español (son las que posicionan en Google);
 // la versión en inglés del texto está en servicios.en.ts y se muestra en el navegador al elegir EN.
 // El orden importa: coincide con las tarjetas de la portada (Services.tsx, service1…service10).
-// Sin precios ni plazos inventados: solo se publican los «desde» de la tarifa real; el precio exacto se da por WhatsApp.
+// Sin precios ni plazos inventados: el precio se da por WhatsApp y el mínimo es 3 días.
 
 export type MarkingKey = "pants" | "skirt" | "sleeves" | "takeIn" | "zips";
 
@@ -16,7 +16,6 @@ export type Servicio = {
   imagen?: { src: string; alt: string; width: number; height: number }; // foto junto al título
   incluye: string[];
   incluyeNota?: string; // aviso bajo «Qué incluye» (p. ej. cuando son solo ejemplos)
-  precios?: { concepto: string; desde: number }[]; // precios orientativos («desde X €»), sin recogida
   marcar?: MarkingKey; // guía de marcado (si la prenda se marca)
   consejos?: string[]; // si no se marca: qué necesitamos saber
   preguntas: { p: string; r: string }[];
@@ -26,9 +25,6 @@ export type Servicio = {
 export const SERVICIOS: Servicio[] = [
   {
     slug: "bajos-de-pantalon-madrid",
-    precios: [
-      { concepto: "Bajos a máquina", desde: 13 },
-    ],
     categoria: "ropa",
     nombre: "Bajos de pantalón",
     h1: "Bajos de pantalón a domicilio en Madrid",
@@ -64,14 +60,6 @@ export const SERVICIOS: Servicio[] = [
   },
   {
     slug: "estrechar-chaqueta-madrid",
-    precios: [
-      { concepto: "Entallar americana por la espalda", desde: 18 },
-      { concepto: "Entallar mangas de americana", desde: 15 },
-      { concepto: "Subir puños con botones (con el ojal sin abrir)", desde: 28 },
-      { concepto: "Subir puños sin botones", desde: 18 },
-      { concepto: "Entallar pantalón de vestir por la espalda", desde: 18 },
-      { concepto: "Entallar vaqueros", desde: 21 },
-    ],
     categoria: "ropa",
     nombre: "Estrechar chaquetas",
     h1: "Estrechar chaquetas, americanas y abrigos en Madrid",
@@ -107,9 +95,6 @@ export const SERVICIOS: Servicio[] = [
   },
   {
     slug: "cambio-de-cremallera-madrid",
-    precios: [
-      { concepto: "Cremallera invisible de pantalón o falda", desde: 18 },
-    ],
     categoria: "ropa",
     nombre: "Cambio de cremalleras",
     h1: "Cambio de cremalleras a domicilio en Madrid",
