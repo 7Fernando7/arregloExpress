@@ -95,6 +95,22 @@ export default function ServicioBody({ slug }: { slug: string }) {
                 </li>
               ))}
             </ul>
+            {c.precios && (
+              <div className="mt-8 rounded-lg border border-border bg-background p-5">
+                <h3 className="font-headline text-xl font-semibold">{t("ServicePage.prices")}</h3>
+                <ul className="mt-3 divide-y divide-dashed divide-border">
+                  {c.precios.map(({ concepto, desde }) => (
+                    <li key={concepto} className="flex items-baseline justify-between gap-4 py-2.5 text-sm text-foreground/85">
+                      <span>{concepto}</span>
+                      <span className="shrink-0 font-semibold tabular-nums text-foreground">
+                        {t("ServicePage.pricesFrom").replace("{price}", String(desde))}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-3 text-xs text-muted-foreground">{t("ServicePage.pricesNote")}</p>
+              </div>
+            )}
             <p className="mt-6 text-muted-foreground">{t("ServicePage.notListed")}</p>
           </div>
           <div className="space-y-3">

@@ -4,7 +4,7 @@ import type { Servicio } from "./servicios";
 
 export type ServicioTexto = Pick<
   Servicio,
-  "nombre" | "h1" | "intro" | "incluye" | "incluyeNota" | "consejos" | "preguntas" | "whatsapp"
+  "nombre" | "h1" | "intro" | "incluye" | "incluyeNota" | "precios" | "consejos" | "preguntas" | "whatsapp"
 > & { imagenAlt?: string };
 
 const EXAMPLES_NOTE = "These are examples: send us a photo and we'll confirm what can be done in your case.";
@@ -17,6 +17,9 @@ const THREE_DAYS_RUSH =
 
 export const SERVICIOS_EN: Record<string, ServicioTexto> = {
   "bajos-de-pantalon-madrid": {
+    precios: [
+      { concepto: "Machine-stitched hems", desde: 13 },
+    ],
     nombre: "Trouser hems",
     h1: "Trouser hemming with home pickup in Madrid",
     intro: [
@@ -43,6 +46,14 @@ export const SERVICIOS_EN: Record<string, ServicioTexto> = {
     whatsapp: "Hi! I'd like a quote for a hem.",
   },
   "estrechar-chaqueta-madrid": {
+    precios: [
+      { concepto: "Taking in a blazer at the back", desde: 18 },
+      { concepto: "Taking in blazer sleeves", desde: 15 },
+      { concepto: "Shortening cuffs with buttons (unopened buttonholes)", desde: 28 },
+      { concepto: "Shortening cuffs without buttons", desde: 18 },
+      { concepto: "Taking in dress trousers at the back", desde: 18 },
+      { concepto: "Taking in jeans", desde: 21 },
+    ],
     nombre: "Taking in jackets",
     h1: "Taking in jackets, blazers and coats in Madrid",
     intro: [
@@ -69,6 +80,9 @@ export const SERVICIOS_EN: Record<string, ServicioTexto> = {
     whatsapp: "Hi! I'd like a quote for taking in a garment.",
   },
   "cambio-de-cremallera-madrid": {
+    precios: [
+      { concepto: "Invisible zip on trousers or a skirt", desde: 18 },
+    ],
     nombre: "Zip replacement",
     h1: "Zip replacement with home pickup in Madrid",
     intro: [
