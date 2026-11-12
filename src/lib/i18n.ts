@@ -204,6 +204,7 @@ export const translations = {
       zoneBeyond: "More than {km} km",
       zoneFrom: "from {price}",
       zonesNote: "Pickup + delivery, by distance from our workshop. One price for all your garments.",
+      zonesBulky: "Heavy or bulky items (suitcases, duvets, large curtains, rugs) need different transport, so the price changes: we'll confirm it on WhatsApp before pickup.",
     },
     Payment: {
       eyebrow: "Payment",
@@ -535,6 +536,7 @@ export const translations = {
       zoneBeyond: "Más de {km} km",
       zoneFrom: "desde {price}",
       zonesNote: "Recogida + entrega, según la distancia al taller. El mismo precio para una prenda que para diez.",
+      zonesBulky: "Lo pesado o voluminoso (maletas, edredones, cortinas grandes, alfombras) necesita otro transporte y el precio cambia: te lo confirmamos por WhatsApp antes de recoger.",
     },
     Payment: {
       eyebrow: "Pago",

@@ -381,6 +381,10 @@ export default function Zones() {
               </li>
             </ul>
             <p className="text-center">{t('Zones.zonesNote')}</p>
+            <p className="flex gap-2 rounded-md bg-accent/10 px-3 py-2 text-left leading-relaxed text-foreground">
+              <Icono name="paquete" className="h-5 w-5" />
+              {t('Zones.zonesBulky')}
+            </p>
             <p className="text-center">
               <span className="font-semibold text-foreground">{t('Zones.mapTitle')}</span> · {t('Zones.mapHint')}
             </p>
