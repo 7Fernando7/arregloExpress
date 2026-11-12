@@ -199,6 +199,11 @@ export const translations = {
       mapTitle: "Madrid city",
       mapOrigin: "Our workshop",
       mapHint: "Tap a dot to see its postal code",
+      zoneUpTo: "Up to {km} km",
+      zoneRange: "{from} to {to} km",
+      zoneBeyond: "More than {km} km",
+      zoneFrom: "from {price}",
+      zonesNote: "Pickup + delivery, by distance from our workshop. One price for all your garments.",
     },
     Payment: {
       eyebrow: "Payment",
@@ -525,6 +530,11 @@ export const translations = {
       mapTitle: "Madrid capital",
       mapOrigin: "Nuestro taller",
       mapHint: "Toca un punto para ver su código postal",
+      zoneUpTo: "Hasta {km} km",
+      zoneRange: "De {from} a {to} km",
+      zoneBeyond: "Más de {km} km",
+      zoneFrom: "desde {price}",
+      zonesNote: "Recogida + entrega, según la distancia al taller. El mismo precio para una prenda que para diez.",
     },
     Payment: {
       eyebrow: "Pago",

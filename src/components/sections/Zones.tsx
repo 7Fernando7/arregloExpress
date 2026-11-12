@@ -4,13 +4,17 @@ import { useLanguage } from '@/context/LanguageContext';
 import Eyebrow from '@/components/Eyebrow';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 import { whatsappLink } from '@/lib/contact';
-import { estimateDelivery, estimateFromCoords, POSTAL_CODES, toKm, type EstimateResult } from '@/lib/delivery';
+import { estimateDelivery, estimateFromCoords, POSTAL_CODES, toKm, totalAtStraightKm, type EstimateResult } from '@/lib/delivery';
 import { searchAddress, type AddressSuggestion } from '@/lib/geocoder';
 import { cn } from '@/lib/utils';
 import { track } from '@/lib/analytics';
 import Icono from "@/components/Icono";
 
 const RINGS_KM = [3, 6, 9];
+// zonas de precio del mapa: del anillo interior (más barato) al exterior
+const ZONE_FILLS = ['fill-accent/30', 'fill-accent/[0.18]', 'fill-accent/[0.08]'];
+// los discos se superponen, así que el color visible de cada anillo es la suma de los que tiene encima
+const ZONE_CHIPS = ['bg-accent/[0.47]', 'bg-accent/25', 'bg-accent/[0.08]'];
 // contorno del color de fondo para que los textos del mapa se lean sobre los puntos
 const HALO = { stroke: 'hsl(var(--card))', strokeWidth: 0.18, paintOrder: 'stroke' } as const;
 
@@ -146,6 +150,15 @@ export default function Zones() {
     ? { cp: estimate.postalCode, exact: !!estimate.address, ...toKm(estimate.lat, estimate.lng) }
     : null;
   const price = estimate ? formatPrice(estimate.total) : '';
+  // precio mínimo y máximo de cada anillo, con la misma fórmula que el calculador
+  const zones = RINGS_KM.map((to, i) => {
+    const from = i === 0 ? 0 : RINGS_KM[i - 1];
+    return {
+      label: i === 0 ? t('Zones.zoneUpTo').replace('{km}', String(to)) : t('Zones.zoneRange').replace('{from}', String(from)).replace('{to}', String(to)),
+      prices: `${formatPrice(totalAtStraightKm(from))} – ${formatPrice(totalAtStraightKm(to))}`,
+    };
+  });
+  const lastRing = RINGS_KM[RINGS_KM.length - 1];
   const showList = open && suggestions.length > 0 && !isPostalInput(query);
 
   return (
@@ -296,6 +309,10 @@ export default function Zones() {
 
         <figure className="mx-auto w-full max-w-md">
           <svg viewBox="-11 -11 22 22" className="w-full" role="img" aria-label={t('Zones.mapTitle')}>
+            {/* zonas de precio: discos de mayor a menor para que cada anillo quede con su color */}
+            {[...RINGS_KM].reverse().map((r, i) => (
+              <circle key={r} r={r} className={ZONE_FILLS[RINGS_KM.length - 1 - i]} />
+            ))}
             {RINGS_KM.map((r) => (
               <g key={r}>
                 <circle
@@ -346,8 +363,27 @@ export default function Zones() {
               </g>
             )}
           </svg>
-          <figcaption className="mt-2 text-center text-xs text-muted-foreground">
-            <span className="font-semibold text-foreground">{t('Zones.mapTitle')}</span> · {t('Zones.mapHint')}
+          <figcaption className="mt-3 space-y-3 text-xs text-muted-foreground">
+            <ul className="mx-auto grid max-w-xs gap-1.5">
+              {zones.map((z, i) => (
+                <li key={z.label} className="flex items-center gap-2.5">
+                  <span aria-hidden className={cn('h-3.5 w-3.5 shrink-0 rounded-full border border-accent/40', ZONE_CHIPS[i])} />
+                  <span className="flex-1">{z.label}</span>
+                  <span className="font-semibold tabular-nums text-foreground">{z.prices}</span>
+                </li>
+              ))}
+              <li className="flex items-center gap-2.5">
+                <span aria-hidden className="h-3.5 w-3.5 shrink-0 rounded-full border border-dashed border-accent/40" />
+                <span className="flex-1">{t('Zones.zoneBeyond').replace('{km}', String(lastRing))}</span>
+                <span className="font-semibold tabular-nums text-foreground">
+                  {t('Zones.zoneFrom').replace('{price}', formatPrice(totalAtStraightKm(lastRing)))}
+                </span>
+              </li>
+            </ul>
+            <p className="text-center">{t('Zones.zonesNote')}</p>
+            <p className="text-center">
+              <span className="font-semibold text-foreground">{t('Zones.mapTitle')}</span> · {t('Zones.mapHint')}
+            </p>
           </figcaption>
         </figure>
       </div>

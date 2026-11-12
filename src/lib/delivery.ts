@@ -113,10 +113,16 @@ export function estimateFromCoords(
   postalCode: string,
   address?: string
 ): DeliveryEstimate {
-  const km = haversineKm(ORIGIN.lat, ORIGIN.lng, lat, lng) * PRICING.roadFactor;
+  const straightKm = haversineKm(ORIGIN.lat, ORIGIN.lng, lat, lng);
+  const km = straightKm * PRICING.roadFactor;
+  return { postalCode, address, lat, lng, km, total: totalAtStraightKm(straightKm) };
+}
+
+// Precio de recogida + entrega a una distancia en línea recta del taller (las zonas del mapa)
+export function totalAtStraightKm(straightKm: number) {
+  const km = straightKm * PRICING.roadFactor;
   const trip = Math.max(PRICING.minTrip, PRICING.base + PRICING.perKm * km);
-  const total = Math.ceil((trip * PRICING.trips) / PRICING.roundTo) * PRICING.roundTo;
-  return { postalCode, address, lat, lng, km, total };
+  return Math.ceil((trip * PRICING.trips) / PRICING.roundTo) * PRICING.roundTo;
 }
 
 export function estimateDelivery(input: string): EstimateResult {
