@@ -431,6 +431,7 @@ export const SERVICIOS: Servicio[] = [
     categoria: "ropa",
     nombre: "Personalización de prendas",
     h1: "Personalización y transformación de prendas en Madrid",
+    imagen: { src: "/brand/personalizar.jpg", alt: "Manos de una costurera cosiendo un parche en unos vaqueros, junto a un short vaquero, hilos y tijeras", width: 1200, height: 900 },
     metaTitle: "Personalizar y transformar ropa, Madrid",
     metaDescription:
       "Transformamos y personalizamos tu ropa: vaqueros en shorts, vestidos en faldas, cambios de mangas o cuello, parches y zurcidos. Recogida a domicilio en Madrid.",

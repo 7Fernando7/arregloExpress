@@ -340,6 +340,7 @@ export const SERVICIOS_EN: Record<string, ServicioTexto> = {
   "personalizar-ropa-madrid": {
     nombre: "Customising garments",
     h1: "Garment customisation and transformation in Madrid",
+    imagenAlt: "A seamstress's hands sewing a patch onto a pair of jeans, next to denim shorts, thread and scissors",
     intro: [
       "That garment you no longer wear can have a second life. We turn jeans into shorts and dresses into skirts, change sleeves or collars, sew on patches and darn tears.",
       "Every job is different: tell us your idea on WhatsApp with a photo of the garment and we'll tell you whether it can be done and the price before we pick it up.",

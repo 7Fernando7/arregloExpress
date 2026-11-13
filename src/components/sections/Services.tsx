@@ -19,8 +19,7 @@ export default function Services() {
     { icon: 'serv-zapatos' as IconoNombre, key: 'service8' },
     { icon: 'serv-tintoreria' as IconoNombre, key: 'service9' },
     { icon: 'serv-maletas' as IconoNombre, key: 'service10' },
-    // icono provisional hasta tener el ilustrado propio (serv-personalizar)
-    { icon: 'tijeras' as IconoNombre, key: 'service11' },
+    { icon: 'serv-personalizar' as IconoNombre, key: 'service11' },
   ];
 
   return (
