@@ -38,6 +38,7 @@ export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
     { href: '/arreglos/arreglo-de-zapatos-madrid', label: t('Services.service8.title') },
     { href: '/arreglos/tintoreria-a-domicilio-madrid', label: t('Services.service9.title') },
     { href: '/arreglos/arreglo-de-maletas-madrid', label: t('Services.service10.title') },
+    { href: '/arreglos/personalizar-ropa-madrid', label: t('Services.service11.title') },
   ];
   // en el menú del móvil caben todas las secciones
   const menuLinks = [
