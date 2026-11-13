@@ -100,15 +100,16 @@ export const SERVICIOS: Servicio[] = [
     h1: "Cambio de cremalleras a domicilio en Madrid",
     metaTitle: "Cambio de cremalleras a domicilio, Madrid",
     metaDescription:
-      "Cambiamos o reparamos cremalleras de pantalones, faldas, vestidos, chaquetas y abrigos. Recogida y entrega a domicilio en Madrid capital.",
+      "Cambiamos o reparamos cremalleras de pantalones, vestidos, chaquetas, abrigos, mochilas y bolsos. Recogida y entrega a domicilio en Madrid capital.",
     intro: [
-      "Una cremallera rota no es motivo para dejar de ponerte una prenda que te gusta. Cambiamos o reparamos cremalleras de pantalones, vaqueros, faldas, vestidos, chaquetas, abrigos y cazadoras.",
+      "Una cremallera rota no es motivo para dejar de ponerte una prenda que te gusta. Cambiamos o reparamos cremalleras de pantalones, vaqueros, faldas, vestidos, chaquetas, abrigos y cazadoras. También las de mochilas y bolsos.",
       "No hace falta que marques nada: solo dinos qué cremallera es y mándanos una foto.",
     ],
     incluye: [
       "Cremalleras de pantalones y vaqueros",
       "Cremalleras invisibles de faldas y vestidos",
       "Cremalleras de chaquetas, abrigos y cazadoras",
+      "Cremalleras de mochilas y bolsos",
       "Cambio de tirador cuando la cremallera está bien",
     ],
     marcar: "zips",
@@ -120,6 +121,10 @@ export const SERVICIOS: Servicio[] = [
       {
         p: "¿Siempre hay que cambiar la cremallera entera?",
         r: "No siempre: a veces basta con cambiar el tirador. Con una foto te decimos qué necesita tu prenda.",
+      },
+      {
+        p: "¿Cambiáis la cremallera de una mochila o un bolso?",
+        r: "Sí. Mándanos una foto de la cremallera y de la mochila o el bolso entero, y te decimos si se puede cambiar y el precio antes de recogerlo.",
       },
       {
         p: "¿Cuánto tardáis?",

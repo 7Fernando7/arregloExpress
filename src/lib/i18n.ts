@@ -113,7 +113,7 @@ export const translations = {
       },
       service3: {
         title: "Zip replacement",
-        description: "We repair or replace broken zips on all kinds of clothing.",
+        description: "We repair or replace broken zips on clothing, backpacks and handbags.",
       },
       service4: {
         title: "Buttons and fasteners",
@@ -174,7 +174,7 @@ export const translations = {
       eyebrow: "Pickup & delivery",
       title: "Calculate your pickup and delivery",
       description:
-        "We cover all of Madrid city. Enter your address or postal code and get an instant estimate.",
+        "We work mainly in central Madrid and cover all of Madrid city. Enter your address or postal code and get an instant estimate.",
       label: "Your address or postal code",
       placeholder: "e.g. Calle Alcalá 100 or 28010",
       button: "Calculate",
@@ -320,7 +320,7 @@ export const translations = {
     },
     Footer: {
       tagline:
-        "Clothing, shoe and luggage repairs and dry cleaning, with home pickup and delivery across Madrid city.",
+        "Clothing, shoe and luggage repairs and dry cleaning, with home pickup and delivery in central Madrid and across Madrid city.",
       contactTitle: "Contact",
       contactText: "We handle orders via WhatsApp, email and the contact form.",
       sectionsTitle: "Website",
@@ -448,7 +448,7 @@ export const translations = {
       },
       service3: {
         title: "Cambio de cremalleras",
-        description: "Reparamos o cambiamos cremalleras rotas en todo tipo de ropa.",
+        description: "Reparamos o cambiamos cremalleras rotas de ropa, mochilas y bolsos.",
       },
       service4: {
         title: "Botones y cierres",
@@ -509,7 +509,7 @@ export const translations = {
       eyebrow: "Recogida y entrega",
       title: "Calcula tu recogida y entrega",
       description:
-        "Cubrimos todo Madrid capital. Escribe tu dirección o tu código postal y te damos una estimación al momento.",
+        "Trabajamos sobre todo en Madrid centro y cubrimos todo Madrid capital. Escribe tu dirección o tu código postal y te damos una estimación al momento.",
       label: "Tu dirección o código postal",
       placeholder: "Ej. Calle Alcalá 100 o 28010",
       button: "Calcular",
@@ -655,7 +655,7 @@ export const translations = {
     },
     Footer: {
       tagline:
-        "Arreglos y composturas de ropa, zapatos y maletas, y tintorería, con recogida y entrega a domicilio en todo Madrid capital.",
+        "Arreglos y composturas de ropa, zapatos y maletas, y tintorería, con recogida y entrega a domicilio en Madrid centro y en todo Madrid capital.",
       contactTitle: "Contacto",
       contactText: "Atendemos por WhatsApp, por correo y por el formulario de contacto.",
       sectionsTitle: "La web",

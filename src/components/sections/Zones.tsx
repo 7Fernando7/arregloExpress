@@ -14,7 +14,7 @@ const RINGS_KM = [3, 6, 9];
 // zonas de precio del mapa: del anillo interior (más barato) al exterior
 // barrios y distritos de cada anillo (según el centro de cada código postal): orientativo
 const ZONE_AREAS = [
-  'Sol, Barrio de las Letras, Lavapiés, La Latina, Malasaña, Chueca, Chamberí, Argüelles, Salamanca, Retiro y Arganzuela',
+  'Sol, Barrio de las Letras, Lavapiés, La Latina, Malasaña, Chueca, Chamberí, Argüelles, Moncloa, Salamanca, Retiro y Arganzuela',
   'Tetuán, Chamartín, Ciudad Universitaria, Ventas, Ciudad Lineal, Moratalaz, Puente de Vallecas, Usera, Carabanchel y Puerta del Ángel',
   'Hortaleza, San Blas, Vicálvaro, Villa de Vallecas, Villaverde, Aluche, Fuencarral y Aravaca',
 ];

@@ -72,13 +72,14 @@ export const SERVICIOS_EN: Record<string, ServicioTexto> = {
     nombre: "Zip replacement",
     h1: "Zip replacement with home pickup in Madrid",
     intro: [
-      "A broken zip is no reason to stop wearing something you like. We replace or repair zips on trousers, jeans, skirts, dresses, jackets and coats.",
+      "A broken zip is no reason to stop wearing something you like. We replace or repair zips on trousers, jeans, skirts, dresses, jackets and coats. Backpacks and handbags too.",
       "You don't need to mark anything: just tell us which zip it is and send us a photo.",
     ],
     incluye: [
       "Zips on trousers and jeans",
       "Invisible zips on skirts and dresses",
       "Zips on jackets and coats",
+      "Zips on backpacks and handbags",
       "Replacing just the slider when the zip itself is fine",
     ],
     preguntas: [
@@ -89,6 +90,10 @@ export const SERVICIOS_EN: Record<string, ServicioTexto> = {
       {
         p: "Does the whole zip always need replacing?",
         r: "Not always: sometimes replacing the slider is enough. With a photo we can tell you what your garment needs.",
+      },
+      {
+        p: "Do you replace the zip on a backpack or a handbag?",
+        r: "Yes. Send us a photo of the zip and of the whole backpack or bag, and we'll tell you whether it can be replaced and the price before we pick it up.",
       },
       { p: HOW_LONG, r: URGENT },
     ],

@@ -4,7 +4,7 @@ export const metadata: Metadata = {
     template: "%s | Arreglos Express",
   },
   description:
-    "Arreglos de ropa, zapatos, maletas y tintorería a domicilio en Madrid capital: bajos, cremalleras, botones y más. Presupuesto por WhatsApp.",
+    "Arreglos de ropa, zapatos, maletas y tintorería a domicilio en Madrid centro y toda la capital: bajos, cremalleras, botones y más. Presupuesto por WhatsApp.",
   authors: [{ name: "Arreglos Express Madrid" }],
   creator: "Arreglos Express Madrid",
   publisher: "Arreglos Express Madrid",
