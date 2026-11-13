@@ -144,6 +144,10 @@ export const translations = {
         title: "Luggage and cases",
         description: "Suitcase wheels, handles and zips, plus music and DJ gear cases.",
       },
+      service11: {
+        title: "Customising garments",
+        description: "Garment transformations, patches and darning.",
+      },
       askTitle: "Can't see your alteration?",
       askText: "Ask us on WhatsApp and we'll tell you if we can do it.",
       askButton: "Ask us",
@@ -478,6 +482,10 @@ export const translations = {
       service10: {
         title: "Maletas y fundas",
         description: "Ruedas, asas y cremalleras de maletas, y fundas de música y DJ.",
+      },
+      service11: {
+        title: "Personalización de prendas",
+        description: "Transformar prendas, parches y zurcidos.",
       },
       askTitle: "¿No ves tu arreglo?",
       askText: "Pregúntanos por WhatsApp y te decimos si podemos hacerlo.",

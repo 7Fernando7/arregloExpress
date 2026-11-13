@@ -1,6 +1,6 @@
 // Páginas por servicio (/arreglos/[slug]). El HTML sale en español (son las que posicionan en Google);
 // la versión en inglés del texto está en servicios.en.ts y se muestra en el navegador al elegir EN.
-// El orden importa: coincide con las tarjetas de la portada (Services.tsx, service1…service10).
+// El orden importa: coincide con las tarjetas de la portada (Services.tsx, service1…service11).
 // Sin precios ni plazos inventados: el precio se da por WhatsApp y el mínimo es 3 días.
 
 export type MarkingKey = "pants" | "skirt" | "sleeves" | "takeIn" | "zips";
@@ -425,6 +425,46 @@ export const SERVICIOS: Servicio[] = [
       },
     ],
     whatsapp: "¡Hola! Quiero presupuesto para arreglar una maleta o una funda.",
+  },
+  {
+    slug: "personalizar-ropa-madrid",
+    categoria: "ropa",
+    nombre: "Personalización de prendas",
+    h1: "Personalización y transformación de prendas en Madrid",
+    metaTitle: "Personalizar y transformar ropa, Madrid",
+    metaDescription:
+      "Transformamos y personalizamos tu ropa: vaqueros en shorts, vestidos en faldas, cambios de mangas o cuello, parches y zurcidos. Recogida a domicilio en Madrid.",
+    intro: [
+      "Esa prenda que ya no te pones puede tener una segunda vida. Transformamos vaqueros en shorts y vestidos en faldas, cambiamos mangas o cuellos, ponemos parches y zurcimos rotos.",
+      "Cada encargo es distinto: cuéntanos tu idea por WhatsApp con una foto de la prenda y te decimos si se puede hacer y el precio antes de recogerla.",
+    ],
+    incluye: [
+      "Transformar prendas: vaquero en short, vestido en falda",
+      "Cambiar o quitar mangas y cuellos",
+      "Poner parches",
+      "Zurcir rotos en vaqueros y otras prendas",
+    ],
+    incluyeNota: "Son ejemplos: mándanos una foto y te confirmamos qué se puede hacer en tu caso.",
+    consejos: [
+      "Haz una foto de la prenda entera y otra de la zona que quieres cambiar.",
+      "Cuéntanos cómo quieres que quede; si tienes una foto de referencia, mándala.",
+      "Si es un parche, mándanoslo con la prenda y dinos dónde lo quieres.",
+    ],
+    preguntas: [
+      {
+        p: "¿Se puede transformar cualquier prenda?",
+        r: "Depende de la tela y de cómo esté hecha. Mándanos una foto y te decimos qué es posible antes de recogerla.",
+      },
+      {
+        p: "¿Hacéis bordados o teñís prendas?",
+        r: "No, por ahora no hacemos bordados ni teñido.",
+      },
+      {
+        p: "¿Cuánto tardáis?",
+        r: "Necesitamos un mínimo de 3 días entre la recogida y la entrega. Una transformación puede llevar más: te lo decimos con el presupuesto.",
+      },
+    ],
+    whatsapp: "¡Hola! Quiero presupuesto para personalizar o transformar una prenda.",
   },
 ];
 

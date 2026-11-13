@@ -19,6 +19,8 @@ export default function Services() {
     { icon: 'serv-zapatos' as IconoNombre, key: 'service8' },
     { icon: 'serv-tintoreria' as IconoNombre, key: 'service9' },
     { icon: 'serv-maletas' as IconoNombre, key: 'service10' },
+    // icono provisional hasta tener el ilustrado propio (serv-personalizar)
+    { icon: 'tijeras' as IconoNombre, key: 'service11' },
   ];
 
   return (
@@ -51,7 +53,7 @@ export default function Services() {
               </span>
             </a>
           ))}
-          <article className="flex flex-col justify-between gap-4 rounded-lg bg-primary p-6 text-primary-foreground sm:col-span-2 lg:flex-row lg:items-center">
+          <article className="flex flex-col justify-between gap-4 rounded-lg bg-primary p-6 text-primary-foreground">
             <div>
               <h3 className="font-headline text-xl font-semibold leading-snug">{t('Services.askTitle')}</h3>
               <p className="mt-2 text-sm leading-relaxed text-primary-foreground/80">{t('Services.askText')}</p>
@@ -60,7 +62,7 @@ export default function Services() {
               data-umami-event="whatsapp" data-umami-event-origen="servicios-preguntar" href={whatsappLink(t('Services.askMessage'))}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 inline-flex shrink-0 items-center gap-2 self-start rounded-md bg-accent px-4 py-2 text-sm lg:mt-0 lg:self-center font-semibold text-accent-foreground transition-colors hover:bg-accent/90"
+              className="mt-2 inline-flex shrink-0 items-center gap-2 self-start rounded-md bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90"
             >
               <MessageCircle className="h-4 w-4" />
               {t('Services.askButton')}

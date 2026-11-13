@@ -337,6 +337,41 @@ export const SERVICIOS_EN: Record<string, ServicioTexto> = {
     ],
     whatsapp: "Hi! I'd like a quote for repairing a suitcase or a case.",
   },
+  "personalizar-ropa-madrid": {
+    nombre: "Customising garments",
+    h1: "Garment customisation and transformation in Madrid",
+    intro: [
+      "That garment you no longer wear can have a second life. We turn jeans into shorts and dresses into skirts, change sleeves or collars, sew on patches and darn tears.",
+      "Every job is different: tell us your idea on WhatsApp with a photo of the garment and we'll tell you whether it can be done and the price before we pick it up.",
+    ],
+    incluye: [
+      "Transforming garments: jeans into shorts, a dress into a skirt",
+      "Changing or removing sleeves and collars",
+      "Sewing on patches",
+      "Darning tears in jeans and other garments",
+    ],
+    incluyeNota: EXAMPLES_NOTE,
+    consejos: [
+      "Take a photo of the whole garment and another of the area you want changed.",
+      "Tell us how you want it to look; if you have a reference photo, send it.",
+      "If it's a patch, send it with the garment and tell us where you want it.",
+    ],
+    preguntas: [
+      {
+        p: "Can any garment be transformed?",
+        r: "It depends on the fabric and how it's made. Send us a photo and we'll tell you what's possible before we pick it up.",
+      },
+      {
+        p: "Do you do embroidery or dye garments?",
+        r: "No, for now we don't do embroidery or dyeing.",
+      },
+      {
+        p: HOW_LONG,
+        r: "We need at least 3 days between pickup and delivery. A transformation may take longer: we'll tell you with the quote.",
+      },
+    ],
+    whatsapp: "Hi! I'd like a quote for customising or transforming a garment.",
+  },
 };
 
 // texto del servicio en el idioma elegido (en español, el propio servicio)
