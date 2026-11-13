@@ -109,7 +109,7 @@ export const SERVICIOS: Servicio[] = [
       "Cremalleras de pantalones y vaqueros",
       "Cremalleras invisibles de faldas y vestidos",
       "Cremalleras de chaquetas, abrigos y cazadoras",
-      "Cremalleras de mochilas y bolsos",
+      "Cremalleras de mochilas y bolsos (según el modelo: mándanos una foto)",
       "Cambio de tirador cuando la cremallera está bien",
     ],
     marcar: "zips",

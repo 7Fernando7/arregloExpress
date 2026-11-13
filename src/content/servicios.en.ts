@@ -79,7 +79,7 @@ export const SERVICIOS_EN: Record<string, ServicioTexto> = {
       "Zips on trousers and jeans",
       "Invisible zips on skirts and dresses",
       "Zips on jackets and coats",
-      "Zips on backpacks and handbags",
+      "Zips on backpacks and handbags (depending on the model: send us a photo)",
       "Replacing just the slider when the zip itself is fine",
     ],
     preguntas: [
