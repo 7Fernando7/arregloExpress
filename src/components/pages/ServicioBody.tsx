@@ -76,6 +76,8 @@ export default function ServicioBody({ slug }: { slug: string }) {
                 badgeText={t(s.categoria === "tintoreria" ? "ServicePage.badgeTextCleaning" : "ServicePage.badgeText")}
                 badgeButton={t("ServicePage.badgeButton")}
                 whatsappMessage={c.whatsapp}
+                calcLabel={t("ServicePage.badgeCalc")}
+                calcHref="/#zones"
               />
             )}
           </div>

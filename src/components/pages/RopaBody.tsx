@@ -72,6 +72,8 @@ export default function RopaBody() {
               badgeText={t("ServicePage.badgeText")}
               badgeButton={t("ServicePage.badgeButton")}
               whatsappMessage={t("RopaPage.photoMessage")}
+              calcLabel={t("ServicePage.badgeCalc")}
+              calcHref="/#zones"
             />
           </div>
         </div>

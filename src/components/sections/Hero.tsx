@@ -63,6 +63,8 @@ export default function Hero() {
           badgeText={t("Hero.badgeText")}
           badgeButton={t("Hero.badgeButton")}
           whatsappMessage={t("Hero.badgeMessage")}
+          calcLabel={t("ServicePage.badgeCalc")}
+          calcHref="#zones"
         />
       </div>
     </section>
