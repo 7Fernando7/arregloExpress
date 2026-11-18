@@ -52,6 +52,8 @@ export default function RootLayout({
         />
         {/* Analítica sin cookies: cloud.umami.is */}
         <script defer src="https://cloud.umami.is/script.js" data-website-id="5ddb600d-a58f-474d-b7aa-845c112f01a2" data-domains="arreglosexpressmadrid.com" />
+        {/* Publicidad: Google AdSense (el aviso de consentimiento lo muestra Google) */}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3792521262251447" crossOrigin="anonymous" />
       </head>
       <body className="font-body antialiased" suppressHydrationWarning={true}>
         <LanguageProvider>

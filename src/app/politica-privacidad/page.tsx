@@ -138,6 +138,10 @@ export default function PoliticaPrivacidad() {
               CartoCiudad (Instituto Geográfico Nacional), solo para localizar la
               dirección que escribes en el calculador de recogida; no la guardamos
             </li>
+            <li>
+              Google Ireland Limited (Google AdSense), para mostrar publicidad
+              en la web
+            </li>
             <li>Servicios de alojamiento en la nube</li>
           </ul>
           <p className="mt-3">
@@ -184,9 +188,33 @@ export default function PoliticaPrivacidad() {
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold mb-3">9. Cookies y estadísticas de uso</h2>
+          <h2 className="text-xl font-semibold mb-3">9. Cookies, publicidad y estadísticas de uso</h2>
           <p className="mb-3">
-            Este sitio web no utiliza cookies de seguimiento ni de publicidad.
+            Este sitio web muestra anuncios de Google AdSense. Google y sus
+            socios publicitarios pueden usar cookies e identificadores para
+            mostrar anuncios, personalizarlos según tus visitas a esta y a
+            otras webs, y medir su rendimiento. Estas cookies solo se usan si
+            lo aceptas en el aviso de consentimiento que aparece al entrar, y
+            puedes cambiar tu elección en cualquier momento desde ese mismo
+            aviso. Tienes más información en{" "}
+            <a
+              href="https://policies.google.com/technologies/partner-sites?hl=es"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              cómo usa Google los datos de los sitios que utilizan sus servicios
+            </a>
+            , y puedes desactivar la publicidad personalizada en{" "}
+            <a
+              href="https://adssettings.google.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              la configuración de anuncios de Google
+            </a>
+            .
           </p>
           <p className="mb-3">
             Para saber cuántas personas visitan la web y qué secciones les
