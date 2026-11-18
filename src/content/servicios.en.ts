@@ -373,6 +373,48 @@ export const SERVICIOS_EN: Record<string, ServicioTexto> = {
     ],
     whatsapp: "Hi! I'd like a quote for customising or transforming a garment.",
   },
+  "arreglo-de-guitarras-madrid": {
+    nombre: "Guitar and bass repair",
+    h1: "Guitar and bass repair with home pickup in Madrid",
+    imagenAlt: "A luthier's hands adjusting the tuning pegs of an acoustic guitar in his workshop, with new strings and a tuner on the bench",
+    intro: [
+      "A guitar that buzzes, won't stay in tune or makes noise can be fixed. We pick up your guitar, bass or other plucked string instrument, acoustic or electric, a luthier sets it up and we bring it back to your door.",
+      "Every instrument is different: send us a few photos on WhatsApp and we'll tell you whether it can be done and the price before we pick it up.",
+    ],
+    incluye: [
+      "Restringing",
+      "Setup: string height, truss rod and intonation",
+      "Worn frets or fret buzz",
+      "Electronics: pickups, pots and jack",
+      "Tuners, nut and bridge",
+      "Dents and cracks in the wood",
+    ],
+    incluyeNota: EXAMPLES_NOTE,
+    consejos: [
+      "Take a photo of the whole instrument and another of the area that needs repairing.",
+      "Tell us the brand and model, and what you notice when you play.",
+      "Hand it over in its bag or case: we can't pick it up without one.",
+    ],
+    preguntas: [
+      {
+        p: "Which instruments do you repair?",
+        r: "Plucked string instruments, acoustic or electric: classical, acoustic and electric guitars, basses and ukuleles. If you have another one, ask us with a photo.",
+      },
+      {
+        p: "Do I have to hand it over in a case?",
+        r: "Yes. So that it travels protected, we only pick it up in its bag or case.",
+      },
+      {
+        p: "Do you repair the case too?",
+        r: "Yes, but that's a separate service: see luggage and case repair.",
+      },
+      {
+        p: HOW_LONG,
+        r: "It depends on the job. We need at least 3 days between pickup and delivery; if a part has to be ordered it may take longer: we'll tell you with the quote.",
+      },
+    ],
+    whatsapp: "Hi! I'd like a quote for repairing a guitar or a bass.",
+  },
 };
 
 // texto del servicio en el idioma elegido (en español, el propio servicio)

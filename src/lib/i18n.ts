@@ -148,6 +148,10 @@ export const translations = {
         title: "Customising garments",
         description: "Garment transformations, patches and darning.",
       },
+      service12: {
+        title: "Guitars and basses",
+        description: "Restringing, setup, frets and electronics, by a luthier.",
+      },
       askTitle: "Can't see your alteration?",
       askText: "Ask us on WhatsApp and we'll tell you if we can do it.",
       askButton: "Ask us",
@@ -488,6 +492,10 @@ export const translations = {
       service11: {
         title: "Personalización de prendas",
         description: "Transformar prendas, parches y zurcidos.",
+      },
+      service12: {
+        title: "Guitarras y bajos",
+        description: "Cambio de cuerdas, ajuste, trastes y electrónica, con luthier.",
       },
       askTitle: "¿No ves tu arreglo?",
       askText: "Pregúntanos por WhatsApp y te decimos si podemos hacerlo.",

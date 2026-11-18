@@ -1,13 +1,13 @@
 // Páginas por servicio (/arreglos/[slug]). El HTML sale en español (son las que posicionan en Google);
 // la versión en inglés del texto está en servicios.en.ts y se muestra en el navegador al elegir EN.
-// El orden importa: coincide con las tarjetas de la portada (Services.tsx, service1…service11).
+// El orden importa: coincide con las tarjetas de la portada (Services.tsx, service1…service12).
 // Sin precios ni plazos inventados: el precio se da por WhatsApp y el mínimo es 3 días.
 
 export type MarkingKey = "pants" | "skirt" | "sleeves" | "takeIn" | "zips";
 
 export type Servicio = {
   slug: string;
-  categoria: "ropa" | "calzado" | "tintoreria" | "maletas";
+  categoria: "ropa" | "calzado" | "tintoreria" | "maletas" | "instrumentos";
   nombre: string; // texto corto para enlaces y migas de pan
   h1: string;
   metaTitle: string; // sin la marca (la añade la plantilla del layout)
@@ -466,6 +466,53 @@ export const SERVICIOS: Servicio[] = [
       },
     ],
     whatsapp: "¡Hola! Quiero presupuesto para personalizar o transformar una prenda.",
+  },
+  {
+    slug: "arreglo-de-guitarras-madrid",
+    categoria: "instrumentos",
+    nombre: "Arreglo de guitarras y bajos",
+    h1: "Arreglo de guitarras y bajos a domicilio en Madrid",
+    imagen: { src: "/brand/instrumentos.jpg", alt: "Manos de un luthier ajustando las clavijas de una guitarra acústica en su taller, con cuerdas nuevas y un afinador sobre el banco", width: 1200, height: 900 },
+    metaTitle: "Arreglo de guitarras y bajos, luthier Madrid",
+    metaDescription:
+      "Recogemos tu guitarra o tu bajo en casa, lo pone a punto un luthier y te lo devolvemos: cambio de cuerdas, ajuste, trastes y electrónica. Madrid capital.",
+    intro: [
+      "Una guitarra que trastea, que no afina o que mete ruido tiene arreglo. Recogemos tu guitarra, tu bajo u otro instrumento de cuerda pulsada, acústico o eléctrico, lo pone a punto un luthier y te lo devolvemos en casa.",
+      "Cada instrumento es distinto: mándanos unas fotos por WhatsApp y te decimos si se puede hacer y el precio antes de recogerlo.",
+    ],
+    incluye: [
+      "Cambio de cuerdas",
+      "Ajuste del instrumento: altura de cuerdas, alma y octavación",
+      "Trastes gastados o cuerdas que trastean",
+      "Electrónica: pastillas, potenciómetros y jack",
+      "Clavijeros, cejuela y puente",
+      "Golpes y grietas en la madera",
+    ],
+    incluyeNota: "Son ejemplos: mándanos una foto y te confirmamos qué se puede hacer en tu caso.",
+    consejos: [
+      "Haz una foto del instrumento entero y otra de la zona que hay que arreglar.",
+      "Dinos la marca y el modelo, y cuéntanos qué le notas al tocar.",
+      "Entréganoslo en su funda o estuche: sin funda no podemos recogerlo.",
+    ],
+    preguntas: [
+      {
+        p: "¿Qué instrumentos arregláis?",
+        r: "Instrumentos de cuerda pulsada, acústicos o eléctricos: guitarras españolas, acústicas y eléctricas, bajos y ukeleles. Si tienes otro, pregúntanos con una foto.",
+      },
+      {
+        p: "¿Tengo que entregarlo con funda?",
+        r: "Sí. Para que viaje protegido lo recogemos solo en su funda o estuche.",
+      },
+      {
+        p: "¿Arregláis también la funda?",
+        r: "Sí, pero es otro servicio: lo tienes en arreglo de maletas y fundas.",
+      },
+      {
+        p: "¿Cuánto tardáis?",
+        r: "Depende del trabajo. Necesitamos un mínimo de 3 días entre la recogida y la entrega; si hay que pedir una pieza puede tardar más: te lo decimos con el presupuesto.",
+      },
+    ],
+    whatsapp: "¡Hola! Quiero presupuesto para arreglar una guitarra o un bajo.",
   },
 ];
 
