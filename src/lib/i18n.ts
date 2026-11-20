@@ -47,7 +47,7 @@ export const translations = {
         description: "At least 3 days after pickup, we deliver it to your door.",
       },
       leadTime:
-        "The usual turnaround is 3 days between pickup and delivery. In a hurry? Next-day express clothing alterations for €5 extra: ask us. Express jobs are paid in cash at pickup, with a receipt.",
+        "The usual turnaround is 3 days between pickup and delivery. In a hurry? Next-day express clothing alterations for a surcharge we confirm with your quote: ask us. Express jobs are paid in cash at pickup, with a receipt.",
     },
     Marking: {
       eyebrow: "Before pickup",
@@ -146,7 +146,7 @@ export const translations = {
       },
       service11: {
         title: "Customising garments",
-        description: "Garment transformations, patches and darning.",
+        description: "Garment transformations, embroidery, patches and darning.",
       },
       service12: {
         title: "Guitars and basses",
@@ -239,7 +239,7 @@ export const translations = {
       q3: "Where do you pick up?",
       a3: "Anywhere in Madrid city (postal codes 28001 to 28055): at home, at the office or wherever suits you best.",
       q4: "How long does it take?",
-      a4: "The usual turnaround is 3 days between pickup and delivery. If you need it sooner (a wedding, an event), we offer next-day express clothing alterations for €5 extra: ask us on WhatsApp whether your alteration qualifies. Express jobs are paid in cash at pickup, with a receipt.",
+      a4: "The usual turnaround is 3 days between pickup and delivery. If you need it sooner (a wedding, an event), we offer next-day express clothing alterations for a surcharge we confirm with your quote: ask us on WhatsApp whether your alteration qualifies. Express jobs are paid in cash at pickup, with a receipt.",
       q5: "How can I contact you?",
       a5: "Via WhatsApp or the form on this page. We'll reply through the same channel.",
       q6: "How and when do I pay?",
@@ -332,7 +332,7 @@ export const translations = {
       faq2q: "Do I need to come in to be measured?",
       faq2a: "No. You can mark the garment yourself at home with safety pins, following our guide, or send us another garment that fits the way you want.",
       faq3q: "How long does it take?",
-      faq3a: "The usual turnaround is 3 days between pickup and delivery. In a hurry? We offer a next-day express service for €5 extra: ask us on WhatsApp whether your alteration qualifies. Express jobs are paid in cash at pickup, with a receipt.",
+      faq3a: "The usual turnaround is 3 days between pickup and delivery. In a hurry? We offer a next-day express service for a surcharge we confirm with your quote: ask us on WhatsApp whether your alteration qualifies. Express jobs are paid in cash at pickup, with a receipt.",
     },
     Footer: {
       tagline:
@@ -399,7 +399,7 @@ export const translations = {
         description: "Como mínimo 3 días después de la recogida, te la llevamos a la puerta de casa.",
       },
       leadTime:
-        "Lo normal son 3 días entre la recogida y la entrega. ¿Tienes prisa? Arreglos de ropa express de un día para otro por 5 € más: pregúntanos. El express se paga en efectivo en la recogida, con recibo.",
+        "Lo normal son 3 días entre la recogida y la entrega. ¿Tienes prisa? Arreglos de ropa express de un día para otro con un recargo que te confirmamos en el presupuesto: pregúntanos. El express se paga en efectivo en la recogida, con recibo.",
     },
     Marking: {
       eyebrow: "Antes de la recogida",
@@ -498,7 +498,7 @@ export const translations = {
       },
       service11: {
         title: "Personalización de prendas",
-        description: "Transformar prendas, parches y zurcidos.",
+        description: "Transformar prendas, bordados, parches y zurcidos.",
       },
       service12: {
         title: "Guitarras y bajos",
@@ -591,7 +591,7 @@ export const translations = {
       q3: "¿Dónde recogéis?",
       a3: "En todo Madrid capital (códigos postales del 28001 al 28055): en casa, en la oficina o donde mejor te venga.",
       q4: "¿Cuánto tardáis?",
-      a4: "Lo normal son 3 días entre la recogida y la entrega. Si lo necesitas antes (una boda, un evento), tenemos arreglos de ropa express de un día para otro por 5 € más: pregúntanos por WhatsApp si tu arreglo entra. El express se paga en efectivo en la recogida, con recibo.",
+      a4: "Lo normal son 3 días entre la recogida y la entrega. Si lo necesitas antes (una boda, un evento), tenemos arreglos de ropa express de un día para otro con un recargo que te confirmamos en el presupuesto: pregúntanos por WhatsApp si tu arreglo entra. El express se paga en efectivo en la recogida, con recibo.",
       q5: "¿Cómo os contacto?",
       a5: "Por WhatsApp o con el formulario de esta página. Te respondemos por el mismo medio.",
       q6: "¿Cómo y cuándo se paga?",
@@ -684,7 +684,7 @@ export const translations = {
       faq2q: "¿Tengo que ir a que me tomen medidas?",
       faq2a: "No. Puedes marcar la prenda tú en casa con imperdibles, siguiendo nuestra guía, o mandarnos otra prenda que te quede como quieres.",
       faq3q: "¿Cuánto tardáis?",
-      faq3a: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro por 5 € más: pregúntanos por WhatsApp si tu arreglo entra. El express se paga en efectivo en la recogida, con recibo.",
+      faq3a: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro con un recargo que te confirmamos en el presupuesto: pregúntanos por WhatsApp si tu arreglo entra. El express se paga en efectivo en la recogida, con recibo.",
     },
     Footer: {
       tagline:

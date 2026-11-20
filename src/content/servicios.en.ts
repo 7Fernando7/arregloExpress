@@ -11,7 +11,7 @@ const EXAMPLES_NOTE = "These are examples: send us a photo and we'll confirm wha
 const HOW_LONG = "How long does it take?";
 const THREE_DAYS = "We need at least 3 days between pickup and delivery.";
 const URGENT =
-  "The usual turnaround is 3 days between pickup and delivery. In a hurry? We offer a next-day express service for €5 extra: ask us on WhatsApp whether your alteration qualifies. Express jobs are paid in cash at pickup, with a receipt.";
+  "The usual turnaround is 3 days between pickup and delivery. In a hurry? We offer a next-day express service for a surcharge we confirm with your quote: ask us on WhatsApp whether your alteration qualifies. Express jobs are paid in cash at pickup, with a receipt.";
 const THREE_DAYS_RUSH =
   "We need at least 3 days between pickup and delivery. If you need it sooner, tell us and we'll try, but we can't guarantee it.";
 
@@ -141,7 +141,7 @@ export const SERVICIOS_EN: Record<string, ServicioTexto> = {
     preguntas: [
       {
         p: "I need it for a specific date. Will it be ready?",
-        r: "The usual turnaround is 3 days between pickup and delivery. If time is tight, we offer a next-day express service for €5 extra: write to us as soon as you can to confirm it. Express jobs are paid in cash at pickup, with a receipt.",
+        r: "The usual turnaround is 3 days between pickup and delivery. If time is tight, we offer a next-day express service for a surcharge we confirm with your quote: write to us as soon as you can to confirm it. Express jobs are paid in cash at pickup, with a receipt.",
       },
       {
         p: "How do I mark the length of a long dress?",
@@ -342,12 +342,13 @@ export const SERVICIOS_EN: Record<string, ServicioTexto> = {
     h1: "Garment customisation and transformation in Madrid",
     imagenAlt: "A seamstress's hands sewing a patch onto a pair of jeans, next to denim shorts, thread and scissors",
     intro: [
-      "That garment you no longer wear can have a second life. We turn jeans into shorts and dresses into skirts, change sleeves or collars, sew on patches and darn tears.",
+      "That garment you no longer wear can have a second life. We turn jeans into shorts and dresses into skirts, change sleeves or collars, embroider names or designs, sew on patches and darn tears.",
       "Every job is different: tell us your idea on WhatsApp with a photo of the garment and we'll tell you whether it can be done and the price before we pick it up.",
     ],
     incluye: [
       "Transforming garments: jeans into shorts, a dress into a skirt",
       "Changing or removing sleeves and collars",
+      "Custom embroidery: names, initials and designs",
       "Sewing on patches",
       "Darning tears in jeans and other garments",
     ],
@@ -356,6 +357,7 @@ export const SERVICIOS_EN: Record<string, ServicioTexto> = {
       "Take a photo of the whole garment and another of the area you want changed.",
       "Tell us how you want it to look; if you have a reference photo, send it.",
       "If it's a patch, send it with the garment and tell us where you want it.",
+      "If it's embroidery, send us the text or design and tell us the size and where you want it.",
     ],
     preguntas: [
       {
@@ -364,7 +366,7 @@ export const SERVICIOS_EN: Record<string, ServicioTexto> = {
       },
       {
         p: "Do you do embroidery or dye garments?",
-        r: "No, for now we don't do embroidery or dyeing.",
+        r: "Embroidery, yes: send us the text or design and a photo of the garment, and we'll tell you the price. Dyeing, not for now.",
       },
       {
         p: HOW_LONG,

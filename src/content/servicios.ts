@@ -53,7 +53,7 @@ export const SERVICIOS: Servicio[] = [
       },
       {
         p: "¿Cuánto tardáis?",
-        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro por 5 € más: pregúntanos por WhatsApp si tu arreglo entra. El express se paga en efectivo en la recogida, con recibo.",
+        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro con un recargo que te confirmamos en el presupuesto: pregúntanos por WhatsApp si tu arreglo entra. El express se paga en efectivo en la recogida, con recibo.",
       },
     ],
     whatsapp: "¡Hola! Quiero presupuesto para coger un bajo.",
@@ -88,7 +88,7 @@ export const SERVICIOS: Servicio[] = [
       },
       {
         p: "¿Cuánto tardáis?",
-        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro por 5 € más: pregúntanos por WhatsApp si tu arreglo entra. El express se paga en efectivo en la recogida, con recibo.",
+        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro con un recargo que te confirmamos en el presupuesto: pregúntanos por WhatsApp si tu arreglo entra. El express se paga en efectivo en la recogida, con recibo.",
       },
     ],
     whatsapp: "¡Hola! Quiero presupuesto para estrechar una prenda.",
@@ -128,7 +128,7 @@ export const SERVICIOS: Servicio[] = [
       },
       {
         p: "¿Cuánto tardáis?",
-        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro por 5 € más: pregúntanos por WhatsApp si tu arreglo entra. El express se paga en efectivo en la recogida, con recibo.",
+        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro con un recargo que te confirmamos en el presupuesto: pregúntanos por WhatsApp si tu arreglo entra. El express se paga en efectivo en la recogida, con recibo.",
       },
     ],
     whatsapp: "¡Hola! Quiero presupuesto para cambiar una cremallera.",
@@ -163,7 +163,7 @@ export const SERVICIOS: Servicio[] = [
       },
       {
         p: "¿Cuánto tardáis?",
-        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro por 5 € más: pregúntanos por WhatsApp si tu arreglo entra. El express se paga en efectivo en la recogida, con recibo.",
+        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro con un recargo que te confirmamos en el presupuesto: pregúntanos por WhatsApp si tu arreglo entra. El express se paga en efectivo en la recogida, con recibo.",
       },
     ],
     whatsapp: "¡Hola! Quiero presupuesto para unos botones.",
@@ -190,7 +190,7 @@ export const SERVICIOS: Servicio[] = [
     preguntas: [
       {
         p: "Lo necesito para una fecha concreta, ¿llegáis?",
-        r: "Lo normal son 3 días entre la recogida y la entrega. Si vas justo de tiempo, tenemos servicio urgente de un día para otro por 5 € más: escríbenos cuanto antes para confirmarlo. El express se paga en efectivo en la recogida, con recibo.",
+        r: "Lo normal son 3 días entre la recogida y la entrega. Si vas justo de tiempo, tenemos servicio urgente de un día para otro con un recargo que te confirmamos en el presupuesto: escríbenos cuanto antes para confirmarlo. El express se paga en efectivo en la recogida, con recibo.",
       },
       {
         p: "¿Cómo marco el largo de un vestido largo?",
@@ -233,7 +233,7 @@ export const SERVICIOS: Servicio[] = [
       },
       {
         p: "¿Cuánto tardáis?",
-        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro por 5 € más: pregúntanos por WhatsApp si tu arreglo entra. El express se paga en efectivo en la recogida, con recibo.",
+        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro con un recargo que te confirmamos en el presupuesto: pregúntanos por WhatsApp si tu arreglo entra. El express se paga en efectivo en la recogida, con recibo.",
       },
     ],
     whatsapp: "¡Hola! Quiero presupuesto para cambiar un forro.",
@@ -268,7 +268,7 @@ export const SERVICIOS: Servicio[] = [
       },
       {
         p: "¿Cuánto tardáis?",
-        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro por 5 € más: pregúntanos por WhatsApp si tu arreglo entra. El express se paga en efectivo en la recogida, con recibo.",
+        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro con un recargo que te confirmamos en el presupuesto: pregúntanos por WhatsApp si tu arreglo entra. El express se paga en efectivo en la recogida, con recibo.",
       },
     ],
     whatsapp: "¡Hola! Quiero presupuesto para arreglar cortinas o textil del hogar.",
@@ -434,14 +434,15 @@ export const SERVICIOS: Servicio[] = [
     imagen: { src: "/brand/personalizar.jpg", alt: "Manos de una costurera cosiendo un parche en unos vaqueros, junto a un short vaquero, hilos y tijeras", width: 1200, height: 900 },
     metaTitle: "Personalizar y transformar ropa, Madrid",
     metaDescription:
-      "Transformamos y personalizamos tu ropa: vaqueros en shorts, vestidos en faldas, cambios de mangas o cuello, parches y zurcidos. Recogida a domicilio en Madrid.",
+      "Transformamos y personalizamos tu ropa: vaqueros en shorts, vestidos en faldas, mangas y cuellos, bordados, parches y zurcidos. Recogida a domicilio en Madrid.",
     intro: [
-      "Esa prenda que ya no te pones puede tener una segunda vida. Transformamos vaqueros en shorts y vestidos en faldas, cambiamos mangas o cuellos, ponemos parches y zurcimos rotos.",
+      "Esa prenda que ya no te pones puede tener una segunda vida. Transformamos vaqueros en shorts y vestidos en faldas, cambiamos mangas o cuellos, bordamos nombres o dibujos, ponemos parches y zurcimos rotos.",
       "Cada encargo es distinto: cuéntanos tu idea por WhatsApp con una foto de la prenda y te decimos si se puede hacer y el precio antes de recogerla.",
     ],
     incluye: [
       "Transformar prendas: vaquero en short, vestido en falda",
       "Cambiar o quitar mangas y cuellos",
+      "Bordados personalizados: nombres, iniciales y dibujos",
       "Poner parches",
       "Zurcir rotos en vaqueros y otras prendas",
     ],
@@ -450,6 +451,7 @@ export const SERVICIOS: Servicio[] = [
       "Haz una foto de la prenda entera y otra de la zona que quieres cambiar.",
       "Cuéntanos cómo quieres que quede; si tienes una foto de referencia, mándala.",
       "Si es un parche, mándanoslo con la prenda y dinos dónde lo quieres.",
+      "Si es un bordado, mándanos el texto o el dibujo y dinos el tamaño y dónde lo quieres.",
     ],
     preguntas: [
       {
@@ -458,7 +460,7 @@ export const SERVICIOS: Servicio[] = [
       },
       {
         p: "¿Hacéis bordados o teñís prendas?",
-        r: "No, por ahora no hacemos bordados ni teñido.",
+        r: "Bordados sí: mándanos el texto o el dibujo y una foto de la prenda, y te decimos el precio. Teñido, por ahora no.",
       },
       {
         p: "¿Cuánto tardáis?",
