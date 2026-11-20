@@ -53,7 +53,7 @@ export const SERVICIOS: Servicio[] = [
       },
       {
         p: "¿Cuánto tardáis?",
-        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro por 5 € más: pregúntanos por WhatsApp si tu arreglo entra.",
+        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro por 5 € más: pregúntanos por WhatsApp si tu arreglo entra. El express se paga en efectivo en la recogida, con recibo.",
       },
     ],
     whatsapp: "¡Hola! Quiero presupuesto para coger un bajo.",
@@ -88,7 +88,7 @@ export const SERVICIOS: Servicio[] = [
       },
       {
         p: "¿Cuánto tardáis?",
-        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro por 5 € más: pregúntanos por WhatsApp si tu arreglo entra.",
+        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro por 5 € más: pregúntanos por WhatsApp si tu arreglo entra. El express se paga en efectivo en la recogida, con recibo.",
       },
     ],
     whatsapp: "¡Hola! Quiero presupuesto para estrechar una prenda.",
@@ -128,7 +128,7 @@ export const SERVICIOS: Servicio[] = [
       },
       {
         p: "¿Cuánto tardáis?",
-        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro por 5 € más: pregúntanos por WhatsApp si tu arreglo entra.",
+        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro por 5 € más: pregúntanos por WhatsApp si tu arreglo entra. El express se paga en efectivo en la recogida, con recibo.",
       },
     ],
     whatsapp: "¡Hola! Quiero presupuesto para cambiar una cremallera.",
@@ -163,7 +163,7 @@ export const SERVICIOS: Servicio[] = [
       },
       {
         p: "¿Cuánto tardáis?",
-        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro por 5 € más: pregúntanos por WhatsApp si tu arreglo entra.",
+        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro por 5 € más: pregúntanos por WhatsApp si tu arreglo entra. El express se paga en efectivo en la recogida, con recibo.",
       },
     ],
     whatsapp: "¡Hola! Quiero presupuesto para unos botones.",
@@ -190,7 +190,7 @@ export const SERVICIOS: Servicio[] = [
     preguntas: [
       {
         p: "Lo necesito para una fecha concreta, ¿llegáis?",
-        r: "Lo normal son 3 días entre la recogida y la entrega. Si vas justo de tiempo, tenemos servicio urgente de un día para otro por 5 € más: escríbenos cuanto antes para confirmarlo.",
+        r: "Lo normal son 3 días entre la recogida y la entrega. Si vas justo de tiempo, tenemos servicio urgente de un día para otro por 5 € más: escríbenos cuanto antes para confirmarlo. El express se paga en efectivo en la recogida, con recibo.",
       },
       {
         p: "¿Cómo marco el largo de un vestido largo?",
@@ -233,7 +233,7 @@ export const SERVICIOS: Servicio[] = [
       },
       {
         p: "¿Cuánto tardáis?",
-        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro por 5 € más: pregúntanos por WhatsApp si tu arreglo entra.",
+        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro por 5 € más: pregúntanos por WhatsApp si tu arreglo entra. El express se paga en efectivo en la recogida, con recibo.",
       },
     ],
     whatsapp: "¡Hola! Quiero presupuesto para cambiar un forro.",
@@ -268,7 +268,7 @@ export const SERVICIOS: Servicio[] = [
       },
       {
         p: "¿Cuánto tardáis?",
-        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro por 5 € más: pregúntanos por WhatsApp si tu arreglo entra.",
+        r: "Lo normal son 3 días entre la recogida y la entrega. Si tienes prisa, tenemos servicio urgente de un día para otro por 5 € más: pregúntanos por WhatsApp si tu arreglo entra. El express se paga en efectivo en la recogida, con recibo.",
       },
     ],
     whatsapp: "¡Hola! Quiero presupuesto para arreglar cortinas o textil del hogar.",

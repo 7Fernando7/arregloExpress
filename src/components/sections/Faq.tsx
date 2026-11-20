@@ -3,7 +3,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import Eyebrow from '@/components/Eyebrow';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
-const QUESTIONS = [1, 2, 3, 4, 5];
+const QUESTIONS = [1, 2, 3, 4, 5, 6];
 
 export default function Faq() {
   const { t } = useLanguage();

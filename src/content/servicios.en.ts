@@ -11,7 +11,7 @@ const EXAMPLES_NOTE = "These are examples: send us a photo and we'll confirm wha
 const HOW_LONG = "How long does it take?";
 const THREE_DAYS = "We need at least 3 days between pickup and delivery.";
 const URGENT =
-  "The usual turnaround is 3 days between pickup and delivery. In a hurry? We offer a next-day express service for €5 extra: ask us on WhatsApp whether your alteration qualifies.";
+  "The usual turnaround is 3 days between pickup and delivery. In a hurry? We offer a next-day express service for €5 extra: ask us on WhatsApp whether your alteration qualifies. Express jobs are paid in cash at pickup, with a receipt.";
 const THREE_DAYS_RUSH =
   "We need at least 3 days between pickup and delivery. If you need it sooner, tell us and we'll try, but we can't guarantee it.";
 
@@ -141,7 +141,7 @@ export const SERVICIOS_EN: Record<string, ServicioTexto> = {
     preguntas: [
       {
         p: "I need it for a specific date. Will it be ready?",
-        r: "The usual turnaround is 3 days between pickup and delivery. If time is tight, we offer a next-day express service for €5 extra: write to us as soon as you can to confirm it.",
+        r: "The usual turnaround is 3 days between pickup and delivery. If time is tight, we offer a next-day express service for €5 extra: write to us as soon as you can to confirm it. Express jobs are paid in cash at pickup, with a receipt.",
       },
       {
         p: "How do I mark the length of a long dress?",

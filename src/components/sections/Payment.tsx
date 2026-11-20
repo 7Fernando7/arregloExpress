@@ -53,6 +53,10 @@ export default function Payment() {
             <Icono name="candado" className="h-4 w-4" />
             {t('Payment.secure')}
           </p>
+          <p className="mt-5 rounded-md border border-dashed border-accent/60 p-4 text-sm leading-relaxed text-foreground/85">
+            <strong className="block font-semibold text-foreground">{t('Payment.cashTitle')}</strong>
+            {t('Payment.cash')}
+          </p>
         </div>
       </div>
     </section>
