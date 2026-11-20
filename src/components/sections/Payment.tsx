@@ -55,7 +55,10 @@ export default function Payment() {
           </p>
           <p className="mt-5 rounded-md border border-dashed border-accent/60 p-4 text-sm leading-relaxed text-foreground/85">
             <strong className="block font-semibold text-foreground">{t('Payment.cashTitle')}</strong>
-            {t('Payment.cash')}
+            {t('Payment.cash')}{' '}
+            <a href="#faq-express" className="font-semibold text-accent underline underline-offset-2">
+              {t('Payment.cashWhy')}
+            </a>
           </p>
         </div>
       </div>

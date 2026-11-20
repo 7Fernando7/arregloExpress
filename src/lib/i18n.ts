@@ -224,8 +224,9 @@ export const translations = {
       step3: "Pay by card, Apple Pay, Google Pay or Bizum. You'll get the receipt by email.",
       button: "Pay my alteration",
       secure: "Secure payment processed by Stripe. We never see your card details.",
-      cashTitle: "Prefer cash?",
-      cash: "You can pay in cash at pickup and we'll give you a receipt. Express alterations are always paid in cash at pickup.",
+      cashTitle: "Express alterations are paid in cash",
+      cash: "At pickup, and we'll give you a receipt.",
+      cashWhy: "Why? Click here to find out",
       menu: "Pay",
     },
     Faq: {
@@ -243,6 +244,8 @@ export const translations = {
       a5: "Via WhatsApp or the form on this page. We'll reply through the same channel.",
       q6: "How and when do I pay?",
       a6: "Alterations are paid in advance, once you accept the quote. You can pay on this website by card, Apple Pay, Google Pay or Bizum, or in cash at pickup: we'll give you a receipt. Express alterations are always paid in cash at pickup.",
+      q7: "Why are express alterations paid in cash?",
+      a7: "Because an express job is done overnight and the workshop is paid in advance. Card or Bizum payments made on the website take 2 to 3 days to reach us, so there isn't enough time. That's why express alterations are paid in cash at pickup, and we give you a receipt.",
     },
     Contact: {
       eyebrow: "Contact",
@@ -573,8 +576,9 @@ export const translations = {
       step3: "Paga con tarjeta, Apple Pay, Google Pay o Bizum. Recibirás el recibo por correo.",
       button: "Pagar mi arreglo",
       secure: "Pago seguro gestionado por Stripe. Nunca vemos los datos de tu tarjeta.",
-      cashTitle: "¿Prefieres efectivo?",
-      cash: "Puedes pagar en efectivo en la recogida y te damos un recibo. Los arreglos express se pagan siempre en efectivo en la recogida.",
+      cashTitle: "Los arreglos express se pagan en efectivo",
+      cash: "En la recogida, y te damos un recibo.",
+      cashWhy: "¿Por qué? Haz clic aquí para entenderlo",
       menu: "Pagar",
     },
     Faq: {
@@ -592,6 +596,8 @@ export const translations = {
       a5: "Por WhatsApp o con el formulario de esta página. Te respondemos por el mismo medio.",
       q6: "¿Cómo y cuándo se paga?",
       a6: "El arreglo se paga por adelantado, cuando aceptas el presupuesto. Puedes pagar en esta web con tarjeta, Apple Pay, Google Pay o Bizum, o en efectivo en la recogida: te damos un recibo. Los arreglos express se pagan siempre en efectivo en la recogida.",
+      q7: "¿Por qué los arreglos express se pagan en efectivo?",
+      a7: "Porque un express se hace de un día para otro y el taller cobra por adelantado. El pago con tarjeta o Bizum por la web tarda entre 2 y 3 días en llegarnos, así que no da tiempo. Por eso el express se paga en efectivo en la recogida, y te damos un recibo.",
     },
     Contact: {
       eyebrow: "Contacto",
