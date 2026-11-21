@@ -13,6 +13,7 @@ import { textoServicio } from "@/content/servicios.en";
 import { useLanguage } from "@/context/LanguageContext";
 import { whatsappLink } from "@/lib/contact";
 import Icono from "@/components/Icono";
+import { guiaDeServicio, textoGuia, uiGuia } from "@/content/guias";
 
 export default function ServicioBody({ slug }: { slug: string }) {
   const { t, language } = useLanguage();
@@ -21,6 +22,7 @@ export default function ServicioBody({ slug }: { slug: string }) {
   const c = textoServicio(s, language);
   const otros = SERVICIOS.filter((o) => o.slug !== s.slug);
   const esRopa = s.categoria === "ropa";
+  const guia = guiaDeServicio(s.slug);
 
   return (
     <main className="flex-grow">
@@ -98,6 +100,14 @@ export default function ServicioBody({ slug }: { slug: string }) {
               ))}
             </ul>
             <p className="mt-6 text-muted-foreground">{t("ServicePage.notListed")}</p>
+            {guia && (
+              <p className="mt-4 text-sm">
+                <span className="text-muted-foreground">{uiGuia(language).relacionada}: </span>
+                <a href={`/guias/${guia.slug}`} className="font-semibold text-accent hover:underline">
+                  {textoGuia(guia, language).titulo}
+                </a>
+              </p>
+            )}
           </div>
           <div className="space-y-3">
             {s.marcar ? (

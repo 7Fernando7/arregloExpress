@@ -7,6 +7,7 @@ import { CONTACT_EMAIL, whatsappLink } from "@/lib/contact";
 import { Mail } from "lucide-react";
 import OpeningHours from "@/components/OpeningHours";
 import { usePathname } from "next/navigation";
+import { uiGuia } from "@/content/guias";
 
 export default function Footer() {
   const { t, language } = useLanguage();
@@ -65,6 +66,11 @@ export default function Footer() {
                 </a>
               </li>
             ))}
+            <li>
+              <a href="/guias" className="text-primary-foreground/80 transition-colors hover:text-primary-foreground">
+                {uiGuia(language).indiceTitulo}
+              </a>
+            </li>
           </ul>
         </nav>
 

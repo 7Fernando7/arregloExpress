@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site";
 import { ROPA_SLUG, SERVICIOS } from "@/content/servicios";
+import { GUIAS } from "@/content/guias";
 
 export const dynamic = "force-static";
 
@@ -15,6 +16,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.8,
+    })),
+    { url: `${SITE_URL}/guias`, lastModified, changeFrequency: "monthly", priority: 0.6 },
+    ...GUIAS.map((g) => ({
+      url: `${SITE_URL}/guias/${g.slug}`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
     })),
     { url: `${SITE_URL}/politica-privacidad`, lastModified, changeFrequency: "yearly", priority: 0.2 },
   ];
