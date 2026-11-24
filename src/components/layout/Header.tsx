@@ -62,13 +62,15 @@ export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/85">
-      <div className="container mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 md:px-6 lg:grid lg:h-[4.75rem] lg:grid-cols-[1fr_auto_1fr]">
-        <p className="hidden text-[11px] font-semibold uppercase tracking-[0.22em] text-accent lg:block">{t('ServicePage.eyebrow')}</p>
-        <a href={isHome ? '#' : '/'} aria-label="Arreglos Express Madrid" className="lg:justify-self-center">
-          <Logo className="h-11 md:h-12 lg:h-14" />
-        </a>
-        <div className="flex items-center gap-2 sm:gap-3 lg:justify-self-end">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-white shadow-[0_2px_12px_-6px_rgba(19,41,75,0.18)]">
+      <div className="container mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 md:px-6 lg:h-[4.75rem]">
+        <div className="flex items-center gap-5">
+          <a href={isHome ? '#' : '/'} aria-label="Arreglos Express Madrid">
+            <Logo className="h-11 md:h-12 lg:h-14" />
+          </a>
+          <p className="hidden border-l border-border pl-5 text-[11px] font-semibold uppercase tracking-[0.22em] text-accent lg:block">{t('ServicePage.eyebrow')}</p>
+        </div>
+        <div className="flex items-center gap-2 sm:gap-3">
           <div className="hidden sm:block">
             <LanguageSwitcher />
           </div>
@@ -157,7 +159,7 @@ export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
         </div>
       </div>
       <nav className="hidden border-t border-border/70 lg:block">
-        <div className="container mx-auto flex h-11 max-w-6xl items-center justify-center gap-9 px-6">
+        <div className="container mx-auto flex h-11 max-w-6xl items-center gap-9 px-6">
           {links.map((link) =>
             link.href === '#services' ? (
               <DropdownMenu key={link.href} modal={false}>
@@ -165,7 +167,7 @@ export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
                   {link.label}
                   <ChevronDown className="h-3.5 w-3.5 transition-transform [[data-state=open]>&]:rotate-180" />
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="center" sideOffset={10} className="w-56 border-border bg-background p-1.5">
+                <DropdownMenuContent align="start" sideOffset={10} className="w-56 border-border bg-background p-1.5">
                   {serviceLinks.map((sl) => (
                     <DropdownMenuItem key={sl.href} asChild className="cursor-pointer rounded px-3 py-2 text-sm focus:bg-card">
                       <a href={sl.href}>{sl.label}</a>
