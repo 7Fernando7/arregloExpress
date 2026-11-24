@@ -24,7 +24,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="w-full py-16 md:py-24">
+    <section id="services" className="w-full border-y border-border bg-card py-16 md:py-24">
       <div className="container mx-auto max-w-6xl px-4 md:px-6">
         <div className="max-w-2xl space-y-4">
           <Eyebrow>{t('Services.eyebrow')}</Eyebrow>
@@ -38,7 +38,7 @@ export default function Services() {
             <a
               key={key}
               href={`/arreglos/${SERVICIOS[index].slug}`}
-              className="group flex flex-col rounded-lg border border-border bg-card p-6 transition-colors hover:border-dashed hover:border-accent"
+              className="group flex flex-col rounded-lg border border-border bg-background p-6 transition-colors hover:border-dashed hover:border-accent"
             >
               <Icono name={icon} className="h-16 w-16" />
               <h3 className="mt-5 font-headline text-xl font-semibold leading-snug">

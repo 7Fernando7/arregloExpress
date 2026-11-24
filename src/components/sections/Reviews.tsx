@@ -19,7 +19,7 @@ export default function Reviews() {
   const reviewHref = hasGoogle ? GOOGLE_REVIEW_URL : whatsappLink(t('Reviews.ctaMessage'));
 
   return (
-    <section id="reviews" className="w-full border-y border-dashed border-border bg-card/60 py-16 md:py-24">
+    <section id="reviews" className="w-full border-y border-border bg-card py-16 md:py-24">
       <div className="container mx-auto max-w-6xl px-4 md:px-6">
         <div className="max-w-2xl space-y-4">
           <Eyebrow>{t('Reviews.eyebrow')}</Eyebrow>

@@ -86,7 +86,7 @@ export default function ServicioBody({ slug }: { slug: string }) {
         </div>
       </section>
 
-      <section className="w-full border-y border-dashed border-border bg-card/60 py-14 md:py-20">
+      <section className="w-full border-y border-border bg-card py-14 md:py-20">
         <div className="container mx-auto grid max-w-6xl gap-10 px-4 md:px-6 lg:grid-cols-2 lg:gap-16">
           <div>
             <h2 className="font-headline text-3xl font-semibold tracking-tight sm:text-4xl">{t("ServicePage.includes")}</h2>
@@ -154,7 +154,7 @@ export default function ServicioBody({ slug }: { slug: string }) {
         </div>
       </section>
 
-      <section className="w-full border-t border-dashed border-border bg-card/60 py-14 md:py-20">
+      <section className="w-full border-t border-border bg-card py-14 md:py-20">
         <div className="container mx-auto max-w-6xl px-4 md:px-6">
           <h2 className="font-headline text-3xl font-semibold tracking-tight">{t("ServicePage.othersAlterations")}</h2>
           <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

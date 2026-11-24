@@ -169,7 +169,7 @@ export default function Zones() {
   const showList = open && suggestions.length > 0 && !isPostalInput(query);
 
   return (
-    <section id="zones" className="w-full border-y border-dashed border-border bg-card/60 py-16 md:py-24">
+    <section id="zones" className="w-full py-16 md:py-24">
       <div className="container mx-auto grid max-w-6xl items-start gap-12 px-4 md:px-6 lg:grid-cols-2 lg:gap-16">
         <div className="min-w-0 space-y-8">
           <div className="space-y-4">

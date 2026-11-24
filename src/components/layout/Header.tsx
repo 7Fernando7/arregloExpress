@@ -62,39 +62,13 @@ export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-dashed border-border bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/75">
-      <div className="container mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 md:h-20 md:px-6">
-        <a href={isHome ? '#' : '/'} aria-label="Arreglos Express Madrid">
-          <Logo className="h-11 md:h-14" />
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/85">
+      <div className="container mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 md:px-6 lg:grid lg:h-[4.75rem] lg:grid-cols-[1fr_auto_1fr]">
+        <p className="hidden text-[11px] font-semibold uppercase tracking-[0.22em] text-accent lg:block">{t('ServicePage.eyebrow')}</p>
+        <a href={isHome ? '#' : '/'} aria-label="Arreglos Express Madrid" className="lg:justify-self-center">
+          <Logo className="h-11 md:h-12 lg:h-14" />
         </a>
-        <nav className="hidden items-center gap-7 lg:flex">
-          {links.map((link) =>
-            link.href === '#services' ? (
-              <DropdownMenu key={link.href} modal={false}>
-                <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-foreground/75 outline-none transition-colors hover:text-foreground data-[state=open]:text-foreground">
-                  {link.label}
-                  <ChevronDown className="h-3.5 w-3.5 transition-transform [[data-state=open]>&]:rotate-180" />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="start" sideOffset={12} className="w-56 border-border bg-background p-1.5">
-                  {serviceLinks.map((sl) => (
-                    <DropdownMenuItem key={sl.href} asChild className="cursor-pointer rounded px-3 py-2 text-sm focus:bg-card">
-                      <a href={sl.href}>{sl.label}</a>
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
-            ) : (
-              <a
-                key={link.href}
-                href={home + link.href}
-                className="text-sm font-medium text-foreground/75 transition-colors hover:text-foreground"
-              >
-                {link.label}
-              </a>
-            )
-          )}
-        </nav>
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-2 sm:gap-3 lg:justify-self-end">
           <div className="hidden sm:block">
             <LanguageSwitcher />
           </div>
@@ -103,7 +77,7 @@ export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={t('WhatsappButton.ariaLabel')}
-            className="inline-flex h-10 items-center gap-2 rounded-md bg-primary px-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 sm:px-4"
+            className="inline-flex h-10 items-center gap-2 rounded-full bg-primary px-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 sm:px-5"
           >
             <WhatsappIcon className="h-4 w-4" />
             <span className="hidden sm:inline">{t('Header.whatsapp')}</span>
@@ -182,6 +156,35 @@ export default function Header({ hasWorks = false }: { hasWorks?: boolean }) {
           </Sheet>
         </div>
       </div>
+      <nav className="hidden border-t border-border/70 lg:block">
+        <div className="container mx-auto flex h-11 max-w-6xl items-center justify-center gap-9 px-6">
+          {links.map((link) =>
+            link.href === '#services' ? (
+              <DropdownMenu key={link.href} modal={false}>
+                <DropdownMenuTrigger className="flex items-center gap-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/70 outline-none transition-colors hover:text-foreground data-[state=open]:text-foreground">
+                  {link.label}
+                  <ChevronDown className="h-3.5 w-3.5 transition-transform [[data-state=open]>&]:rotate-180" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="center" sideOffset={10} className="w-56 border-border bg-background p-1.5">
+                  {serviceLinks.map((sl) => (
+                    <DropdownMenuItem key={sl.href} asChild className="cursor-pointer rounded px-3 py-2 text-sm focus:bg-card">
+                      <a href={sl.href}>{sl.label}</a>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <a
+                key={link.href}
+                href={home + link.href}
+                className="text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/70 transition-colors hover:text-foreground"
+              >
+                {link.label}
+              </a>
+            )
+          )}
+        </div>
+      </nav>
     </header>
   );
 }

@@ -145,7 +145,7 @@ export default function GuiaBody({ slug }: { slug: string }) {
       </article>
 
       {GUIAS.length > 1 && (
-        <section className="w-full border-t border-dashed border-border bg-card/60 py-14">
+        <section className="w-full border-t border-border bg-card py-14">
           <div className="container mx-auto max-w-3xl px-4 md:px-6">
             <h2 className="mb-6 font-headline text-3xl font-semibold tracking-tight">{ui.otras}</h2>
             <Tarjetas excepto={g.slug} />

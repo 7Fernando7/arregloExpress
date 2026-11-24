@@ -12,7 +12,7 @@ export default function Payment() {
   if (STRIPE_PAYMENT_URL === '') return null;
 
   return (
-    <section id="pay" className="w-full py-16 md:py-24">
+    <section id="pay" className="w-full border-y border-border bg-card py-16 md:py-24">
       <div className="container mx-auto grid max-w-6xl items-center gap-10 px-4 md:px-6 lg:grid-cols-2 lg:gap-16">
         <div className="space-y-4">
           <Eyebrow>{t('Payment.eyebrow')}</Eyebrow>
@@ -22,7 +22,7 @@ export default function Payment() {
           <p className="text-lg text-muted-foreground">{t('Payment.description')}</p>
         </div>
 
-        <div className="rounded-lg border border-border bg-card p-6 sm:p-8">
+        <div className="rounded-lg border border-border bg-background p-6 sm:p-8">
           <ol className="space-y-3 text-sm leading-relaxed text-foreground/85">
             {[1, 2, 3].map((n) => (
               <li key={n} className="flex gap-3">
@@ -44,7 +44,7 @@ export default function Payment() {
           </a>
           <ul className="mt-4 flex flex-wrap justify-center gap-2">
             {METHODS.map((m) => (
-              <li key={m} className="rounded border border-border bg-background px-2 py-0.5 text-xs font-medium text-muted-foreground">
+              <li key={m} className="rounded border border-border bg-card px-2 py-0.5 text-xs font-medium text-muted-foreground">
                 {m}
               </li>
             ))}

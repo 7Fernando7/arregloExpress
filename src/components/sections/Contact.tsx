@@ -85,7 +85,7 @@ export default function Contact() {
   const fieldClass = "h-11 bg-background focus-visible:ring-1";
 
   return (
-    <section id="contact" className="w-full border-t border-dashed border-border bg-card/60 py-16 md:py-24">
+    <section id="contact" className="w-full border-t border-border bg-card py-16 md:py-24">
       <div className="container mx-auto grid max-w-6xl gap-12 px-4 md:px-6 lg:grid-cols-[1fr_1.3fr] lg:gap-16">
         <div className="space-y-6">
           <Eyebrow>{t("Contact.eyebrow")}</Eyebrow>

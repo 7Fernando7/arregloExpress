@@ -12,7 +12,7 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section id="how-it-works" className="w-full border-y border-dashed border-border bg-card/60 py-16 md:py-24">
+    <section id="how-it-works" className="w-full border-y border-border bg-card py-16 md:py-24">
       <div className="container mx-auto max-w-6xl px-4 md:px-6">
         <div className="mx-auto max-w-2xl space-y-4 text-center">
           <Eyebrow center>{t('HowItWorks.eyebrow')}</Eyebrow>
