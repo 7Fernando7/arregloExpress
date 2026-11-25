@@ -7,7 +7,7 @@ import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import type { Work } from '@/lib/trabajos';
 import Icono from "@/components/Icono";
 
-const INITIAL = 8;
+const INITIAL = 6;
 
 export default function Works({ works }: { works: Work[] }) {
   const { t } = useLanguage();
@@ -31,7 +31,7 @@ export default function Works({ works }: { works: Work[] }) {
           <p className="text-lg text-muted-foreground">{t('Works.description')}</p>
         </div>
 
-        <ul className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+        <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
           {visible.map((work) => (
             <li
               key={work.id}
@@ -41,13 +41,13 @@ export default function Works({ works }: { works: Work[] }) {
                 images={work.images}
                 alt={work.caption}
                 labelText={labelText}
-                className="aspect-square"
+                className="aspect-[4/3]"
                 imgClassName="object-cover"
                 onImageClick={(index) => setOpen({ work, index })}
                 {...nav}
               />
-              <div className="px-3 py-2.5">
-                <p className="flex items-center justify-between gap-2 text-sm font-medium text-foreground">
+              <div className="p-4 sm:p-5">
+                <p className="flex items-center justify-between gap-2 font-headline text-lg font-semibold leading-snug text-foreground">
                   {work.caption}
                   {work.images.length > 1 && (
                     <span className="flex shrink-0 items-center gap-1 text-xs text-muted-foreground">
@@ -57,7 +57,7 @@ export default function Works({ works }: { works: Work[] }) {
                   )}
                 </p>
                 {work.description && (
-                  <p className="mt-1 line-clamp-3 text-xs leading-relaxed text-muted-foreground">{work.description}</p>
+                  <p className="mt-2 line-clamp-4 text-sm leading-relaxed text-muted-foreground">{work.description}</p>
                 )}
               </div>
             </li>
