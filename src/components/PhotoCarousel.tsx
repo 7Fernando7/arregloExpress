@@ -12,6 +12,7 @@ export default function PhotoCarousel({
   labelText,
   className,
   imgClassName,
+  blurFill = false,
   onImageClick,
   prevLabel,
   nextLabel,
@@ -22,6 +23,7 @@ export default function PhotoCarousel({
   labelText: (label?: WorkImage['label']) => string | null;
   className?: string;
   imgClassName?: string;
+  blurFill?: boolean; // foto entera (sin recortar) sobre un fondo desenfocado de la misma foto
   onImageClick?: (index: number) => void;
   prevLabel: string;
   nextLabel: string;
@@ -48,14 +50,18 @@ export default function PhotoCarousel({
       <div ref={emblaRef} className="h-full overflow-hidden">
         <div className="flex h-full">
           {images.map((img, i) => (
-            <div key={img.src} className="relative h-full min-w-0 shrink-0 grow-0 basis-full">
+            <div key={img.src} className="relative h-full min-w-0 shrink-0 grow-0 basis-full overflow-hidden">
+              {blurFill && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={img.src} alt="" aria-hidden loading="lazy" className="absolute inset-0 h-full w-full scale-125 object-cover opacity-70 blur-2xl" />
+              )}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={img.src}
                 alt={alt}
                 loading="lazy"
                 onClick={() => onImageClick?.(i)}
-                className={cn('h-full w-full', onImageClick && 'cursor-zoom-in', imgClassName)}
+                className={cn('relative h-full w-full', onImageClick && 'cursor-zoom-in', imgClassName)}
               />
               {labelText(img.label) && (
                 <span className="absolute left-2 top-2 rounded bg-background/90 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-foreground">

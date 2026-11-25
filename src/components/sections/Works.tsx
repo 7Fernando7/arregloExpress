@@ -41,8 +41,9 @@ export default function Works({ works }: { works: Work[] }) {
                 images={work.images}
                 alt={work.caption}
                 labelText={labelText}
-                className="aspect-[4/3]"
-                imgClassName="object-cover"
+                className="aspect-[4/5] bg-card"
+                imgClassName="object-contain"
+                blurFill
                 onImageClick={(index) => setOpen({ work, index })}
                 {...nav}
               />
