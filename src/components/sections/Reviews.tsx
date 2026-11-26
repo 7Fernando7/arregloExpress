@@ -1,9 +1,9 @@
 'use client';
-import { Star } from 'lucide-react';
+import { ExternalLink, Star } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import Eyebrow from '@/components/Eyebrow';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
-import { GOOGLE_REVIEW_URL, whatsappLink } from '@/lib/contact';
+import { GOOGLE_PROFILE_URL, GOOGLE_REVIEW_URL, whatsappLink } from '@/lib/contact';
 import reviewsData from '@/content/resenas.json';
 import { cn } from '@/lib/utils';
 
@@ -60,6 +60,7 @@ export default function Reviews() {
                 {REVIEWS.length === 0 ? t('Reviews.empty') : t('Reviews.ctaText')}
               </p>
             </div>
+            <div className="flex flex-wrap gap-3">
             <a
               data-umami-event="dejar-opinion" href={reviewHref}
               target="_blank"
@@ -69,6 +70,18 @@ export default function Reviews() {
               {hasGoogle ? <Star className="h-4 w-4" /> : <WhatsappIcon className="h-4 w-4" />}
               {t('Reviews.ctaButton')}
             </a>
+            {GOOGLE_PROFILE_URL && REVIEWS.length > 0 && (
+              <a
+                data-umami-event="ver-resenas-google" href={GOOGLE_PROFILE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex shrink-0 items-center gap-2 self-start rounded-md border border-primary-foreground/30 px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:border-primary-foreground"
+              >
+                <ExternalLink className="h-4 w-4" />
+                {t('Reviews.seeAll')}
+              </a>
+            )}
+            </div>
           </div>
         </div>
 

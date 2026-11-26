@@ -10,6 +10,8 @@ export function whatsappLink(text?: string) {
 // Enlace "escribir reseña" de la ficha de Google Business (Pedir reseñas)
 // Vacío = las opiniones llegan por WhatsApp.
 export const GOOGLE_REVIEW_URL: string = "https://g.page/r/CbyxECDS3DmaEBM/review";
+// La ficha en Google Maps, para leer todas las reseñas. Vacío = no se muestra el botón.
+export const GOOGLE_PROFILE_URL: string = "https://g.page/r/CbyxECDS3DmaEBM";
 
 // Enlace de pago de Stripe con importe libre (Payment Link "el cliente elige cuánto pagar").
 // Vacío = la sección "Pagar mi arreglo" no se muestra.
