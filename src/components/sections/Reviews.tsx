@@ -29,19 +29,22 @@ export default function Reviews() {
         </div>
 
         <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {REVIEWS.map((review) => (
-            <figure key={review.nombre + review.texto.slice(0, 20)} className="flex flex-col rounded-lg border border-border bg-background p-6">
+          {REVIEWS.map((review) => {
+            const corta = review.texto.length < 120; // las cortas, centradas y más grandes para no dejar la tarjeta vacía
+            return (
+            <figure key={review.nombre + review.texto.slice(0, 20)} className={cn('flex flex-col rounded-lg border border-border bg-background p-6', corta && 'items-center text-center')}>
               <div className="flex gap-0.5 text-accent" aria-label={`${review.estrellas}/5`}>
                 {Array.from({ length: 5 }, (_, i) => (
                   <Star key={i} className="h-4 w-4" fill={i < review.estrellas ? 'currentColor' : 'none'} />
                 ))}
               </div>
-              <blockquote className="mt-4 flex-1 font-headline text-lg leading-snug text-foreground">
+              <blockquote className={cn('mt-4 flex flex-1 font-headline leading-snug text-foreground', corta ? 'items-center text-2xl' : 'text-lg')}>
                 “{review.texto}”
               </blockquote>
               <figcaption className="mt-4 text-sm font-semibold text-muted-foreground">{review.nombre}</figcaption>
             </figure>
-          ))}
+            );
+          })}
 
           <div
             className={cn(
